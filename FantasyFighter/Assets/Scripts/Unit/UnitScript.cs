@@ -6,6 +6,8 @@ public class UnitScript : MonoBehaviour {
     public string ownerName { get; set; }
     public int ownerNum { get; set; }
 
+	public Light unitLight;
+
     public int hp { get; set; }
     public int mana { get; set; }
 
@@ -19,6 +21,8 @@ public class UnitScript : MonoBehaviour {
     public bool SetOwner(int num) {
         ownerName = "Player " + num.ToString();
         ownerNum = num;
+
+		unitLight.color = GameManager.GM.getPlayerColor(num);
         return true;
     }
 }

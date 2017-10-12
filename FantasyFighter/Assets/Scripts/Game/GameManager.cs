@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
 
     private void Awake() {
         MakeThisTheOnlyGameManager();
-        players = new Player[4];
+        players = new Player[10];
 
         //  instantiate players;
         for (int x = 0; x < players.Length; x++) {
@@ -45,6 +45,10 @@ public class GameManager : MonoBehaviour {
 
         PlayerManager.PM.SetCurrentPlayer(0);
     }
+
+	public Color getPlayerColor(int playerNum) {
+		return playerColor[playerNum];
+	}
     
     void MakeThisTheOnlyGameManager() {
         if (GM == null) {

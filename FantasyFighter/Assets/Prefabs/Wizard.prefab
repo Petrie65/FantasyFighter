@@ -221,7 +221,7 @@ GameObject:
   - component: {fileID: 4555157864977602}
   - component: {fileID: 108116976557999748}
   m_Layer: 0
-  m_Name: unitLight
+  m_Name: UnitLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -512,7 +512,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1199690439902772}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.32, y: 0.3, z: 10.65}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4289339360670860}
@@ -642,7 +642,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1528962442505958}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4349684206727676}
@@ -782,11 +782,11 @@ Light:
   m_GameObject: {fileID: 1528962442505958}
   m_Enabled: 1
   serializedVersion: 8
-  m_Type: 2
+  m_Type: 0
   m_Color: {r: 0.07586192, g: 0, b: 1, a: 1}
-  m_Intensity: 81.27
-  m_Range: 1.73
-  m_SpotAngle: 45
+  m_Intensity: 0.1
+  m_Range: 3
+  m_SpotAngle: 60
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -806,20 +806,6 @@ Light:
   m_Lightmapping: 1
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_FalloffTable:
-    m_Table[0]: 0
-    m_Table[1]: 0
-    m_Table[2]: 0
-    m_Table[3]: 0
-    m_Table[4]: 0
-    m_Table[5]: 0
-    m_Table[6]: 0
-    m_Table[7]: 0
-    m_Table[8]: 0
-    m_Table[9]: 0
-    m_Table[10]: 0
-    m_Table[11]: 0
-    m_Table[12]: 0
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
@@ -835,6 +821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff5c67c0d7ecd96499f0006c4eb47131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  unitLight: {fileID: 108116976557999748}
 --- !u!114 &114884883208823580
 MonoBehaviour:
   m_ObjectHideFlags: 1
