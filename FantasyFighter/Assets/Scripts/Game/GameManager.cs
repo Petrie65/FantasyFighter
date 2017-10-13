@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
 
     private void Awake() {
         MakeThisTheOnlyGameManager();
-        players = new Player[10];
+        players = new Player[4];
 
         //  instantiate players;
         for (int x = 0; x < players.Length; x++) {
