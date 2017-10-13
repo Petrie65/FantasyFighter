@@ -102,6 +102,7 @@
      <Compile Include="Assets\Scripts\Game\ObjectUI.cs" />
      <Compile Include="Assets\Scripts\Game\PlayerManager.cs" />
      <Compile Include="Assets\Scripts\Spells\MeteorProjectile.cs" />
+     <Compile Include="Assets\Scripts\Spells\SpellManager.cs" />
      <Compile Include="Assets\Scripts\Spells\WorldSpell.cs" />
      <Compile Include="Assets\Scripts\Unit\SpellInventory.cs" />
      <Compile Include="Assets\Scripts\Unit\UnitScript.cs" />

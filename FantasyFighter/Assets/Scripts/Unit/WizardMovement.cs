@@ -44,8 +44,7 @@ public class WizardMovement : MonoBehaviour {
         movement = movement.normalized * (sprintActive ? runSpeed : walkSpeed) * Time.deltaTime;
 
         // Move a rigidbody to a position in world space
-        playerRigidbody.MovePosition(transform.position + movement);
-        
+        playerRigidbody.transform.position += movement;
     }
 
     private void Rotate() {
