@@ -7,6 +7,7 @@ public class UnitScript : MonoBehaviour {
     public int ownerNum { get; set; }
 
 	public Light unitLight;
+    public GameObject unitMesh;
 
     public int hp { get; set; }
     public int mana { get; set; }
@@ -16,6 +17,7 @@ public class UnitScript : MonoBehaviour {
         ownerNum = -1;
         hp = -1;
         mana = -1;
+        
     }
 
     public bool SetOwner(int num) {
@@ -23,6 +25,8 @@ public class UnitScript : MonoBehaviour {
         ownerNum = num;
 
 		unitLight.color = GameManager.GM.getPlayerColor(num);
+        unitMesh.GetComponent<SkinnedMeshRenderer>().material.mainTexture = Resources.Load("WizardSkin/wizardTexture" + num.ToString()) as Texture;
+        Debug.Log("Set owner");
         return true;
     }
 }
