@@ -384,6 +384,7 @@
     <None Include="Assets\Import\NatureStarterKit2\info.txt" />
     <None Include="Assets\Import\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
     <None Include="Assets\Import\PyroParticles\Readme.txt" />
+    <None Include="Assets\UETools\Magic_Particle_Effects\Readme.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

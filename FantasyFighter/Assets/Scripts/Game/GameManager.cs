@@ -12,20 +12,7 @@ public class GameManager : MonoBehaviour {
     public int currentPlayerNum { get; set; }
     public Player currentPlayer { get; set; }
 
-    public static Color[] playerColor = new Color[] {
-        new Color(0F, 0F, 255F),    // Blue (0)
-        new Color(255F, 0F, 0F),    // Red (1)
-        new Color(0F, 255F, 0F),    // Green (2)
-        new Color(255F, 0F, 255F),  // Purple (3)
-
-        new Color(255F, 165F, 0F),  // Orange (4)
-        new Color(0F, 255F, 255F),  // Cyan (5)
-        new Color(255F, 192F, 203F),// Pink (6)
-        new Color(255F, 255F, 0F),  // Yellow (7)
-
-        new Color(46F, 139F, 87F),  // Sea Green (8)
-        new Color(210F, 180F, 140F), // Brown (9)
-    };
+    public ColorScript colors;
 
     private void Awake() {
         MakeThisTheOnlyGameManager();
@@ -46,11 +33,7 @@ public class GameManager : MonoBehaviour {
 
         PlayerManager.PM.SetCurrentPlayer(0);
     }
-
-	public Color getPlayerColor(int playerNum) {
-		return playerColor[playerNum];
-	}
-    
+        
     void MakeThisTheOnlyGameManager() {
         if (GM == null) {
             DontDestroyOnLoad(gameObject);
