@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour {
 
         PlayerManager.PM.SetCurrentPlayer(0);
     }
-        
+
     void MakeThisTheOnlyGameManager() {
         if (GM == null) {
             DontDestroyOnLoad(gameObject);

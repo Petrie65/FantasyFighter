@@ -29,8 +29,15 @@ public class MeteorProjectile : MonoBehaviour {
 		}
 	}
 
-    private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag == "Player") {
+    public void setOwner(string ownerName) {
+        owner = ownerName;
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "Player") {
+            Debug.Log("Collision owner name: " + other.gameObject.GetComponent<UnitScript>().ownerName);
+            if (other.gameObject.GetComponent<UnitScript>().ownerName == owner) return;
+
 			isAlive = false;
 
             GetComponent<MeshRenderer>().enabled = false;

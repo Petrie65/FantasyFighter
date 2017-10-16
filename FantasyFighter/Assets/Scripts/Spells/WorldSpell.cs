@@ -22,8 +22,7 @@ public class WorldSpell : MonoBehaviour {
             container.transform.position = Vector3.Lerp(container.transform.position, pickupUnit.transform.position, tweenSpeed * Time.deltaTime);
             transform.localScale = Vector3.Lerp(new Vector3(0.2f,0.2f,0.2f), new Vector3(0f, 0f, 0f), tweenSpeed * Time.deltaTime);
             if (areaLight.intensity > 0) {
-                areaLight.intensity -= 0.2f;
-                Debug.Log("in: " + areaLight.intensity.ToString());
+                areaLight.intensity -= 0.1f;
             }
 
         }

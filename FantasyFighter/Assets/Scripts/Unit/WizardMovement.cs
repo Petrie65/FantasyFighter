@@ -9,6 +9,7 @@ public class WizardMovement : MonoBehaviour {
     private Animator anim;
     private Rigidbody playerRigidbody;
 
+    private bool isAnimating = false;
     private bool sprintActive = false;
     
     private UnitScript unitScript;
@@ -25,6 +26,7 @@ public class WizardMovement : MonoBehaviour {
     // Every physics update (you're moving a physics character with rigidbody attched)
       private void FixedUpdate() {
         if (GameManager.GM.currentPlayer.name != unitScript.ownerName) return;
+        if (isAnimating) return;
 
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
@@ -53,6 +55,11 @@ public class WizardMovement : MonoBehaviour {
             Quaternion.LookRotation(movement),
             rotateSpeed * Time.deltaTime
         );
+    }
+
+    public void CastSpell(int animNum, Vector3 spellPos) {
+        isAnimating = true;
+        anim.SetTrigger("triggerAttack1");
     }
 
     private void Animating(float h, float v) {
