@@ -97,6 +97,7 @@
      <Compile Include="Assets\Import\PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
      <Compile Include="Assets\Import\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
      <Compile Include="Assets\Scripts\Game\CameraScript.cs" />
+     <Compile Include="Assets\Scripts\Game\ColorScript.cs" />
      <Compile Include="Assets\Scripts\Game\GameManager.cs" />
      <Compile Include="Assets\Scripts\Game\GUIManager.cs" />
      <Compile Include="Assets\Scripts\Game\ObjectUI.cs" />
@@ -151,6 +152,7 @@
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionSelective.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\Bokeh34.shader" />
+     <None Include="Assets\UETools\Magic_Particle_Effects\Readme.txt" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />

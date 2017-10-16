@@ -66,8 +66,6 @@
      <Compile Include="Assets\Import\NatureStarterKit2\Editor\ImageEffects\TonemappingEditor.cs" />
      <Compile Include="Assets\Import\NatureStarterKit2\Editor\ImageEffects\VignetteAndChromaticAberrationEditor.cs" />
      <Compile Include="Assets\Import\PyroParticles\Prefab\Editor\PyroParticlesEditor.cs" />
-     <Compile Include="Assets\Import\Ultimate Game UI\UpdateManager\Editor\SimpleJSON.cs" />
-     <Compile Include="Assets\Import\Ultimate Game UI\UpdateManager\Editor\UpdatesWindow.cs" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
@@ -112,6 +110,7 @@
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionSelective.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\Bokeh34.shader" />
+     <None Include="Assets\UETools\Magic_Particle_Effects\Readme.txt" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />

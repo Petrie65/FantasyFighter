@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class WizardMovement : MonoBehaviour {
     public float walkSpeed = 5f;
@@ -57,12 +58,29 @@ public class WizardMovement : MonoBehaviour {
         );
     }
 
-    public void CastSpell(int animNum, Vector3 spellPos) {
-        isAnimating = true;
-        anim.SetTrigger("triggerAttack1");
-    }
 
-    private void Animating(float h, float v) {
+
+	public void CastSpell(int animNum, Vector3 spellPos) {
+		var animation = StartCoroutine(WaitForAnimation(animNum, spellPos));
+	}
+
+	private IEnumerator WaitForAnimation(int animNum, Vector3 pos) {
+		isAnimating = true;
+
+		anim.SetTrigger("triggerAttack" + animNum.ToString());
+		
+		Vector3 playerToMouse = pos - transform.position;
+		playerToMouse.y = 0f;
+		
+		Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
+		transform.rotation = newRotation;
+
+		yield return new WaitForSeconds(0.5f); 
+
+		isAnimating = false;
+	}
+
+	private void Animating(float h, float v) {
         if (h != 0f || v != 0f) {
             anim.SetBool("isWalking", true);
             anim.SetBool("isRunning", sprintActive);

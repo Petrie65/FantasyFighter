@@ -40,12 +40,20 @@ public class SpellManager : MonoBehaviour {
 
         switch (spellName) {
             case "Meteor":
-                GameObject mProjectile = Instantiate(meteorProjectile);
-                mProjectile.transform.position = owner.unit.transform.position;
-                mProjectile.transform.LookAt(clickPos);
-                mProjectile.GetComponent<MeteorProjectile>().setOwner(owner.name);
+				StartCoroutine(SpellDelay(0.3f, clickPos, owner));
                 break;
 
         }
+	}
+	
+	private IEnumerator SpellDelay(float delay, Vector3 clickPos, Player owner) {
+
+		yield return new WaitForSeconds(delay);
+
+		GameObject mProjectile = Instantiate(meteorProjectile);
+		mProjectile.transform.position = owner.unit.transform.position;
+		mProjectile.transform.LookAt(clickPos);
+		mProjectile.GetComponent<MeteorProjectile>().setOwner(owner.name);
+		
 	}
 }

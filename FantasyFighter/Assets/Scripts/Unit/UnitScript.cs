@@ -47,22 +47,10 @@ public class UnitScript : MonoBehaviour {
         if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask)) {
             Vector3 adjustedPoint = new Vector3(floorHit.point.x, this.transform.position.y + 0.9f, floorHit.point.z);
             SpellManager.SM.CastSpellMouse(ownerNum, selectedSpell, adjustedPoint);
-
-            GetComponent<WizardMovement>().CastSpell(0, adjustedPoint);
-            Vector3 playerToMouse = adjustedPoint - transform.position;
-            //playerToMouse.y = 0f;
-
-            // Z axis is front
-            Quaternion newRotation = Quaternion.LookRotation(playerToMouse);
-            transform.rotation = newRotation;
-           // transform.Rotate()
-
-          //  GetComponent<Rigidbody>().MoveRotation(newRotation);
+            GetComponent<WizardMovement>().CastSpell(1, adjustedPoint);
+			
         }
-
-
-
-
+		
     }
 
     public bool SetOwner(int num) {
