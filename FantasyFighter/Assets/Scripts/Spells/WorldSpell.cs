@@ -28,13 +28,13 @@ public class WorldSpell : MonoBehaviour {
         }
     }
 
-    private void OnCollisionEnter(Collision collision) {
-        if (collision.gameObject.tag == "Player") {
-            if (GameManager.GM.acquireItem(collision.gameObject.GetComponent<UnitScript>().ownerNum, spellName)) {
+    private void OnTriggerEnter(Collider other) {
+        if (other.gameObject.tag == "Player") {
+            if (GameManager.GM.acquireItem(other.gameObject.GetComponent<UnitScript>().ownerNum, spellName)) {
                 // Only destroy if item has been picked up
                 GetComponent<SphereCollider>().enabled = false;
 
-                pickupUnit = collision.gameObject;
+                pickupUnit = other.gameObject;
                 pickedUp = true;
 
                 GetComponent<Animator>().enabled = false;
