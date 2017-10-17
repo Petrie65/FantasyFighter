@@ -30,6 +30,7 @@ public class SpellManager : MonoBehaviour {
 		if (spell != "")
 		{
             GameManager.GM.currentPlayer.unit.GetComponent<UnitScript>().selectedSpell = spell;
+            GameManager.GM.currentPlayer.unit.GetComponent<UnitScript>().selectedSpellIdx = spellNum;
 			Debug.Log("select spell:" + spell);
 		}
 	}
@@ -37,6 +38,11 @@ public class SpellManager : MonoBehaviour {
 	public void CastSpellMouse(int ownerNum, string spellName, Vector3 clickPos) {
 
         Player owner = GameManager.GM.players[ownerNum];
+
+        owner.unit.GetComponent<UnitScript>().selectedSpell = "";           
+        owner.spells[owner.unit.GetComponent<UnitScript>().selectedSpellIdx] = "";
+        owner.unit.GetComponent<UnitScript>().selectedSpellIdx = 0;
+        GUIManager.GUI.updateGUI(0);
 
         switch (spellName) {
             case "Meteor":
@@ -54,6 +60,5 @@ public class SpellManager : MonoBehaviour {
 		mProjectile.transform.position = owner.unit.transform.position;
 		mProjectile.transform.LookAt(clickPos);
 		mProjectile.GetComponent<MeteorProjectile>().setOwner(owner.name);
-		
 	}
 }

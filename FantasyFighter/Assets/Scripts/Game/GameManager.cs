@@ -65,6 +65,8 @@ public class Player {
     public string[] spells;
     public string name;
 
+    
+
     public Player(string name) {
         this.name = name;
         spells = new string[4];

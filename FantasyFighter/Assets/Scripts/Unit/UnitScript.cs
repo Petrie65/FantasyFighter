@@ -12,6 +12,7 @@ public class UnitScript : MonoBehaviour {
     public int hp { get; set; }
     public int mana { get; set; }
 
+    public int selectedSpellIdx = 0;
     public string selectedSpell = "";
 
     private Animator anim;

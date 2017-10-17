@@ -678,7 +678,7 @@ ParticleSystem:
     randomizeRotationDirection: 0
     maxNumParticles: 5000
     size3D: 0
-    rotation3D: 0
+    rotation3D: 1
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
