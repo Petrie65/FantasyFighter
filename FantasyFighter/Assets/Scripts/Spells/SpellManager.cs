@@ -7,7 +7,10 @@ public class SpellManager : MonoBehaviour {
     public static SpellManager SM;
 	private string selectedSpell;
 
-    public GameObject meteorProjectile;
+    public GameObject projectileMeteor;
+    public GameObject projectileSnowball;
+
+    private GameObject projectile;
 
     private void Awake() {
         MakeThisTheOnlySpellManager();
@@ -46,7 +49,10 @@ public class SpellManager : MonoBehaviour {
 
         switch (spellName) {
             case "Meteor":
-				StartCoroutine(SpellDelay(0.3f, clickPos, owner));
+				StartCoroutine(SpellDelay(0.2f, clickPos, owner));
+                break;
+            case "Snowball":
+				StartCoroutine(SpellDelay(0.2f, clickPos, owner));
                 break;
 
         }
@@ -56,9 +62,9 @@ public class SpellManager : MonoBehaviour {
 
 		yield return new WaitForSeconds(delay);
 
-		GameObject mProjectile = Instantiate(meteorProjectile);
+		GameObject mProjectile = Instantiate(projectileSnowball);
 		mProjectile.transform.position = owner.unit.transform.position;
 		mProjectile.transform.LookAt(clickPos);
-		mProjectile.GetComponent<MeteorProjectile>().setOwner(owner.name);
+		mProjectile.GetComponent<ProjectileSnowball>().setOwner(owner.name);
 	}
 }
