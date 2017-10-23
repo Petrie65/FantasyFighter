@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ProjectileSnowball : MonoBehaviour {
-    // public ParticleSystem praticleTail;
-    // public ParticleSystem particleCollide;
+    public ParticleSystem praticleTail;
+    public ParticleSystem particleCollide;
 
     public Light fireLight;
 
@@ -43,11 +43,11 @@ public class ProjectileSnowball : MonoBehaviour {
 			isAlive = false;
 
             GetComponent<MeshRenderer>().enabled = false;
-            // praticleTail.Stop();
+            praticleTail.Stop();
 
             // fireLightAnim.SetTrigger("triggerExplode");
 
-            // particleCollide.Emit(30);
+            particleCollide.Emit(300);
             Destroy(gameObject, 1);
         }
     }
