@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 33455020262616940}
   - component: {fileID: 23863998214523628}
   - component: {fileID: 135953613067208306}
-  - component: {fileID: 95426756238170162}
   - component: {fileID: 114362581413254898}
   m_Layer: 5
   m_Name: ProjectileSnowball
@@ -57,6 +56,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4306457962279450}
   - component: {fileID: 108313932875665130}
+  - component: {fileID: 95187255773999504}
   m_Layer: 8
   m_Name: Light
   m_TagString: Untagged
@@ -177,17 +177,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1032662503379850}
   m_Mesh: {fileID: 4300008, guid: 371ed6c0dd75f6a4ebd1dfcb0b578b46, type: 3}
---- !u!95 &95426756238170162
+--- !u!95 &95187255773999504
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1032662503379850}
-  m_Enabled: 0
+  m_GameObject: {fileID: 1869113117830188}
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 924b148a84f40c0458c7653788a91b11, type: 2}
-  m_CullingMode: 1
+  m_Controller: {fileID: 9100000, guid: b44b088f8c8385d428cb8ca1a7c166e3, type: 2}
+  m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -203,7 +203,7 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0, g: 0.5862069, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.25517225, b: 1, a: 1}
   m_Intensity: 1.38
   m_Range: 8
   m_SpotAngle: 30
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   praticleTail: {fileID: 198099703216843570}
   particleCollide: {fileID: 198829010112447200}
-  fireLight: {fileID: 108313932875665130}
+  iceLight: {fileID: 108313932875665130}
 --- !u!135 &135953613067208306
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -316,7 +316,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1358794866
+  randomSeed: -2038929283
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3633,7 +3633,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1926627267
+  randomSeed: 36780471
   InitialModule:
     serializedVersion: 3
     enabled: 1

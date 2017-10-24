@@ -6,9 +6,9 @@ public class ProjectileSnowball : MonoBehaviour {
     public ParticleSystem praticleTail;
     public ParticleSystem particleCollide;
 
-    public Light fireLight;
+    public Light iceLight;
 
-    // private Animator fireLightAnim;
+    private Animator iceLightAnim;
     
     private float speed = 20f;
 	private float range = 20f;
@@ -20,12 +20,11 @@ public class ProjectileSnowball : MonoBehaviour {
 	private bool isAlive = true;
 
     private void Awake() {
-        // fireLightAnim = fireLight.GetComponent<Animator>();
+        iceLightAnim = iceLight.GetComponent<Animator>();
     }
 
     private void Update() {
 		if (isAlive) { 
-            // transform.Rotate(0, 10f, 0, Space.Self);
 			transform.position += transform.forward * Time.deltaTime * speed;   
 
 		}
@@ -45,7 +44,7 @@ public class ProjectileSnowball : MonoBehaviour {
             GetComponent<MeshRenderer>().enabled = false;
             praticleTail.Stop();
 
-            // fireLightAnim.SetTrigger("triggerExplode");
+            iceLightAnim.SetTrigger("triggerExplode");
 
             particleCollide.Emit(300);
             Destroy(gameObject, 1);
