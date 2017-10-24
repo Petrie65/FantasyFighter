@@ -217,12 +217,6 @@
     <Reference Include="UnityEngine.Purchasing">
       <HintPath>Library\UnityAssemblies\UnityEngine.Purchasing.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Scripts\Antialiasing.cs" />
@@ -276,7 +270,8 @@
     <Compile Include="Assets\Scripts\Game\GUIManager.cs" />
     <Compile Include="Assets\Scripts\Game\ObjectUI.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerManager.cs" />
-    <Compile Include="Assets\Scripts\Spells\MeteorProjectile.cs" />
+    <Compile Include="Assets\Scripts\Spells\ProjectileMeteor.cs" />
+    <Compile Include="Assets\Scripts\Spells\ProjectileSnowball.cs" />
     <Compile Include="Assets\Scripts\Spells\SpellManager.cs" />
     <Compile Include="Assets\Scripts\Spells\WorldSpell.cs" />
     <Compile Include="Assets\Scripts\Unit\SpellInventory.cs" />

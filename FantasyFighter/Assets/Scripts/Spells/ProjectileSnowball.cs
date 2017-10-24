@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ProjectileSnowball : MonoBehaviour {
     public ParticleSystem praticleTail;
-    public ParticleSystem particleCollide;
+    public ParticleSystem[] particlesCollision;
+    public int[] emitCount;
 
     public Light iceLight;
 
@@ -25,8 +26,7 @@ public class ProjectileSnowball : MonoBehaviour {
 
     private void Update() {
 		if (isAlive) { 
-			transform.position += transform.forward * Time.deltaTime * speed;   
-
+			transform.position += transform.forward * Time.deltaTime * speed;
 		}
 	}
 
@@ -46,7 +46,12 @@ public class ProjectileSnowball : MonoBehaviour {
 
             iceLightAnim.SetTrigger("triggerExplode");
 
-            particleCollide.Emit(300);
+            for (int x=0;x<particlesCollision.Length;x++) {
+                if (particlesCollision[x]) {
+                    particlesCollision[x].Emit(emitCount[x]);
+                }
+            }
+
             Destroy(gameObject, 1);
         }
     }
