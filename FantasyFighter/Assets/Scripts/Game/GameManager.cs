@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour {
             currentUnit.GetComponent<UnitScript>().SetOwner(x);
 
             players[x].unit = currentUnit;
+            players[x].playerNum = x;
         }
 
         PlayerManager.PM.SetCurrentPlayer(0);
@@ -61,11 +62,10 @@ public class GameManager : MonoBehaviour {
 
 public class Player {
     public GameObject unit;
+    public int playerNum;
     public int money;
     public string[] spells;
     public string name;
-
-    
 
     public Player(string name) {
         this.name = name;

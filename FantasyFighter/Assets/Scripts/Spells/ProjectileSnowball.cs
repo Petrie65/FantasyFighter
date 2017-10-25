@@ -11,7 +11,7 @@ public class ProjectileSnowball : MonoBehaviour {
 
     private Animator iceLightAnim;
     
-    private float speed = 20f;
+    private float speed = 15f;
 	private float range = 20f;
 	private int damage = 10;
 

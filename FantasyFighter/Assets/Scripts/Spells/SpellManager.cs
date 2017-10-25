@@ -30,8 +30,7 @@ public class SpellManager : MonoBehaviour {
     public void SelectSpell(int spellNum)
 	{
 		var spell = GameManager.GM.currentPlayer.spells[spellNum];
-		if (spell != "")
-		{
+		if (spell != "") {
             GameManager.GM.currentPlayer.unit.GetComponent<UnitScript>().selectedSpell = spell;
             GameManager.GM.currentPlayer.unit.GetComponent<UnitScript>().selectedSpellIdx = spellNum;
 			Debug.Log("select spell:" + spell);
@@ -39,32 +38,35 @@ public class SpellManager : MonoBehaviour {
 	}
 
 	public void CastSpellMouse(int ownerNum, string spellName, Vector3 clickPos) {
-
         Player owner = GameManager.GM.players[ownerNum];
 
         owner.unit.GetComponent<UnitScript>().selectedSpell = "";           
         owner.spells[owner.unit.GetComponent<UnitScript>().selectedSpellIdx] = "";
         owner.unit.GetComponent<UnitScript>().selectedSpellIdx = 0;
-        GUIManager.GUI.updateGUI(0);
+        GUIManager.GUI.updateGUI(owner.playerNum);
+
+        StartCoroutine(SpellDelay(0.2f, owner, spellName, clickPos));
+	}
+	
+	private IEnumerator SpellDelay(float delay, Player owner, string spellName, Vector3 clickPos) {
+		yield return new WaitForSeconds(delay);
 
         switch (spellName) {
             case "Meteor":
-				StartCoroutine(SpellDelay(0.2f, clickPos, owner));
+                createProjectile(projectileMeteor, owner, clickPos);
                 break;
             case "Snowball":
-				StartCoroutine(SpellDelay(0.2f, clickPos, owner));
+                createProjectile(projectileSnowball, owner, clickPos);
                 break;
-
         }
 	}
-	
-	private IEnumerator SpellDelay(float delay, Vector3 clickPos, Player owner) {
 
-		yield return new WaitForSeconds(delay);
-
-		GameObject mProjectile = Instantiate(projectileSnowball);
+    private void createProjectile(GameObject projectile, Player owner, Vector3 destination) {
+		GameObject mProjectile = Instantiate(projectile);
 		mProjectile.transform.position = owner.unit.transform.position;
-		mProjectile.transform.LookAt(clickPos);
-		mProjectile.GetComponent<ProjectileSnowball>().setOwner(owner.name);
-	}
+		mProjectile.transform.LookAt(destination);
+
+        // SendMessage(string methodName, object value)
+        mProjectile.SendMessage("setOwner", owner.name);
+    }
 }
