@@ -5,6 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ObjectUI : MonoBehaviour {
+    //TODO MAKE STATIC
+
     public int heightOffset = 40;
     // public GameObject UnitText;
     public GameObject unitUI;
@@ -37,6 +39,7 @@ public class ObjectUI : MonoBehaviour {
             hp.colors = cb;
 
             UnitText[x].GetComponent<Text>().text = wizards[x].GetComponent<UnitScript>().ownerName;
+            UpdateHealthBar(x);
         }
 	}
 	
@@ -46,12 +49,14 @@ public class ObjectUI : MonoBehaviour {
             playerPos = Camera.main.WorldToScreenPoint(wizards[x].transform.position);
             playerPos.y += heightOffset;
             UnitUIList[x].transform.position = playerPos;
+        }
+    }
 
-            UnitScript script = wizards[x].GetComponent<UnitScript>();
+    public void UpdateHealthBar(int num) {
+            UnitScript script = wizards[num].GetComponent<UnitScript>();
 
             float hpWidth = 150f * ((float)script.currentHP / (float)script.maxHP);
-            UnitHealthBarHandle[x].GetComponent<RectTransform>().sizeDelta = new Vector2(hpWidth, 20);
-        }
+            UnitHealthBarHandle[num].GetComponent<RectTransform>().sizeDelta = new Vector2(hpWidth, 20);
     }
 
 }

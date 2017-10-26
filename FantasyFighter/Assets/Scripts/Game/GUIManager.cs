@@ -25,8 +25,8 @@ public class GUIManager : MonoBehaviour {
     public bool updateGUI(int player) {
         if (GameManager.GM.currentPlayerNum == player) {
             for (int x = 0; x < spellButtons.Length; x++) {
-                string spell = GameManager.GM.players[player].spells[x];
-                bool isSpell = spell != "";
+                Spell spell = GameManager.GM.players[player].spells[x];
+                bool isSpell = spell != null;
 
                 Text spellButtonText = spellButtons[x].GetComponentInChildren<Text>();
 
@@ -34,6 +34,9 @@ public class GUIManager : MonoBehaviour {
                 spellButtons[x].GetComponentInChildren<Button>().interactable = isSpell;
             }
             return true;
+
+            // TODO: Update health, mana, money
+
         }
         return false;
     }

@@ -10,10 +10,13 @@ public class SpellManager : MonoBehaviour {
     public GameObject projectileMeteor;
     public GameObject projectileSnowball;
 
+    public Spell spells[];
+
     private GameObject projectile;
 
     private void Awake() {
         MakeThisTheOnlySpellManager();
+        InitSpells();
     }
 
     void MakeThisTheOnlySpellManager() {
@@ -27,22 +30,53 @@ public class SpellManager : MonoBehaviour {
         }
     }
 
-    public void SelectSpell(int spellNum)
-	{
+    private void InitSpells() {
+        spells[] = new Spell[] {
+            new Spell("Meteor", 10, projectileMeteor),
+            new Spell("Snowball", 15, projectileSnowball)
+        };
+    }
+
+    public Spell getSpell(string spellName) {
+        for (int x = 0; x < spells.length; x++) {
+            if (spells[x].name == "spellName") {
+                return spells[x];
+            }
+        }
+        Debug.log("spellName does not exist");
+        return null;
+    }
+
+    public void SelectSpell(int spellNum) {
 		var spell = GameManager.GM.currentPlayer.spells[spellNum];
-		if (spell != "") {
-            GameManager.GM.currentPlayer.unit.GetComponent<UnitScript>().selectedSpell = spell;
-            GameManager.GM.currentPlayer.unit.GetComponent<UnitScript>().selectedSpellIdx = spellNum;
-			Debug.Log("select spell:" + spell);
-		}
+		if (spell == null) {
+            Debug.Log("No spell selected");
+            return;
+        }
+
+        UnityScript unitScript =  GameManager.GM.currentPlayer.unit.GetComponent<UnitScript>();
+        
+        // Todo: point to correct spell
+        if (unitScript.mana < spells[0].manaCost)
+            Debug.Log("Not enough mana");
+            return;
+        }
+
+        // Success
+        unitScript.selectedSpell = spell;
+        unitScript.selectedSpellIdx = spellNum;
 	}
 
 	public void CastSpellMouse(int ownerNum, string spellName, Vector3 clickPos) {
         Player owner = GameManager.GM.players[ownerNum];
 
-        owner.unit.GetComponent<UnitScript>().selectedSpell = "";           
-        owner.spells[owner.unit.GetComponent<UnitScript>().selectedSpellIdx] = "";
+        owner.unit.GetComponent<UnitScript>().selectedSpell = null;           
+        owner.spells[owner.unit.GetComponent<UnitScript>().selectedSpellIdx] = null;
         owner.unit.GetComponent<UnitScript>().selectedSpellIdx = 0;
+
+        // Todo: deduct mana correctly
+        owner.unit.GetComponent<UnitScript>().mana -= 10;
+
         GUIManager.GUI.updateGUI(owner.playerNum);
 
         StartCoroutine(SpellDelay(0.2f, owner, spellName, clickPos));
@@ -67,6 +101,6 @@ public class SpellManager : MonoBehaviour {
 		mProjectile.transform.LookAt(destination);
 
         // SendMessage(string methodName, object value)
-        mProjectile.SendMessage("setOwner", owner.name);
+        mProjectile.SendMessage("setOwner", owner);
     }
 }

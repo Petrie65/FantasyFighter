@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour {
 
     public ColorScript colors;
 
+    // TODO: Connect!
+    public ObjectUI objectUI;
+
     private void Awake() {
         MakeThisTheOnlyGameManager();
         players = new Player[10];
@@ -46,12 +49,22 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public bool acquireItem(int player, string item) {
+    public bool acquireItem(int player, Spell spell) {
         for (int x = 0; x < 4; x++) {
+
+            /* 
             string spell = players[player].spells[x];
             if (spell == "") {
                 players[player].spells[x] = item;
                 Debug.Log("spell " + x.ToString() + " = " + item);
+                GUIManager.GUI.updateGUI(player);
+                return true;
+            }*/
+
+            Spell spell = players[player].spells[x];
+            if (spell == null) {
+                players[player].spells[x] = spell;
+                Debug.Log("spell " + x.ToString() + " = " + spell.name);
                 GUIManager.GUI.updateGUI(player);
                 return true;
             }
@@ -60,6 +73,7 @@ public class GameManager : MonoBehaviour {
     }
 }
 
+/*
 public class Player {
     public GameObject unit;
     public int playerNum;
@@ -75,3 +89,4 @@ public class Player {
         }
     }
 }
+*/

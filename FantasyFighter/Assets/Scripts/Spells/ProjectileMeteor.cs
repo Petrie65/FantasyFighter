@@ -15,7 +15,7 @@ public class ProjectileMeteor : MonoBehaviour {
 	private int damage = 10;
 
     private Transform startPosition;
-    private string owner;
+    private Player owner;
 
 	private bool isAlive = true;
 
@@ -29,15 +29,19 @@ public class ProjectileMeteor : MonoBehaviour {
 		}
 	}
 
-    public void setOwner(string ownerName) {
-        owner = ownerName;
+    public void setOwner(Player owner) {
+        this.owner = owner;
     }
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player") {
-            Debug.Log("Collision owner name: " + other.gameObject.GetComponent<UnitScript>().ownerName);
-            if (other.gameObject.GetComponent<UnitScript>().ownerName == owner) return;
+            UnitScript unitScript = other.gameObject.GetComponent<UnitScript>();
+            if (unitScript.ownerName == owner.name) return;
 
+            unitScript.TakeDamage(owner, damage);
+            GUIManager.GUI.updateGUI(unitScript.ownerNum);
+            GameManager.GM.objectUI.UpdateHealthBar(unitScript.ownerNum);
+            
 			isAlive = false;
 
             GetComponent<MeshRenderer>().enabled = false;

@@ -24,13 +24,12 @@ public class WorldSpell : MonoBehaviour {
             if (areaLight.intensity > 0) {
                 areaLight.intensity -= 0.1f;
             }
-
         }
     }
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player") {
-            if (GameManager.GM.acquireItem(other.gameObject.GetComponent<UnitScript>().ownerNum, spellName)) {
+            if (GameManager.GM.acquireItem(other.gameObject.GetComponent<UnitScript>().ownerNum, SpellManager.SM.getSpell(spellName))) {
                 // Only destroy if item has been picked up
                 GetComponent<SphereCollider>().enabled = false;
 
