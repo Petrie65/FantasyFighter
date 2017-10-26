@@ -9,11 +9,13 @@ public class UnitScript : MonoBehaviour {
 	public Light unitLight;
     public GameObject unitMesh;
 
-    public int hp { get; set; }
-    public int mana { get; set; }
-
     public int selectedSpellIdx = 0;
     public string selectedSpell = "";
+
+    [HideInInspector]
+    public int maxHP;
+    public int currentHP;
+    public int mana;
 
     private Animator anim;
     private Rigidbody playerRigidbody;
@@ -24,8 +26,10 @@ public class UnitScript : MonoBehaviour {
     public void Awake() {
         ownerName = "undefined";
         ownerNum = -1;
-        hp = -1;
-        mana = -1;
+
+        currentHP = 75;
+        maxHP = 100;
+        mana = 100;
 
         floorMask = LayerMask.GetMask("Floor");
         anim = GetComponent<Animator>();
@@ -40,7 +44,6 @@ public class UnitScript : MonoBehaviour {
         }
     }
     
-
     private void CastSpellMouse(Vector3 mousePos) {
         Ray camRay = Camera.main.ScreenPointToRay(mousePos);
         RaycastHit floorHit;
@@ -51,7 +54,6 @@ public class UnitScript : MonoBehaviour {
             GetComponent<WizardMovement>().CastSpell(1, adjustedPoint);
 			
         }
-		
     }
 
     public bool SetOwner(int num) {
@@ -59,12 +61,23 @@ public class UnitScript : MonoBehaviour {
         name = "Wizard P" + num.ToString() + " (" +  GameManager.GM.colors.colorName[num] + ")";
         ownerNum = num;
         
-        unitLight.color = GameManager.GM.colors.color[num];
+        unitLight.color = GameManager.GM.colors.lightColor[num];
 
         unitMesh.GetComponent<SkinnedMeshRenderer>().material.mainTexture = Resources.Load("WizardSkin/wizardTexture" + num.ToString()) as Texture;
-
         return true;
     }
 
+    public void TakeDamage(Player playerFrom, int damage) {
+        if (playerFrom.name != ownerName) {
+            currentHP -= damage;
+            if (currentHP <= 0) {
+                Debug.Log("Killed by " + playerFrom.name);
+                Die();
+            }
+        }
+    }
 
+    public void Die() {
+
+    }
 }
