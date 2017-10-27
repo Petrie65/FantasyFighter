@@ -10,7 +10,7 @@ public class SpellManager : MonoBehaviour {
     public GameObject projectileMeteor;
     public GameObject projectileSnowball;
 
-    public Spell spells[];
+    public Spell[] spells;
 
     private GameObject projectile;
 
@@ -31,19 +31,19 @@ public class SpellManager : MonoBehaviour {
     }
 
     private void InitSpells() {
-        spells[] = new Spell[] {
+        spells = new Spell[] {
             new Spell("Meteor", 10, projectileMeteor),
             new Spell("Snowball", 15, projectileSnowball)
         };
     }
 
     public Spell getSpell(string spellName) {
-        for (int x = 0; x < spells.length; x++) {
-            if (spells[x].name == "spellName") {
+        for (int x = 0; x < spells.Length; x++) {
+            if (spells[x].name == spellName) {
                 return spells[x];
             }
         }
-        Debug.log("spellName does not exist");
+        Debug.Log("spellName does not exist");
         return null;
     }
 
@@ -54,10 +54,9 @@ public class SpellManager : MonoBehaviour {
             return;
         }
 
-        UnityScript unitScript =  GameManager.GM.currentPlayer.unit.GetComponent<UnitScript>();
+        UnitScript unitScript =  GameManager.GM.currentPlayer.unit.GetComponent<UnitScript>();
         
-        // Todo: point to correct spell
-        if (unitScript.mana < spells[0].manaCost)
+        if (unitScript.mana < spell.manaCost) {
             Debug.Log("Not enough mana");
             return;
         }
@@ -67,7 +66,7 @@ public class SpellManager : MonoBehaviour {
         unitScript.selectedSpellIdx = spellNum;
 	}
 
-	public void CastSpellMouse(int ownerNum, string spellName, Vector3 clickPos) {
+	public void CastSpellMouse(int ownerNum, Spell castSpell, Vector3 clickPos) {
         Player owner = GameManager.GM.players[ownerNum];
 
         owner.unit.GetComponent<UnitScript>().selectedSpell = null;           
@@ -77,9 +76,9 @@ public class SpellManager : MonoBehaviour {
         // Todo: deduct mana correctly
         owner.unit.GetComponent<UnitScript>().mana -= 10;
 
-        GUIManager.GUI.updateGUI(owner.playerNum);
+        GUIManager.GUI.updateGUI(owner);
 
-        StartCoroutine(SpellDelay(0.2f, owner, spellName, clickPos));
+        StartCoroutine(SpellDelay(0.2f, owner, castSpell.name, clickPos));
 	}
 	
 	private IEnumerator SpellDelay(float delay, Player owner, string spellName, Vector3 clickPos) {

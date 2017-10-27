@@ -26,7 +26,7 @@ public class WizardMovement : MonoBehaviour {
 
     // Every physics update (you're moving a physics character with rigidbody attched)
       private void FixedUpdate() {
-        if (GameManager.GM.currentPlayer.name != unitScript.ownerName) return;
+        if (GameManager.GM.currentPlayer != unitScript.owner) return;
         if (isAnimating) return;
 
         float h = Input.GetAxisRaw("Horizontal");

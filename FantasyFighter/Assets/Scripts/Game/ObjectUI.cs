@@ -5,10 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ObjectUI : MonoBehaviour {
-    //TODO MAKE STATIC
-
     public int heightOffset = 40;
-    // public GameObject UnitText;
+
     public GameObject unitUI;
     
     GameObject[] wizards;
@@ -38,7 +36,7 @@ public class ObjectUI : MonoBehaviour {
             cb.disabledColor = GameManager.GM.colors.color[x];
             hp.colors = cb;
 
-            UnitText[x].GetComponent<Text>().text = wizards[x].GetComponent<UnitScript>().ownerName;
+            UnitText[x].GetComponent<Text>().text = wizards[x].GetComponent<UnitScript>().owner.name;
             UpdateHealthBar(x);
         }
 	}

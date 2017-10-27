@@ -3,14 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class UnitScript : MonoBehaviour {
-    public string ownerName { get; set; }
-    public int ownerNum { get; set; }
+    public Player owner {get; set; }
 
 	public Light unitLight;
     public GameObject unitMesh;
 
     public int selectedSpellIdx = 0;
-    public string selectedSpell = "";
+    public Spell selectedSpell = null;
 
     [HideInInspector]
     public int maxHP;
@@ -24,10 +23,9 @@ public class UnitScript : MonoBehaviour {
     private float camRayLength = 100f;
 
     public void Awake() {
-        ownerName = "undefined";
-        ownerNum = -1;
+        owner = null;
 
-        currentHP = 75;
+        currentHP = 100;
         maxHP = 100;
         mana = 100;
 
@@ -37,7 +35,7 @@ public class UnitScript : MonoBehaviour {
     }
 
     private void Update() {
-        if (selectedSpell != "") {
+        if (selectedSpell != null) {
             if (Input.GetMouseButtonDown(0)) {
                 CastSpellMouse(Input.mousePosition);
             }
@@ -50,25 +48,24 @@ public class UnitScript : MonoBehaviour {
 
         if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask)) {
             Vector3 adjustedPoint = new Vector3(floorHit.point.x, this.transform.position.y + 0.9f, floorHit.point.z);
-            SpellManager.SM.CastSpellMouse(ownerNum, selectedSpell, adjustedPoint);
+            SpellManager.SM.CastSpellMouse(owner.playerNum, selectedSpell, adjustedPoint);
             GetComponent<WizardMovement>().CastSpell(1, adjustedPoint);
 			
         }
     }
 
-    public bool SetOwner(int num) {
-        ownerName = "Player " + num.ToString();
-        name = "Wizard P" + num.ToString() + " (" +  GameManager.GM.colors.colorName[num] + ")";
-        ownerNum = num;
+    public bool SetOwner(Player player) {
+        owner = player;
+        name = "Wizard P" + owner.playerNum.ToString() + " (" +  GameManager.GM.colors.colorName[owner.playerNum] + ")";
         
-        unitLight.color = GameManager.GM.colors.lightColor[num];
+        unitLight.color = GameManager.GM.colors.lightColor[owner.playerNum];
 
-        unitMesh.GetComponent<SkinnedMeshRenderer>().material.mainTexture = Resources.Load("WizardSkin/wizardTexture" + num.ToString()) as Texture;
+        unitMesh.GetComponent<SkinnedMeshRenderer>().material.mainTexture = Resources.Load("WizardSkin/wizardTexture" + owner.playerNum.ToString()) as Texture;
         return true;
     }
 
     public void TakeDamage(Player playerFrom, int damage) {
-        if (playerFrom.name != ownerName) {
+        if (playerFrom.name != owner.name) {
             currentHP -= damage;
             if (currentHP <= 0) {
                 Debug.Log("Killed by " + playerFrom.name);

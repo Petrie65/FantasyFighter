@@ -29,7 +29,7 @@ public class WorldSpell : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player") {
-            if (GameManager.GM.acquireItem(other.gameObject.GetComponent<UnitScript>().ownerNum, SpellManager.SM.getSpell(spellName))) {
+            if (GameManager.GM.acquireItem(other.gameObject.GetComponent<UnitScript>().owner, SpellManager.SM.getSpell(spellName))) {
                 // Only destroy if item has been picked up
                 GetComponent<SphereCollider>().enabled = false;
 

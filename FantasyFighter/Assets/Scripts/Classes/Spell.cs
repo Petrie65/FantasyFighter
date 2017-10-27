@@ -2,9 +2,16 @@
 using System;
 
 public class Spell {
-    string name;
-    int manaCost;
-    GameObject object;
+    public string name;
+    public int manaCost;
+    public GameObject gameObject;
 
-    Player owner;
+    public Player owner;
+
+    public Spell(string name, int manaCost, GameObject gameObject) {
+        this.name = name;
+        this.manaCost = manaCost;
+        this.gameObject = gameObject;
+
+    }
 }

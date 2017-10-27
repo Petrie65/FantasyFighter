@@ -9,13 +9,14 @@ public class GameManager : MonoBehaviour {
     public GameObject playerUnit;
 
     public Player[] players;
-    public int currentPlayerNum { get; set; }
     public Player currentPlayer { get; set; }
 
     public ColorScript colors;
 
-    // TODO: Connect!
-    public ObjectUI objectUI;
+    public GameObject objectUI;
+
+    [HideInInspector]
+    public ObjectUI objectUIScript;
 
     private void Awake() {
         MakeThisTheOnlyGameManager();
@@ -29,13 +30,15 @@ public class GameManager : MonoBehaviour {
             GameObject currentUnit = Instantiate(playerUnit);
             currentUnit.transform.Translate(new Vector3(x * 5, 1, 0));
 
-            currentUnit.GetComponent<UnitScript>().SetOwner(x);
+            players[x].playerNum = x;
+            currentUnit.GetComponent<UnitScript>().SetOwner(players[x]);
 
             players[x].unit = currentUnit;
-            players[x].playerNum = x;
         }
 
-        PlayerManager.PM.SetCurrentPlayer(0);
+        objectUIScript = objectUI.GetComponent<ObjectUI>();
+
+        PlayerManager.PM.SetCurrentPlayer(players[0]);
     }
 
     void MakeThisTheOnlyGameManager() {
@@ -49,22 +52,11 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public bool acquireItem(int player, Spell spell) {
+    public bool acquireItem(Player player, Spell spell) {
         for (int x = 0; x < 4; x++) {
-
-            /* 
-            string spell = players[player].spells[x];
-            if (spell == "") {
-                players[player].spells[x] = item;
-                Debug.Log("spell " + x.ToString() + " = " + item);
-                GUIManager.GUI.updateGUI(player);
-                return true;
-            }*/
-
-            Spell spell = players[player].spells[x];
-            if (spell == null) {
-                players[player].spells[x] = spell;
-                Debug.Log("spell " + x.ToString() + " = " + spell.name);
+            Spell currentSpell = player.spells[x];
+            if (currentSpell == null) {
+                player.spells[x] = spell;
                 GUIManager.GUI.updateGUI(player);
                 return true;
             }
@@ -72,21 +64,3 @@ public class GameManager : MonoBehaviour {
         return false;
     }
 }
-
-/*
-public class Player {
-    public GameObject unit;
-    public int playerNum;
-    public int money;
-    public string[] spells;
-    public string name;
-
-    public Player(string name) {
-        this.name = name;
-        spells = new string[4];
-        for (int x = 0; x < spells.Length; x++) {
-            spells[x] = "";
-        }
-    }
-}
-*/

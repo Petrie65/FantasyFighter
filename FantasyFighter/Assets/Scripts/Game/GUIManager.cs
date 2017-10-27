@@ -22,15 +22,15 @@ public class GUIManager : MonoBehaviour {
         }
     }
 
-    public bool updateGUI(int player) {
-        if (GameManager.GM.currentPlayerNum == player) {
+    public bool updateGUI(Player player) {
+        if (GameManager.GM.currentPlayer == player) {
             for (int x = 0; x < spellButtons.Length; x++) {
-                Spell spell = GameManager.GM.players[player].spells[x];
+                Spell spell = player.spells[x];
                 bool isSpell = spell != null;
 
                 Text spellButtonText = spellButtons[x].GetComponentInChildren<Text>();
 
-                spellButtonText.text = isSpell ? spell : x.ToString();
+                spellButtonText.text = isSpell ? spell.name : x.ToString();
                 spellButtons[x].GetComponentInChildren<Button>().interactable = isSpell;
             }
             return true;

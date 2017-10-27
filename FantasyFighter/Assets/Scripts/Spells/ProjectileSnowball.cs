@@ -16,7 +16,7 @@ public class ProjectileSnowball : MonoBehaviour {
 	private int damage = 10;
 
     private Transform startPosition;
-    private string owner;
+    private Player owner;
 
 	private bool isAlive = true;
 
@@ -30,14 +30,13 @@ public class ProjectileSnowball : MonoBehaviour {
 		}
 	}
 
-    public void setOwner(string ownerName) {
-        owner = ownerName;
+    public void setOwner(Player owner) {
+        this.owner = owner;
     }
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player") {
-            Debug.Log("Collision owner name: " + other.gameObject.GetComponent<UnitScript>().ownerName);
-            if (other.gameObject.GetComponent<UnitScript>().ownerName == owner) return;
+            if (other.gameObject.GetComponent<UnitScript>().owner.name == owner.name) return;
 
 			isAlive = false;
 

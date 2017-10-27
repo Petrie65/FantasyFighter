@@ -27,18 +27,18 @@ public class PlayerManager : MonoBehaviour {
         }
     }
 
-    public void SetCurrentPlayer(int playerNum) {
-        if (GameManager.GM.players[playerNum] != null) {
-            GameManager.GM.currentPlayerNum = playerNum;
-            GameManager.GM.currentPlayer = GameManager.GM.players[playerNum];
-
-            GUIManager.GUI.updateGUI(playerNum);
-
-            playerText.text = GameManager.GM.currentPlayer.name;
-
-            camScript.target = GameManager.GM.players[playerNum].unit.transform;
+    public void SetCurrentPlayer(Player player) {
+        if (player != null) {
+            GameManager.GM.currentPlayer = player;
+            GUIManager.GUI.updateGUI(player);
+            playerText.text = player.name;
+            camScript.target = player.unit.transform;
         } else {
             Debug.Log("Player doesnt exist");
         }
+    }
+
+    public void SetCurrentPlayer(int playerNum) {
+        SetCurrentPlayer(GameManager.GM.players[playerNum]);
     }
 }

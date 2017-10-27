@@ -36,11 +36,11 @@ public class ProjectileMeteor : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player") {
             UnitScript unitScript = other.gameObject.GetComponent<UnitScript>();
-            if (unitScript.ownerName == owner.name) return;
+            if (unitScript.owner.name == owner.name) return;
 
             unitScript.TakeDamage(owner, damage);
-            GUIManager.GUI.updateGUI(unitScript.ownerNum);
-            GameManager.GM.objectUI.UpdateHealthBar(unitScript.ownerNum);
+            GUIManager.GUI.updateGUI(unitScript.owner);
+            GameManager.GM.objectUIScript.UpdateHealthBar(unitScript.owner.playerNum);
             
 			isAlive = false;
 
