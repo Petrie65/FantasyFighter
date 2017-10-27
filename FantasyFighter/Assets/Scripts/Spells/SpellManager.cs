@@ -33,7 +33,7 @@ public class SpellManager : MonoBehaviour {
     private void InitSpells() {
         spells = new Spell[] {
             new Spell("Meteor", 10, projectileMeteor),
-            new Spell("Snowball", 15, projectileSnowball)
+            new Spell("Snowball", 30, projectileSnowball)
         };
     }
 
@@ -73,8 +73,7 @@ public class SpellManager : MonoBehaviour {
         owner.spells[owner.unit.GetComponent<UnitScript>().selectedSpellIdx] = null;
         owner.unit.GetComponent<UnitScript>().selectedSpellIdx = 0;
 
-        // Todo: deduct mana correctly
-        owner.unit.GetComponent<UnitScript>().mana -= 10;
+        owner.unit.GetComponent<UnitScript>().mana -= castSpell.manaCost;
 
         GUIManager.GUI.updateGUI(owner);
 

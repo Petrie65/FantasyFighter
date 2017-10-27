@@ -12,6 +12,5 @@ public class Spell {
         this.name = name;
         this.manaCost = manaCost;
         this.gameObject = gameObject;
-
     }
 }

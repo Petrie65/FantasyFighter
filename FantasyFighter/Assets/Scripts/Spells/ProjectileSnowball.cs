@@ -36,9 +36,14 @@ public class ProjectileSnowball : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player") {
-            if (other.gameObject.GetComponent<UnitScript>().owner.name == owner.name) return;
+            UnitScript unitScript = other.gameObject.GetComponent<UnitScript>();
+            if (unitScript.owner.name == owner.name) return;
 
-			isAlive = false;
+            unitScript.TakeDamage(owner, damage);
+            GUIManager.GUI.updateGUI(unitScript.owner);
+            GameManager.GM.objectUIScript.UpdateHealthBar(unitScript.owner.playerNum);
+			
+            isAlive = false;
 
             GetComponent<MeshRenderer>().enabled = false;
             praticleTail.Stop();

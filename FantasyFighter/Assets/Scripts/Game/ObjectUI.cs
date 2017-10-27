@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ObjectUI : MonoBehaviour {
-    public int heightOffset = 40;
+    public float heightOffset = 30f;
 
     public GameObject unitUI;
     
@@ -44,9 +44,15 @@ public class ObjectUI : MonoBehaviour {
 	void Update () {
         Vector3 playerPos;
         for (int x = 0; x < wizards.Length; x++) {
+            // Position UI object on unit
             playerPos = Camera.main.WorldToScreenPoint(wizards[x].transform.position);
             playerPos.y += heightOffset;
             UnitUIList[x].transform.position = playerPos;
+
+            // Set height offset
+            Vector3 pos = UnitUIList[x].GetComponent<RectTransform>().position;
+            pos.y += heightOffset;
+            UnitUIList[x].GetComponent<RectTransform>().position = pos;
         }
     }
 
