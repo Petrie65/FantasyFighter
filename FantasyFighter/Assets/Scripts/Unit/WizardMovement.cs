@@ -6,12 +6,18 @@ public class WizardMovement : MonoBehaviour {
     public float runSpeed = 7f;
     public float rotateSpeed = 80f;
 
-    private Vector3 movement;
+    public float dodgeSpeed;
+    public float dodgeDistance;
+    private float dodgeMoved = 0f;
+    private float dodgeHeight = 10f;
+
+    private Vector3 movement = new Vector3(0, 0, 0.1f);
     private Animator anim;
     private Rigidbody playerRigidbody;
 
     private bool isAnimating = false;
     private bool sprintActive = false;
+    private bool isDodging = false; 
     
     private UnitScript unitScript;
 
@@ -20,14 +26,13 @@ public class WizardMovement : MonoBehaviour {
     private void Awake() {
         anim = GetComponent<Animator>();
         playerRigidbody = GetComponent<Rigidbody>();
-
         unitScript = GetComponent<UnitScript>();
     }
 
     // Every physics update (you're moving a physics character with rigidbody attched)
       private void FixedUpdate() {
         if (GameManager.GM.currentPlayer != unitScript.owner) return;
-        if (isAnimating) return;
+        if (isAnimating || unitScript.isDead) return;
 
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
@@ -42,8 +47,12 @@ public class WizardMovement : MonoBehaviour {
     private void Move(float h, float v) {
         if (h == 0f && v == 0f) return;
 
-        movement.Set(h, 0, v);
+        if (Input.GetMouseButtonDown(1)) {
+            StartDodge(h, v);
+            return;
+        }
 
+        movement.Set(h, 0, v);
         movement = movement.normalized * (sprintActive ? runSpeed : walkSpeed) * Time.deltaTime;
 
         // Move a rigidbody to a position in world space
@@ -57,8 +66,6 @@ public class WizardMovement : MonoBehaviour {
             rotateSpeed * Time.deltaTime
         );
     }
-
-
 
 	public void CastSpell(int animNum, Vector3 spellPos) {
 		var animation = StartCoroutine(WaitForAnimation(animNum, spellPos));
@@ -79,6 +86,12 @@ public class WizardMovement : MonoBehaviour {
 
 		isAnimating = false;
 	}
+
+    private void StartDodge(float h, float v) { 
+        isDodging = true;
+		anim.SetTrigger("triggerDodge");
+        playerRigidbody.AddForce(new Vector3(h, 0.3f, v) * 1000f);
+    }
 
 	private void Animating(float h, float v) {
         if (h != 0f || v != 0f) {

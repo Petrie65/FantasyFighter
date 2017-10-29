@@ -55,12 +55,15 @@ public class SpellManager : MonoBehaviour {
         }
 
         UnitScript unitScript =  GameManager.GM.currentPlayer.unit.GetComponent<UnitScript>();
-        
+        if (unitScript.isDead) {
+            Debug.Log("Unit is dead");
+            return;
+        }
         if (unitScript.mana < spell.manaCost) {
             Debug.Log("Not enough mana");
             return;
         }
-
+        
         // Success
         unitScript.selectedSpell = spell;
         unitScript.selectedSpellIdx = spellNum;

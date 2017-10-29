@@ -11,16 +11,20 @@ public class UnitScript : MonoBehaviour {
     public int selectedSpellIdx = 0;
     public Spell selectedSpell = null;
 
+    public ParticleSystem staffParticles;
+
     [HideInInspector]
     public int maxHP;
     public int currentHP;
     public int mana;
 
     private Animator anim;
-    private Rigidbody playerRigidbody;
+    private Rigidbody unitRigidbody;
 
     private int floorMask;
     private float camRayLength = 100f;
+
+    public bool isDead = false;
 
     public void Awake() {
         owner = null;
@@ -31,17 +35,23 @@ public class UnitScript : MonoBehaviour {
 
         floorMask = LayerMask.GetMask("Floor");
         anim = GetComponent<Animator>();
-        playerRigidbody = GetComponent<Rigidbody>();
+        unitRigidbody = GetComponent<Rigidbody>();
     }
 
     private void Update() {
-        if (selectedSpell != null) {
-            if (Input.GetMouseButtonDown(0)) {
-                CastSpellMouse(Input.mousePosition);
+        if (!isDead) {
+            if (GameManager.GM.currentPlayer != owner) return;
+
+            if (Input.GetButtonDown("Fire1")) {
+                if (selectedSpell != null) {
+                    CastSpellMouse(Input.mousePosition);
+                }
             }
+        } else {
+            PerformDie();
         }
     }
-    
+
     private void CastSpellMouse(Vector3 mousePos) {
         Ray camRay = Camera.main.ScreenPointToRay(mousePos);
         RaycastHit floorHit;
@@ -69,12 +79,45 @@ public class UnitScript : MonoBehaviour {
             currentHP -= damage;
             if (currentHP <= 0) {
                 Debug.Log("Killed by " + playerFrom.name);
-                Die();
+                StartCoroutine(DieRoutine());
             }
         }
     }
 
-    public void Die() {
+    string dieState;
+    private IEnumerator DieRoutine() {
+        isDead = true;
+		anim.SetTrigger("triggerDie");
+        
+        // Prevent the body from falling
+        unitRigidbody.useGravity = false;
+        GetComponent<CapsuleCollider>().enabled = false;
+
+        staffParticles.Stop();
+
+        dieState = "animate";
+        yield return new WaitForSeconds(1f);
+        dieState = "light";
+        yield return new WaitForSeconds(4f);
+        dieState = "dissolve";
+        yield return new WaitForSeconds(5f);
+        dieState = "dead";
+        
+        gameObject.SetActive(false);
+    }
+
+    float dissolveSpeed = 0.3f;
+    private void PerformDie() {
+        switch (dieState) {
+            case "animate":
+                break;
+            case "light":
+                unitLight.intensity -= 7f * Time.deltaTime;
+                break;
+            case "dissolve":
+                transform.Translate(Vector3.down * Time.deltaTime * dissolveSpeed, Space.World);
+                break;
+        }
 
     }
 }

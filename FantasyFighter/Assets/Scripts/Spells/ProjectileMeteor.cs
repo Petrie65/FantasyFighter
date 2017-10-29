@@ -12,7 +12,7 @@ public class ProjectileMeteor : MonoBehaviour {
     
     private float speed = 30f;
 	private float range = 20f;
-	private int damage = 10;
+	private int damage = 75;
 
     private Transform startPosition;
     private Player owner;

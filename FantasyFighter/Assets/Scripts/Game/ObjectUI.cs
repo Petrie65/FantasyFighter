@@ -5,7 +5,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ObjectUI : MonoBehaviour {
-    public float heightOffset = 30f;
+    public float heightOffset;
+    public float scaleDiv;
 
     public GameObject unitUI;
     
@@ -16,6 +17,8 @@ public class ObjectUI : MonoBehaviour {
     private GameObject[] UnitText;
     private GameObject[] UnitHealthBar;
     private GameObject[] UnitHealthBarHandle;
+
+    private float heightScale;
         
 	void Awake () {
         wizards = GameObject.FindGameObjectsWithTag("Player");
@@ -23,6 +26,10 @@ public class ObjectUI : MonoBehaviour {
         UnitText = new GameObject[wizards.Length];
         UnitHealthBar = new GameObject[wizards.Length];
         UnitHealthBarHandle = new GameObject[wizards.Length];
+
+        // TODO: update scale whenever screen resizes
+        float heightScale = (float)(Screen.height) / scaleDiv;
+        heightOffset *= heightScale;
 
         for (int x = 0; x < wizards.Length; x++) {
             UnitUIList.Add(Instantiate(unitUI, this.transform));
@@ -35,6 +42,8 @@ public class ObjectUI : MonoBehaviour {
             ColorBlock cb = hp.colors;
             cb.disabledColor = GameManager.GM.colors.color[x];
             hp.colors = cb;
+
+            UnitUIList[x].GetComponent<RectTransform>().localScale = new Vector3(heightScale,heightScale,heightScale);
 
             UnitText[x].GetComponent<Text>().text = wizards[x].GetComponent<UnitScript>().owner.name;
             UpdateHealthBar(x);

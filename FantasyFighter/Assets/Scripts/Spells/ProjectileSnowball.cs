@@ -13,7 +13,7 @@ public class ProjectileSnowball : MonoBehaviour {
     
     private float speed = 15f;
 	private float range = 20f;
-	private int damage = 10;
+	private int damage = 40;
 
     private Transform startPosition;
     private Player owner;

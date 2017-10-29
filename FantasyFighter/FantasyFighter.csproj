@@ -264,10 +264,13 @@
     <Compile Include="Assets\Import\PyroParticles\Prefab\Script\FireProjectileScript.cs" />
     <Compile Include="Assets\Import\PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
     <Compile Include="Assets\Import\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
+    <Compile Include="Assets\Scripts\Classes\Player.cs" />
+    <Compile Include="Assets\Scripts\Classes\Spell.cs" />
     <Compile Include="Assets\Scripts\Game\CameraScript.cs" />
     <Compile Include="Assets\Scripts\Game\ColorScript.cs" />
     <Compile Include="Assets\Scripts\Game\GameManager.cs" />
     <Compile Include="Assets\Scripts\Game\GUIManager.cs" />
+    <Compile Include="Assets\Scripts\Game\InputManager.cs" />
     <Compile Include="Assets\Scripts\Game\ObjectUI.cs" />
     <Compile Include="Assets\Scripts\Game\PlayerManager.cs" />
     <Compile Include="Assets\Scripts\Spells\ProjectileMeteor.cs" />
