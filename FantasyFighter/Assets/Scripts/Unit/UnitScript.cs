@@ -17,6 +17,7 @@ public class UnitScript : MonoBehaviour {
     public int maxHP;
     public int currentHP;
     public int mana;
+    public int stamina;
 
     private Animator anim;
     private Rigidbody unitRigidbody;
@@ -32,6 +33,7 @@ public class UnitScript : MonoBehaviour {
         currentHP = 100;
         maxHP = 100;
         mana = 100;
+        stamina = 100;
 
         floorMask = LayerMask.GetMask("Floor");
         anim = GetComponent<Animator>();

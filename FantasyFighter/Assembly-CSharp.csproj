@@ -44,10 +44,10 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed\UnityEngine.dll</HintPath>
+      <HintPath>D:/Program Files/Unity/Editor/Data/Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +96,142 @@
      <Compile Include="Assets\Import\PyroParticles\Prefab\Script\FireProjectileScript.cs" />
      <Compile Include="Assets\Import\PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
      <Compile Include="Assets\Import\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Attributes\BitMaskAttribute.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Attributes\ResourcePathAttribute.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Color Scheme\ColorScheme.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Color Scheme\ColorSchemeElement.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Color Scheme\ColorSchemeElementType.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Color Scheme\ColorSchemeManager.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Color Scheme\ColorSchemeShade.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Demo\Character Create\Demo_CharacterCreateMgr.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Demo\Character Select\3D\Demo_CharacterSelectMgr.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Demo\Character Select\3D\Demo_CharacterSelectSlot.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Demo\Character Select\Demo_CharacterInfo.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Demo\Character Select\List\Demo_CharacterSelectList.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Demo\Character Select\List\Demo_CharacterSelectList_Character.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Demo\Chat\Demo_AddChatMessage.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Demo\Chat\Demo_AddChatTestMessages.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Demo\Chat\Demo_Chat.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Demo\Demo_CastManager.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Demo\Demo_LookAtCamera.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Demo\Demo_QuestTrackerCollapse.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Demo\Demo_Quit.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Demo\Demo_Spellbook_SpellRow.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Demo\Demo_XPTooltip.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Miscellaneous\BreakPrefabConnection.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Miscellaneous\CommonColorBuffer.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Test Scripts\Test_CastBar.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Test Scripts\Test_CompassTester.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Test Scripts\Test_FadeInOut.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Test Scripts\Test_Fill.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Test Scripts\Test_SelectAddOption.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Test Scripts\Test_UIBulletBar.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Test Scripts\Test_UIEquipSlot_Assign.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Test Scripts\Test_UIItemSlot_Assign.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Test Scripts\Test_UIItemSlot_AssignAll.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Test Scripts\Test_UIProgressBar.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Test Scripts\Test_UISlotBase_Assign.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Test Scripts\Test_UISpellSlot_Assign.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Test Scripts\Test_UISpellSlot_AssignAll.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\Test Scripts\Test_UITalentSlot_Assign.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Audio\UIAudioSource.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Audio\UIPlayAudio.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Bars\IUIProgressBar.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Bars\UIBulletBar.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Bars\UICastBar.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Bars\UIProgressBar.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Bars\UIStepBar.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Controls\Select Field\UISelectField.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Controls\Select Field\UISelectField_List.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Controls\Select Field\UISelectField_Option.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Controls\Select Field\UISelectField_OptionOverlay.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Controls\Select Field\UISelectField_Transition.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Controls\UISliderExtended.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Controls\UISwitchSelect.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Controls\UITab.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Controls\UIToggle_OnOff.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Databases\Serializables\UIEquipmentType.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Databases\Serializables\UIItemInfo.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Databases\Serializables\UIItemQuality.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Databases\Serializables\UISpellInfo.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Databases\Serializables\UISpellInfo_Flags.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Databases\Serializables\UITalentInfo.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Databases\UIItemDatabase.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Databases\UISpellDatabase.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Databases\UITalentDatabase.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Effects\Gradient.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Effects\LetterSpacing.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Effects\NicerOutline.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Icon Slot System\Interfaces\IUIItemSlot.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Icon Slot System\Interfaces\IUISlotHasCooldown.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Icon Slot System\Interfaces\IUISpellSlot.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Icon Slot System\UIEquipReceiver.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Icon Slot System\UIEquipSlot.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Icon Slot System\UIItemSlot.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Icon Slot System\UIItemSlot_Group.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Icon Slot System\UIItemSlot_SetColorFromQuality.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Icon Slot System\UISlotBase.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Icon Slot System\UISlotCooldown.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Icon Slot System\UISpellSlot.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Icon Slot System\UISpellSlot_Group.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Icon Slot System\UITalentSlot.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Loading Overlay\UILoadingOverlay.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Loading Overlay\UILoadingOverlayManager.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Loading Overlay\UILoadScene.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Mesh Modifiers\UIDrawVertices.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Mesh Modifiers\UIFlippable.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Miscellaneous\UICanvasAnchorToCamera.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Miscellaneous\UICanvasAspectResize.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Miscellaneous\UIGlobeFillInverter.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Miscellaneous\UIInputCaretOffset.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Miscellaneous\UIScrollRectExpander.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Miscellaneous\UISliderDisplayValue.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Miscellaneous\UIStatsAdd.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Miscellaneous\UITextSetValue.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Miscellaneous\UIToggleWindowAndTab.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Miscellaneous\UIWorldCanvasScaleByCamera.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Modal Box\UIModalBox.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Modal Box\UIModalBoxCreate.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Modal Box\UIModalBoxManager.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Raycast Filters\UICircularRaycastFilter.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Raycast Filters\UIIgnoreRaycast.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Raycast Filters\UIMaskRaycastFilter.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Raycast Filters\UIRectangularRaycastFilter.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Scene System\UIScene.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Scene System\UISceneManager.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Scene System\UISceneOpen.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Scene System\UISceneRegistry.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Serializables\AnimationTriggersExtended.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Serializables\ColorBlockExtended.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Serializables\SpriteStateExtended.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Tooltips\UITooltip.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Tooltips\UITooltipLineContent.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Tooltips\UITooltipLines.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Tooltips\UITooltipLineStyle.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Tooltips\UITooltipManager.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Tooltips\UITooltipShow.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Transitions\UIEffectTransition.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Transitions\UIHighlightTransition.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Transitions\UIPressTransition.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Tweening\ColorTween.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Tweening\FloatTween.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Tweening\ITweenValue.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Tweening\TweenEasing.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Tweening\TweenEasingHandler.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Tweening\TweenRunner.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Tweening\Vector2Tween.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Tweening\Vector3Tween.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\UIAlwaysOnTop.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\UIDragObject.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\UIInputEvent.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\UIPagination.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\UIUtility.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Window\UIBlackOverlay.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Window\UIBlackOverlayManager.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Window\UICloseAndShowWindow.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Window\UIWindow.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Window\UIWindowID.cs" />
+     <Compile Include="Assets\RPG and MMO UI 6\Scripts\UI\Window\UIWindowManager.cs" />
      <Compile Include="Assets\Scripts\Classes\Player.cs" />
      <Compile Include="Assets\Scripts\Classes\Spell.cs" />
      <Compile Include="Assets\Scripts\Game\CameraScript.cs" />
@@ -117,10 +253,12 @@
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
+     <None Include="Assets\RPG and MMO UI 6\Readme.txt" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurves.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
+     <None Include="Assets\RPG and MMO UI 6\Shaders\UITribalEffect.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\NFAA.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\VignetteShader.shader" />
@@ -140,6 +278,7 @@
      <None Include="Assets\Import\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
+     <None Include="Assets\RPG and MMO UI 6\Shaders\UIMaskedBlur.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
@@ -156,9 +295,11 @@
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionSelective.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\Bokeh34.shader" />
-     <None Include="Assets\UETools\Magic_Particle_Effects\Readme.txt" />
+     <None Include="Assets\Import\UETools\Magic_Particle_Effects\Readme.txt" />
+     <None Include="Assets\RPG and MMO UI 6\Changelog.txt" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+     <None Include="Assets\RPG and MMO UI 6\Shaders\UIOverlay.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
@@ -193,37 +334,37 @@
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
      <None Include="Assets\Import\NatureStarterKit2\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TestRunner">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Timeline">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+ <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UIAutomation">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
+ <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.GoogleAudioSpatializer">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+ <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.SpatialTracking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+ <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Users/pvanz/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
+ <HintPath>C:/Users/Petrie van Zyl/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Purchasing">
- <HintPath>C:/Users/pvanz/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
+ <HintPath>C:/Users/Petrie van Zyl/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

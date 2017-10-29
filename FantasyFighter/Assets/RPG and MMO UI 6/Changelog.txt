@@ -1,0 +1,9 @@
+Version 1.2:
+- Improved UIUtility Bring To Front method.
+
+Version 1.1:
+- Implemented interfaces for spell slot and item slot.
+- Transition components now take into account canvas groups interactable parameter.
+
+Version 1.0:
+- Initial release.

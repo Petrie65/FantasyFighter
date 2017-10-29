@@ -22,4 +22,8 @@ public class InputManager : MonoBehaviour {
 			SpellManager.SM.SelectSpell(3);
 		}
 	}
+
+	public void ClickSpellButton(int idx) {
+			SpellManager.SM.SelectSpell(idx);
+	}
 }
