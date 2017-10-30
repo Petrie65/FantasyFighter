@@ -26,7 +26,7 @@ public class CaptureScreenshot
 
         string fullFilePath = directory + "/" + fileName + "_" + dirInfo.GetFiles().Length + ".png";
 
-        Application.CaptureScreenshot(fullFilePath);
+        ScreenCapture.CaptureScreenshot(fullFilePath);
         Debug.LogWarning("Screenshot captured! File Path: " + fullFilePath);
     }
 }
