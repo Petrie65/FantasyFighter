@@ -2,21 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DuloGames.UI;
 
 public class GUIManager : MonoBehaviour {
     public static GUIManager GUI;
     public GameObject[] spellButtons;
     public GameObject playerHUD;
+
+    public GameObject playerHP;
+    public GameObject playerMana;
+    public GameObject playerStamina;
+    
     public Text playerControl;
 
-    private Text hudHP;
+    private UIProgressBar hudHP;
     private Text hudMana;
     private Text hudMoney;
 
     private void Awake() {
        MakeThisOnlyGUIManager();
 
-       hudHP = playerHUD.transform.GetChild(0).gameObject.GetComponent<Text>();
+    //    hudHP = playerHUD.transform.GetChild(0).gameObject.GetComponent<Text>();
+    //    hudMana = playerHUD.transform.GetChild(1).gameObject.GetComponent<Text>();
+    //    hudMoney = playerHUD.transform.GetChild(2).gameObject.GetComponent<Text>();       
+    
+       hudHP = playerHP.GetComponent<UIProgressBar>();
        hudMana = playerHUD.transform.GetChild(1).gameObject.GetComponent<Text>();
        hudMoney = playerHUD.transform.GetChild(2).gameObject.GetComponent<Text>();
     }
@@ -45,7 +55,8 @@ public class GUIManager : MonoBehaviour {
             }
             // HUD
             UnitScript unitScript = player.unit.GetComponent<UnitScript>();
-            hudHP.text = unitScript.currentHP.ToString() + " / " + unitScript.maxHP.ToString();
+            hudHP.fillAmount =  (float)unitScript.currentHP / (float)unitScript.maxHP;
+            // hudHP.text = unitScript.currentHP.ToString() + " / " + unitScript.maxHP.ToString();
             hudMana.text = unitScript.mana.ToString();
             hudMoney.text = player.money.ToString();
             return true;
