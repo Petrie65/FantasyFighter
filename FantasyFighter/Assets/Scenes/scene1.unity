@@ -2272,7 +2272,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0.39
   m_FillClockwise: 1
   m_FillOrigin: 0
 --- !u!222 &295509056
@@ -3653,7 +3653,7 @@ MonoBehaviour:
   playerHUD: {fileID: 1708003633}
   playerHP: {fileID: 745944303}
   playerMana: {fileID: 743481843}
-  playerStamina: {fileID: 295509052}
+  playerStamina: {fileID: 1106570409}
   playerControl: {fileID: 157854214}
 --- !u!114 &476070982
 MonoBehaviour:
@@ -9136,6 +9136,7 @@ GameObject:
   - component: {fileID: 1106570410}
   - component: {fileID: 1106570413}
   - component: {fileID: 1106570412}
+  - component: {fileID: 1106570411}
   m_Layer: 5
   m_Name: StaminaBar
   m_TagString: Untagged
@@ -9165,6 +9166,31 @@ RectTransform:
   m_AnchoredPosition: {x: 18.33, y: 75.88}
   m_SizeDelta: {x: 300, y: 18}
   m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &1106570411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1106570409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373415518a0b7b947977a3d9880aca41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Type: 0
+  m_TargetImage: {fileID: 295509055}
+  m_Sprites: []
+  m_TargetTransform: {fileID: 0}
+  m_FillSizing: 0
+  m_MinWidth: 0
+  m_MaxWidth: 100
+  m_FillAmount: 0.39
+  m_Steps: 0
+  onChange:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: DuloGames.UI.UIProgressBar+ChangeEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1106570412
 MonoBehaviour:
   m_ObjectHideFlags: 0

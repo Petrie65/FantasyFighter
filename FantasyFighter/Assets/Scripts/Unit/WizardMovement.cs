@@ -19,6 +19,8 @@ public class WizardMovement : MonoBehaviour {
     private bool sprintActive = false;
     private bool isDodging = false; 
     
+    private float staminaTimer = 2000f;
+
     private UnitScript unitScript;
 
     // Awake always gets called
@@ -45,15 +47,31 @@ public class WizardMovement : MonoBehaviour {
     }
 
     private void Move(float h, float v) {
-        if (h == 0f && v == 0f) return;
-
-        if (Input.GetMouseButtonDown(1)) {
-            StartDodge(h, v);
+        if (h == 0f && v == 0f) {
+            RegenStamina(0.5f);
             return;
         }
 
+        if (Input.GetMouseButtonDown(1)) {
+            if (unitScript.stamina >= 50f) {
+                StartDodge(h, v);
+                unitScript.stamina -= 50f;
+                GUIManager.GUI.updateGUI(unitScript.owner);
+                return;
+            }
+        }
+
         movement.Set(h, 0, v);
-        movement = movement.normalized * (sprintActive ? runSpeed : walkSpeed) * Time.deltaTime;
+
+        if (sprintActive && unitScript.stamina > 0f) {
+            movement = movement.normalized * runSpeed * Time.deltaTime;
+            unitScript.stamina -= 0.8f;
+            GUIManager.GUI.updateGUI(unitScript.owner);
+        } else {
+            movement = movement.normalized * walkSpeed * Time.deltaTime;
+            RegenStamina(0.1f);
+        }
+        
 
         // Move a rigidbody to a position in world space
         playerRigidbody.transform.position += movement;
@@ -65,6 +83,13 @@ public class WizardMovement : MonoBehaviour {
             Quaternion.LookRotation(movement),
             rotateSpeed * Time.deltaTime
         );
+    }
+
+    public void RegenStamina(float amount) {
+        if (unitScript.stamina <= 100) {
+            unitScript.stamina += amount;
+        }
+        GUIManager.GUI.updateGUI(unitScript.owner);
     }
 
 	public void CastSpell(int animNum, Vector3 spellPos) {
@@ -88,9 +113,10 @@ public class WizardMovement : MonoBehaviour {
 	}
 
     private void StartDodge(float h, float v) { 
+        var dodgeForce = 600f;
         isDodging = true;
 		anim.SetTrigger("triggerDodge");
-        playerRigidbody.AddForce(new Vector3(h, 0.3f, v) * 1000f);
+        playerRigidbody.AddForce(new Vector3(h, 0.3f, v) * dodgeForce);
     }
 
 	private void Animating(float h, float v) {

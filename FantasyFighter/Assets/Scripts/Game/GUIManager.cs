@@ -16,7 +16,8 @@ public class GUIManager : MonoBehaviour {
     public Text playerControl;
 
     private UIProgressBar hudHP;
-    private Text hudMana;
+    private UIProgressBar hudMana;
+    private UIProgressBar hudStamina;
     private Text hudMoney;
 
     private void Awake() {
@@ -27,7 +28,9 @@ public class GUIManager : MonoBehaviour {
     //    hudMoney = playerHUD.transform.GetChild(2).gameObject.GetComponent<Text>();       
     
        hudHP = playerHP.GetComponent<UIProgressBar>();
-       hudMana = playerHUD.transform.GetChild(1).gameObject.GetComponent<Text>();
+       hudMana = playerMana.GetComponent<UIProgressBar>();
+       hudStamina = playerStamina.GetComponent<UIProgressBar>();
+       
        hudMoney = playerHUD.transform.GetChild(2).gameObject.GetComponent<Text>();
     }
     void MakeThisOnlyGUIManager() {
@@ -57,7 +60,9 @@ public class GUIManager : MonoBehaviour {
             UnitScript unitScript = player.unit.GetComponent<UnitScript>();
             hudHP.fillAmount =  (float)unitScript.currentHP / (float)unitScript.maxHP;
             // hudHP.text = unitScript.currentHP.ToString() + " / " + unitScript.maxHP.ToString();
-            hudMana.text = unitScript.mana.ToString();
+            hudMana.fillAmount =  (float)unitScript.mana / 100f;
+            hudStamina.fillAmount =  (float)unitScript.stamina / 100f;
+            //hudMana.text = unitScript.mana.ToString();
             hudMoney.text = player.money.ToString();
             return true;
         }
