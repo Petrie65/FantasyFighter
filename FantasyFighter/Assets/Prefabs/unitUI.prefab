@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 224937460592405296}
   - component: {fileID: 114934818568945120}
   - component: {fileID: 222533741407176396}
+  - component: {fileID: 95676394643077598}
   m_Layer: 0
   m_Name: unitUI
   m_TagString: Untagged
@@ -96,6 +97,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &95676394643077598
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1324624078682730}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 599fec41214ada947a50e9b67e0ff9d8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114208985078027272
 MonoBehaviour:
   m_ObjectHideFlags: 1

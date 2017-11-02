@@ -14,9 +14,11 @@ public class UnitScript : MonoBehaviour {
     public ParticleSystem staffParticles;
 
     [HideInInspector]
-    public int maxHP;
-    public int currentHP;
-    public int mana;
+    public float currentHP;
+    public float maxHP;
+    public float currentMana;
+    public float maxMana;
+
     public float stamina;
 
     private Animator anim;
@@ -32,7 +34,9 @@ public class UnitScript : MonoBehaviour {
 
         currentHP = 100;
         maxHP = 100;
-        mana = 100;
+        currentMana = 100;
+        maxMana = 100;
+
         stamina = 100f;
 
         floorMask = LayerMask.GetMask("Floor");
@@ -98,11 +102,15 @@ public class UnitScript : MonoBehaviour {
         staffParticles.Stop();
 
         dieState = "animate";
+        GameManager.GM.objectUIScript.FadeObject(owner.playerNum);
         yield return new WaitForSeconds(1f);
+
         dieState = "light";
         yield return new WaitForSeconds(4f);
+
         dieState = "dissolve";
         yield return new WaitForSeconds(5f);
+
         dieState = "dead";
         
         gameObject.SetActive(false);

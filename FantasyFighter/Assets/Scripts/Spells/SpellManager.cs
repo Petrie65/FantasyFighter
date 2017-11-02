@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Specialized;
 
 public class SpellManager : MonoBehaviour {
     public static SpellManager SM;
@@ -16,11 +17,14 @@ public class SpellManager : MonoBehaviour {
     public Sprite[] spellIcons;
     public Sprite[] spellIconsGrey;
 
+    public StringDictionary spellDescriptions = new StringDictionary();
+
     private GameObject projectile;
 
     private void Awake() {
         MakeThisTheOnlySpellManager();
         InitSpellIcons();
+        InitDictionary();
         InitSpells();
     }
 
@@ -45,16 +49,21 @@ public class SpellManager : MonoBehaviour {
         }
     }
 
+    private void InitDictionary() {
+        spellDescriptions.Add("Meteor","Fires a meteor that explodes");
+        spellDescriptions.Add("Snowball","Shoots a snowball that explodes");
+    }
+
     private void InitSpells() {
         spells = new Spell[] {
-            new Spell("Meteor", 10, projectileMeteor, 40),
-            new Spell("Snowball", 30, projectileSnowball, 1)
+            new Spell(0, "Meteor", spellIcons[40], 700f, 10f, 3f, 50f, projectileMeteor, spellDescriptions["Meteor"]),
+            new Spell(1, "Snowball", spellIcons[1], 500f, 10f, 3f, 30f, projectileSnowball, spellDescriptions["Snowball"])
         };
     }
 
     public Spell getSpell(string spellName) {
         for (int x = 0; x < spells.Length; x++) {
-            if (spells[x].name == spellName) {
+            if (spells[x].Name == spellName) {
                 return spells[x];
             }
         }
@@ -74,7 +83,7 @@ public class SpellManager : MonoBehaviour {
             Debug.Log("Unit is dead");
             return;
         }
-        if (unitScript.mana < spell.manaCost) {
+        if (unitScript.currentMana < spell.PowerCost) {
             Debug.Log("Not enough mana");
             return;
         }
@@ -91,11 +100,11 @@ public class SpellManager : MonoBehaviour {
         owner.spells[owner.unit.GetComponent<UnitScript>().selectedSpellIdx] = null;
         owner.unit.GetComponent<UnitScript>().selectedSpellIdx = 0;
 
-        owner.unit.GetComponent<UnitScript>().mana -= castSpell.manaCost;
+        owner.unit.GetComponent<UnitScript>().currentMana -= castSpell.PowerCost;
 
         GUIManager.GUI.updateGUI(owner);
 
-        StartCoroutine(SpellDelay(0.2f, owner, castSpell.name, clickPos));
+        StartCoroutine(SpellDelay(0.2f, owner, castSpell.Name, clickPos));
 	}
 	
 	private IEnumerator SpellDelay(float delay, Player owner, string spellName, Vector3 clickPos) {

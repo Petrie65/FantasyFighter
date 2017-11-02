@@ -18,6 +18,8 @@ public class ObjectUI : MonoBehaviour {
     private GameObject[] UnitHealthBar;
     private GameObject[] UnitHealthBarHandle;
 
+    private Animator[] animator;
+
     private float heightScale;
         
 	void Awake () {
@@ -26,6 +28,7 @@ public class ObjectUI : MonoBehaviour {
         UnitText = new GameObject[wizards.Length];
         UnitHealthBar = new GameObject[wizards.Length];
         UnitHealthBarHandle = new GameObject[wizards.Length];
+        animator =  new Animator[wizards.Length];
 
         // TODO: update scale whenever screen resizes
         float heightScale = (float)(Screen.height) / scaleDiv;
@@ -37,6 +40,8 @@ public class ObjectUI : MonoBehaviour {
             UnitText[x] = UnitUIList[x].transform.GetChild(0).gameObject;
             UnitHealthBar[x] = UnitUIList[x].transform.GetChild(1).gameObject;
             UnitHealthBarHandle[x] = UnitUIList[x].transform.GetChild(1).GetChild(0).GetChild(0).gameObject;
+
+            animator[x] =  UnitUIList[x].GetComponent<Animator>();
 
             Scrollbar hp = UnitHealthBar[x].GetComponent<Scrollbar>();
             ColorBlock cb = hp.colors;
@@ -66,18 +71,13 @@ public class ObjectUI : MonoBehaviour {
     }
 
     public void UpdateHealthBar(int num) {
-            UnitScript script = wizards[num].GetComponent<UnitScript>();
+        UnitScript script = wizards[num].GetComponent<UnitScript>();
 
-            float hpWidth = 150f * ((float)script.currentHP / (float)script.maxHP);
-            UnitHealthBarHandle[num].GetComponent<RectTransform>().sizeDelta = new Vector2(hpWidth, 20);
+        float hpWidth = 150f * ((float)script.currentHP / (float)script.maxHP);
+        UnitHealthBarHandle[num].GetComponent<RectTransform>().sizeDelta = new Vector2(hpWidth, 20);
     }
 
-    public void UpdateStaminaBar() {
-
+    public void FadeObject(int num) {
+		animator[num].SetTrigger("triggerFadeOut");
     }
-
-    public void UpdateManaBar() {
-        
-    }
-
 }

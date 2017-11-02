@@ -11,8 +11,14 @@ public class GUIManager : MonoBehaviour {
     public GameObject playerHP;
     public GameObject playerMana;
     public GameObject playerStamina;
+
+    public GameObject hpTextObject;
+    public GameObject manaTextObject;
     
     public Text playerControl;
+
+    private Text hpText;
+    private Text manaText;
 
     private UIProgressBar hudHP;
     private UIProgressBar hudMana;
@@ -24,6 +30,9 @@ public class GUIManager : MonoBehaviour {
        hudHP = playerHP.GetComponent<UIProgressBar>();
        hudMana = playerMana.GetComponent<UIProgressBar>();
        hudStamina = playerStamina.GetComponent<UIProgressBar>();
+
+       hpText = hpTextObject.GetComponent<Text>();
+       manaText = manaTextObject.GetComponent<Text>();
     }
     void MakeThisOnlyGUIManager() {
         if (GUI == null) {
@@ -41,19 +50,20 @@ public class GUIManager : MonoBehaviour {
             // Spells
             for (int x = 0; x < spellButtons.Length; x++) {
                 Spell spell = player.spells[x];
-                bool isSpell = spell != null;
-
-                if (isSpell) {
-                    Sprite icon = SpellManager.SM.spellIcons[spell.iconNumber];
-                    spellButtons[x].GetComponent<UISpellSlot>().SetIcon(icon);
-
+                if (spell != null) {
+                    spellButtons[x].GetComponent<UISpellSlot>().Assign(spell.GetInfo());
+                } else {
+                    spellButtons[x].GetComponent<UISpellSlot>().Unassign();
                 }
             }
             // HUD
             UnitScript unitScript = player.unit.GetComponent<UnitScript>();
-            hudHP.fillAmount =  (float)unitScript.currentHP / (float)unitScript.maxHP;
-            hudMana.fillAmount =  (float)unitScript.mana / 100f;
-            hudStamina.fillAmount =  (float)unitScript.stamina / 100f;
+            hudHP.fillAmount =  unitScript.currentHP / unitScript.maxHP;
+            hpText.text = unitScript.currentHP.ToString() + " / " + unitScript.maxHP.ToString();
+
+            hudMana.fillAmount =  unitScript.currentMana /  unitScript.maxMana;
+            manaText.text = unitScript.currentMana.ToString() + " / " + unitScript.maxMana.ToString();
+            hudStamina.fillAmount =  unitScript.stamina / 100f;
             return true;
         }
         return false;
