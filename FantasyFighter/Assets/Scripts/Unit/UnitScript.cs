@@ -66,7 +66,6 @@ public class UnitScript : MonoBehaviour {
             Vector3 adjustedPoint = new Vector3(floorHit.point.x, this.transform.position.y + 0.9f, floorHit.point.z);
             SpellManager.SM.CastSpellMouse(owner.playerNum, selectedSpell, adjustedPoint);
             GetComponent<WizardMovement>().CastSpell(1, adjustedPoint);
-			
         }
     }
 
@@ -80,9 +79,12 @@ public class UnitScript : MonoBehaviour {
         return true;
     }
 
-    public void TakeDamage(Player playerFrom, int damage) {
+    public void TakeDamage(Player playerFrom, float damage) {
         if (playerFrom.name != owner.name) {
             currentHP -= damage;
+
+            // TODO: add updateGUI
+
             if (currentHP <= 0) {
                 Debug.Log("Killed by " + playerFrom.name);
                 StartCoroutine(DieRoutine());
