@@ -32,7 +32,6 @@ public class GameManager : MonoBehaviour {
 
             players[x].playerNum = x;
             currentUnit.GetComponent<UnitScript>().SetOwner(players[x]);
-
             players[x].unit = currentUnit;
         }
 

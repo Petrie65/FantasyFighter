@@ -12,10 +12,15 @@ public class SpellManager : MonoBehaviour {
 
     public Spell[] spells;
 
+    [HideInInspector]
+    public Sprite[] spellIcons;
+    public Sprite[] spellIconsGrey;
+
     private GameObject projectile;
 
     private void Awake() {
         MakeThisTheOnlySpellManager();
+        InitSpellIcons();
         InitSpells();
     }
 
@@ -30,10 +35,20 @@ public class SpellManager : MonoBehaviour {
         }
     }
 
+    private void InitSpellIcons() {
+        spellIcons = new Sprite[160];
+        spellIconsGrey = new Sprite[160];
+
+        for (int x = 1; x < 159; x++) {
+            spellIcons[x] = Resources.Load<Sprite>("FantasySpellsIconPack/Colored/icon_128x128_" + x);
+            spellIconsGrey[x] = Resources.Load<Sprite>("FantasySpellsIconPack/Grey/icon_128x128_" + x + "_Grey");
+        }
+    }
+
     private void InitSpells() {
         spells = new Spell[] {
-            new Spell("Meteor", 10, projectileMeteor),
-            new Spell("Snowball", 30, projectileSnowball)
+            new Spell("Meteor", 10, projectileMeteor, 40),
+            new Spell("Snowball", 30, projectileSnowball, 1)
         };
     }
 

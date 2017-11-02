@@ -16,8 +16,8 @@ public class Player {
     public Player(string name) {
         this.name = name;
 
-        spells = new Spell[4] {
-            null, null, null, null
+        spells = new Spell[5] {
+            null, null, null, null, null
         };
     }
 }

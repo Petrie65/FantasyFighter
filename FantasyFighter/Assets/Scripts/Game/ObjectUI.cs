@@ -72,4 +72,12 @@ public class ObjectUI : MonoBehaviour {
             UnitHealthBarHandle[num].GetComponent<RectTransform>().sizeDelta = new Vector2(hpWidth, 20);
     }
 
+    public void UpdateStaminaBar() {
+
+    }
+
+    public void UpdateManaBar() {
+        
+    }
+
 }
