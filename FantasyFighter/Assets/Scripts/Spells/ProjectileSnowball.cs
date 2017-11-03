@@ -40,8 +40,7 @@ public class ProjectileSnowball : MonoBehaviour {
             if (unitScript.owner.name == owner.name) return;
 
             unitScript.TakeDamage(owner, damage);
-            GUIManager.GUI.updateGUI(unitScript.owner);
-            GameManager.GM.objectUIScript.UpdateHealthBar(unitScript.owner.playerNum);
+            // GameManager.GM.objectUIScript.UpdateHealthBar(unitScript.owner.playerNum);
 			
             isAlive = false;
 

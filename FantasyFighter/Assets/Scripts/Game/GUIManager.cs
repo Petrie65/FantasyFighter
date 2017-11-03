@@ -24,6 +24,8 @@ public class GUIManager : MonoBehaviour {
     private UIProgressBar hudMana;
     private UIProgressBar hudStamina;
 
+    private Player currentPlayer;
+
     private void Awake() {
        MakeThisOnlyGUIManager();
  
@@ -34,6 +36,11 @@ public class GUIManager : MonoBehaviour {
        hpText = hpTextObject.GetComponent<Text>();
        manaText = manaTextObject.GetComponent<Text>();
     }
+
+    private void Start() {
+       this.currentPlayer = GameManager.GM.currentPlayer;
+    }
+
     void MakeThisOnlyGUIManager() {
         if (GUI == null) {
             DontDestroyOnLoad(gameObject);
@@ -45,27 +52,36 @@ public class GUIManager : MonoBehaviour {
         }
     }
 
-    public bool updateGUI(Player player) {
-        if (GameManager.GM.currentPlayer == player) {
-            // Spells
-            for (int x = 0; x < spellButtons.Length; x++) {
-                Spell spell = player.spells[x];
-                if (spell != null) {
-                    spellButtons[x].GetComponent<UISpellSlot>().Assign(spell.GetInfo());
-                } else {
-                    spellButtons[x].GetComponent<UISpellSlot>().Unassign();
-                }
-            }
-            // HUD
-            UnitScript unitScript = player.unit.GetComponent<UnitScript>();
-            hudHP.fillAmount =  unitScript.currentHP / unitScript.maxHP;
-            hpText.text = unitScript.currentHP.ToString() + " / " + unitScript.maxHP.ToString();
+    public void SetCurrentPlayer(Player player) {
+        this.currentPlayer = player;
+    }
 
-            hudMana.fillAmount =  unitScript.currentMana /  unitScript.maxMana;
-            manaText.text = unitScript.currentMana.ToString() + " / " + unitScript.maxMana.ToString();
-            hudStamina.fillAmount =  unitScript.stamina / 100f;
-            return true;
+    void Update() {
+        updateGUI(currentPlayer);
+    }
+
+    private void updateGUI(Player player) {
+        // Spells
+        for (int x = 0; x < spellButtons.Length; x++) {
+            Spell spell = player.spells[x];
+            if (spell != null) {
+                spellButtons[x].GetComponent<UISpellSlot>().Assign(spell.GetInfo());
+            } else {
+                spellButtons[x].GetComponent<UISpellSlot>().Unassign();
+            }
         }
-        return false;
+        // HUD
+        UnitScript unitScript = player.unit.GetComponent<UnitScript>();
+        hudHP.fillAmount =  unitScript.currentHP / unitScript.maxHP;
+        hpText.text = Mathf.Floor(unitScript.currentHP).ToString() + " / " + Mathf.Floor(unitScript.maxHP).ToString();
+
+        hudMana.fillAmount =  unitScript.currentMana /  unitScript.maxMana;
+        manaText.text = Mathf.Floor(unitScript.currentMana).ToString() + " / " + Mathf.Floor(unitScript.maxMana).ToString();
+
+        hudStamina.fillAmount =  unitScript.stamina / 100f;
+    }
+
+    public void UpdateSpells() {
+        
     }
 }

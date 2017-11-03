@@ -35,9 +35,11 @@ public class GameManager : MonoBehaviour {
             players[x].unit = currentUnit;
         }
 
-        objectUIScript = objectUI.GetComponent<ObjectUI>();
+    }
 
+    private void Start() {
         PlayerManager.PM.SetCurrentPlayer(players[0]);
+        objectUIScript = objectUI.GetComponent<ObjectUI>();
     }
 
     void MakeThisTheOnlyGameManager() {
@@ -56,7 +58,7 @@ public class GameManager : MonoBehaviour {
             Spell currentSpell = player.spells[x];
             if (currentSpell == null) {
                 player.spells[x] = spell;
-                GUIManager.GUI.updateGUI(player);
+                // GUIManager.GUI.updateGUI(player);
                 return true;
             }
         }

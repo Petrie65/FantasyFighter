@@ -13,6 +13,8 @@ public class ProjectileMeteor : MonoBehaviour {
     private float speed = 30f;
 	private float damage = 75;
 
+    private float radiusAOE = 10f;
+
     private float distance = 0f;    
 	private float range;
 
@@ -54,28 +56,28 @@ public class ProjectileMeteor : MonoBehaviour {
     }
 
     private void Explode() {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 5f);
-
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, radiusAOE);
         for (int i = 0; i < hitColliders.Length; i++) {
-            Debug.Log("Collide: " + hitColliders[i].gameObject.name);
-            
             if (hitColliders[i].gameObject.tag == "Player") {
-                UnitScript unitScript = hitColliders[i].gameObject.GetComponent<UnitScript>();
+                GameObject unitObject = hitColliders[i].gameObject;
+                UnitScript unitScript = unitObject.GetComponent<UnitScript>();
+                if (unitScript.owner != owner) {
+                    CapsuleCollider unitCollider = unitObject.GetComponent<CapsuleCollider>();
 
-                // Calc damange based on distance
-                    //TODO, deduct collider radius
-                float distance = Vector3.Distance(transform.position, hitColliders[i].transform.position) + triggerCollider.radius;
+                    // Calc damange based on distance (only x and y)
+                    float proximity = (transform.position - unitObject.transform.position).magnitude;
+                    float effect = 1 - (proximity / radiusAOE);
+                    float modifiedDamage = damage * effect;
 
-                if (distance <= 1f) {
-                    Debug.Log("distance: " + distance.ToString());
+                    if (damage > 0f) {
+                        unitScript.TakeDamage(owner, modifiedDamage);
+
+                        // GameManager.GM.objectUIScript.UpdateHealthBar(unitScript.owner.playerNum);
+                    }
+
+                    // Apply explosion force
+                    unitObject.GetComponent<Rigidbody>().AddExplosionForce(1000f, transform.position, radiusAOE, 1f);
                 }
-                float modifiedDamage = damage / distance;
-
-                unitScript.TakeDamage(owner, modifiedDamage);
-                Debug.Log("Damage: " + modifiedDamage.ToString());
-
-                GUIManager.GUI.updateGUI(unitScript.owner);
-                GameManager.GM.objectUIScript.UpdateHealthBar(unitScript.owner.playerNum);
             }
         }
 

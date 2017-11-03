@@ -30,7 +30,7 @@ public class PlayerManager : MonoBehaviour {
     public void SetCurrentPlayer(Player player) {
         if (player != null) {
             GameManager.GM.currentPlayer = player;
-            GUIManager.GUI.updateGUI(player);
+            GUIManager.GUI.SetCurrentPlayer(player);
             playerText.text = player.name;
             camScript.target = player.unit.transform;
         } else {

@@ -794,7 +794,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!95 &95004188348707244
 Animator:
@@ -864,9 +864,13 @@ MonoBehaviour:
   unitMesh: {fileID: 1891527070821342}
   selectedSpellIdx: 0
   staffParticles: {fileID: 198261854981696514}
-  maxHP: 0
   currentHP: 0
-  mana: 0
+  maxHP: 0
+  regenHP: 0.1
+  currentMana: 0
+  maxMana: 0
+  regenMana: 1
+  stamina: 0
   isDead: 0
 --- !u!114 &114884883208823580
 MonoBehaviour:
@@ -882,6 +886,7 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 8
   rotateSpeed: 5
+  staminaRechargeDelay: 60
   dodgeSpeed: 15
   dodgeDistance: 20
 --- !u!136 &136091006921129720

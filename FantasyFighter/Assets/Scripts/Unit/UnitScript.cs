@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class UnitScript : MonoBehaviour {
-    public Player owner {get; set; }
+    public Player owner {get; set;}
 
 	public Light unitLight;
     public GameObject unitMesh;
@@ -16,8 +16,11 @@ public class UnitScript : MonoBehaviour {
     [HideInInspector]
     public float currentHP;
     public float maxHP;
+    public float regenHP;
+
     public float currentMana;
     public float maxMana;
+    public float regenMana;
 
     public float stamina;
 
@@ -30,12 +33,13 @@ public class UnitScript : MonoBehaviour {
     public bool isDead = false;
 
     public void Awake() {
-        owner = null;
+        currentHP = 100f;
+        maxHP = 100f;
+        regenHP = 0.05f;
 
-        currentHP = 100;
-        maxHP = 100;
-        currentMana = 100;
-        maxMana = 100;
+        currentMana = 100f;
+        maxMana = 100f;
+        regenMana = 0.1f;
 
         stamina = 100f;
 
@@ -46,6 +50,11 @@ public class UnitScript : MonoBehaviour {
 
     private void Update() {
         if (!isDead) {
+            // Regenerate hp and mana
+            GainHealth(regenHP);
+            GainMana(regenMana);
+
+            // Handle player controls
             if (GameManager.GM.currentPlayer != owner) return;
 
             if (Input.GetButtonDown("Fire1")) {
@@ -77,6 +86,22 @@ public class UnitScript : MonoBehaviour {
 
         unitMesh.GetComponent<SkinnedMeshRenderer>().material.mainTexture = Resources.Load("WizardSkin/wizardTexture" + owner.playerNum.ToString()) as Texture;
         return true;
+    }
+
+    public void GainHealth(float hp) {
+        if (currentHP + hp > maxHP) {
+            currentHP = maxHP;
+        } else {
+            currentHP += hp;
+        }
+    }
+
+    public void GainMana(float mana) {
+        if (currentMana + mana > maxMana) {
+            currentMana = maxMana;
+        } else {
+            currentMana += mana;
+        }
     }
 
     public void TakeDamage(Player playerFrom, float damage) {

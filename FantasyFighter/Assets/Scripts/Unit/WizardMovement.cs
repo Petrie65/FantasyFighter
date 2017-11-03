@@ -75,7 +75,6 @@ public class WizardMovement : MonoBehaviour {
         if (sprintActive && unitScript.stamina > 0f) {
             movement = movement.normalized * runSpeed * Time.deltaTime;
             unitScript.stamina -= 0.7f;
-            GUIManager.GUI.updateGUI(unitScript.owner);
         } else {
             movement = movement.normalized * walkSpeed * Time.deltaTime;
         }
@@ -95,14 +94,12 @@ public class WizardMovement : MonoBehaviour {
     public void RegenStamina(float amount) {
         if (unitScript.stamina <= 100) {
             unitScript.stamina += amount;
-            GUIManager.GUI.updateGUI(unitScript.owner);
         }
     }
 
     public bool UseStamina(float amount) {
         if (unitScript.stamina - amount >= 0) {
             unitScript.stamina -= amount;
-            GUIManager.GUI.updateGUI(unitScript.owner);
             return true;
         } 
         return false;        

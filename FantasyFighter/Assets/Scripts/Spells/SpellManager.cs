@@ -56,8 +56,8 @@ public class SpellManager : MonoBehaviour {
 
     private void InitSpells() {
         spells = new Spell[] {
-            new Spell(0, "Meteor", spellIcons[40], 700f, 10f, 3f, 50f, projectileMeteor, spellDescriptions["Meteor"]),
-            new Spell(1, "Snowball", spellIcons[1], 500f, 10f, 3f, 30f, projectileSnowball, spellDescriptions["Snowball"])
+            new Spell(0, "Meteor", spellIcons[40], 30f, 10f, 3f, 30f, projectileMeteor, spellDescriptions["Meteor"]),
+            new Spell(1, "Snowball", spellIcons[1], 25f, 10f, 3f, 30f, projectileSnowball, spellDescriptions["Snowball"])
         };
     }
 
@@ -101,8 +101,6 @@ public class SpellManager : MonoBehaviour {
         owner.unit.GetComponent<UnitScript>().selectedSpellIdx = 0;
 
         owner.unit.GetComponent<UnitScript>().currentMana -= castSpell.PowerCost;
-
-        GUIManager.GUI.updateGUI(owner);
 
         StartCoroutine(SpellDelay(0.2f, owner, castSpell.Name, clickPos));
 	}
