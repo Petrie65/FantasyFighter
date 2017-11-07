@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: 55375c8d6370c8d40a8e79fde0569f28
+timeCreated: 1444408824
+licenseType: Store
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Blacksmith01
+    100002: //RootNode
+    100004: Blacksmith01Base
+    100006: Blacksmith01Bellows01
+    100008: Blacksmith01Bellows02
+    100010: Blacksmith01Bellows03
+    100012: Blacksmith01Bellows04
+    100014: Blacksmith01Center
+    100016: Blacksmith01Chimney01
+    100018: Blacksmith01Chimney02
+    100020: Blacksmith01Lamp01
+    100022: Blacksmith01Lamp02
+    100024: Blacksmith01Root
+    100026: Blacksmith01Sign01
+    100028: Blacksmith01Sign02
+    100030: Skin
+    400000: Blacksmith01
+    400002: //RootNode
+    400004: Blacksmith01Base
+    400006: Blacksmith01Bellows01
+    400008: Blacksmith01Bellows02
+    400010: Blacksmith01Bellows03
+    400012: Blacksmith01Bellows04
+    400014: Blacksmith01Center
+    400016: Blacksmith01Chimney01
+    400018: Blacksmith01Chimney02
+    400020: Blacksmith01Lamp01
+    400022: Blacksmith01Lamp02
+    400024: Blacksmith01Root
+    400026: Blacksmith01Sign01
+    400028: Blacksmith01Sign02
+    400030: Skin
+    4300000: Blacksmith01
+    7400000: Blacksmith01Animation
+    9500000: //RootNode
+    13700000: Blacksmith01
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Blacksmith01Animation
+      takeName: C4D Animation Take
+      firstFrame: 10
+      lastFrame: 80
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Blacksmith01
+        weight: 1
+      - path: Blacksmith01/Skin
+        weight: 1
+      - path: Blacksmith01Root
+        weight: 1
+      - path: Blacksmith01Root/Blacksmith01Base
+        weight: 1
+      - path: Blacksmith01Root/Blacksmith01Base/Blacksmith01Center
+        weight: 1
+      - path: Blacksmith01Root/Blacksmith01Base/Blacksmith01Center/Blacksmith01Bellows01
+        weight: 1
+      - path: Blacksmith01Root/Blacksmith01Base/Blacksmith01Center/Blacksmith01Bellows01/Blacksmith01Bellows02
+        weight: 1
+      - path: Blacksmith01Root/Blacksmith01Base/Blacksmith01Center/Blacksmith01Bellows01/Blacksmith01Bellows03
+        weight: 1
+      - path: Blacksmith01Root/Blacksmith01Base/Blacksmith01Center/Blacksmith01Bellows01/Blacksmith01Bellows04
+        weight: 1
+      - path: Blacksmith01Root/Blacksmith01Base/Blacksmith01Center/Blacksmith01Chimney01
+        weight: 1
+      - path: Blacksmith01Root/Blacksmith01Base/Blacksmith01Center/Blacksmith01Chimney01/Blacksmith01Chimney02
+        weight: 1
+      - path: Blacksmith01Root/Blacksmith01Base/Blacksmith01Center/Blacksmith01Lamp01
+        weight: 1
+      - path: Blacksmith01Root/Blacksmith01Base/Blacksmith01Center/Blacksmith01Lamp01/Blacksmith01Lamp02
+        weight: 1
+      - path: Blacksmith01Root/Blacksmith01Base/Blacksmith01Center/Blacksmith01Sign01
+        weight: 1
+      - path: Blacksmith01Root/Blacksmith01Base/Blacksmith01Center/Blacksmith01Sign01/Blacksmith01Sign02
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
