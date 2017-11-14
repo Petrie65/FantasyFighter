@@ -36,11 +36,27 @@ public class ProjectileMeteor : MonoBehaviour {
             if (distance < range) {
                 distance++;
 			    transform.position += transform.forward * Time.deltaTime * speed;
+                this.UpdateHeight();
             } else {
                 Explode();
             }
 		}
 	}
+
+    private void UpdateHeight() {
+        RaycastHit hit;
+        if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.down) , out hit)) {
+
+                if (hit.transform.tag == ("Ground")){ 
+
+                    float heightPoint = hit.point.y + 2f;
+                    float heightAdjust = this.transform.position.y > heightPoint ? this.transform.position.y - 0.1f : this.transform.position.y + 0.1f;
+
+                    this.transform.position = new Vector3(transform.position.x, heightAdjust, transform.position.z);
+                    Debug.Log(heightAdjust);
+                }
+        }
+    }
 
     public void setOwner(Player owner) {
         this.owner = owner;
