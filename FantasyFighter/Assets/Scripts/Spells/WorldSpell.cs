@@ -13,6 +13,7 @@ public class WorldSpell : MonoBehaviour {
     private GameObject container;
     private GameObject pickupUnit;
 
+    [HideInInspector]
     // The worldspell should have a reference to it's associated UI object
     public GameObject spellUI;
 
