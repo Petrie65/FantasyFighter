@@ -74,7 +74,7 @@ public class WizardMovement : MonoBehaviour {
 
         if (sprintActive && unitScript.stamina > 0f) {
             movement = movement.normalized * runSpeed * Time.deltaTime;
-            unitScript.stamina -= 0.7f;
+            unitScript.stamina -= 0.5f;
         } else {
             movement = movement.normalized * walkSpeed * Time.deltaTime;
         }

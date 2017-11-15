@@ -9,17 +9,24 @@ public class ObjectUI : MonoBehaviour {
     public float scaleDiv;
 
     public GameObject unitUI;
+    public GameObject spellUI;
     
     GameObject[] wizards;
     UnitScript[] scripts;
 
-    private List<GameObject> UnitUIList = new List<GameObject>();
+    // GameObject[] worldSpells;
+    private List<GameObject> worldSpells = new List<GameObject>();
 
+    private List<GameObject> UnitUIList = new List<GameObject>();
     private GameObject[] UnitText;
     private GameObject[] UnitHealthBar;
     private GameObject[] UnitHealthBarHandle;
+    
+    private List<GameObject> SpellUIList = new List<GameObject>();
+    private GameObject[] SpellText;
 
-    private Animator[] animator;
+    private Animator[] unitAnimator;
+    private Animator[] spellAnimator;
 
     private float heightScale;
         
@@ -29,15 +36,17 @@ public class ObjectUI : MonoBehaviour {
         UnitText = new GameObject[wizards.Length];
         UnitHealthBar = new GameObject[wizards.Length];
         UnitHealthBarHandle = new GameObject[wizards.Length];
-        animator = new Animator[wizards.Length];
+        unitAnimator = new Animator[wizards.Length];
         scripts = new UnitScript[wizards.Length];
+
+        worldSpells = SpellManager.SM.worldSpells;
+
+        // TODO: update scale whenever screen resizes
+        heightScale = (float)(Screen.height) / scaleDiv;
+        heightOffset *= heightScale;
 	}
 
     private void Start() {
-        // TODO: update scale whenever screen resizes
-        float heightScale = (float)(Screen.height) / scaleDiv;
-        heightOffset *= heightScale;
-
         for (int x = 0; x < wizards.Length; x++) {
             UnitUIList.Add(Instantiate(unitUI, this.transform));
             
@@ -45,7 +54,7 @@ public class ObjectUI : MonoBehaviour {
             UnitHealthBar[x] = UnitUIList[x].transform.GetChild(1).gameObject;
             UnitHealthBarHandle[x] = UnitUIList[x].transform.GetChild(1).GetChild(0).GetChild(0).gameObject;
 
-            animator[x] = UnitUIList[x].GetComponent<Animator>();
+            unitAnimator[x] = UnitUIList[x].GetComponent<Animator>();
 
             Scrollbar hp = UnitHealthBar[x].GetComponent<Scrollbar>();
             ColorBlock cb = hp.colors;
@@ -77,9 +86,37 @@ public class ObjectUI : MonoBehaviour {
             float hpWidth = 150f * (scripts[x].currentHP / scripts[x].maxHP);
             UnitHealthBarHandle[x].GetComponent<RectTransform>().sizeDelta = new Vector2(hpWidth, 20);
         }
+
+        Vector3 spellPos;
+        foreach (GameObject worldSpell in worldSpells){
+            GameObject spellUI = worldSpell.transform.GetChild(0).GetComponent<WorldSpell>().spellUI;
+            
+            // Position UI object on unit
+            spellPos = Camera.main.WorldToScreenPoint(worldSpell.transform.position);
+            spellPos.y += heightOffset;
+            spellUI.transform.position = spellPos;
+        }
     }
 
-    public void FadeObject(int num) {
-		animator[num].SetTrigger("triggerFadeOut");
+    public void AddSpellUI(GameObject worldSpell) {
+        WorldSpell spellScript = worldSpell.transform.GetChild(0).GetComponent<WorldSpell>();
+
+        GameObject spellUI = Instantiate(this.spellUI, this.transform);
+        spellUI.transform.GetChild(0).gameObject.GetComponent<Text>().text = spellScript.spellName;
+        spellUI.GetComponent<RectTransform>().localScale = new Vector3(heightScale,heightScale,heightScale);
+
+        SpellUIList.Add(spellUI);
+
+        // Set the Gameobject's script to have a reference to the UI object
+        // WorldSpell is ObjectMeteor, we need the child
+        spellScript.spellUI = spellUI;
+    }
+
+    public void RemoveSpellUI(GameObject WorldSpell) {
+        SpellUIList.Remove(WorldSpell);
+    }
+
+    public void FadeUnitUI(int num) {
+		unitAnimator[num].SetTrigger("triggerFadeOut");
     }
 }

@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 4635756936664186}
   m_Layer: 0
   m_Name: ObjectMeteor
-  m_TagString: Untagged
+  m_TagString: WorldSpell
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +190,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1746515591049346}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.46, y: 0, z: 0.54}
+  m_LocalPosition: {x: 24.12, y: 11.43, z: 45.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4848899897132526}

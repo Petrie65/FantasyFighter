@@ -21,6 +21,12 @@ public class SpellManager : MonoBehaviour {
 
     private GameObject projectile;
 
+    // private int worldSpellCount = 0;
+    // public GameObject[] worldSpells;
+
+    public List<GameObject> worldSpells = new List<GameObject>();
+
+
     private void Awake() {
         MakeThisTheOnlySpellManager();
         InitSpellIcons();
@@ -51,15 +57,34 @@ public class SpellManager : MonoBehaviour {
 
     private void InitDictionary() {
         spellDescriptions.Add("Meteor","Fires a meteor that explodes");
+        spellDescriptions.Add("Fire Nova","Fake fire nova");
         spellDescriptions.Add("Snowball","Shoots a snowball that explodes");
     }
 
     private void InitSpells() {
         spells = new Spell[] {
-            new Spell(0, "Meteor", spellIcons[40], 30f, 10f, 3f, 30f, projectileMeteor, spellDescriptions["Meteor"]),
-            new Spell(1, "Snowball", spellIcons[1], 25f, 10f, 3f, 30f, projectileSnowball, spellDescriptions["Snowball"])
+                //  ID   Name       Icon        Range Cooldown CastTime Powercost
+            new Spell(0, "Meteor", spellIcons[40],  50f,10f, 3f, 30f, projectileMeteor, spellDescriptions["Meteor"]),
+            new Spell(1, "Fire Nova", spellIcons[41], 5f, 10f, 3f, 30f, null, spellDescriptions["Fire Nova"]),
+            new Spell(2, "Snowball", spellIcons[1], 25f, 10f, 3f, 30f, projectileSnowball, spellDescriptions["Snowball"])
         };
     }
+
+    public GameObject AddWorldSpell(GameObject worldSpell) {
+        GameObject currentSpell = Instantiate(worldSpell);
+
+        GameManager.GM.objectUIScript.AddSpellUI(currentSpell);
+        worldSpells.Add(currentSpell);
+
+        return currentSpell;
+    }
+
+    public void RemoveWorldSpell(GameObject worldSpell) {
+        GameManager.GM.objectUIScript.RemoveSpellUI(worldSpell);
+        worldSpells.Remove(worldSpell);
+        Destroy(worldSpell);
+    }
+
 
     public Spell getSpell(string spellName) {
         for (int x = 0; x < spells.Length; x++) {

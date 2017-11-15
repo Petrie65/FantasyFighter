@@ -129,7 +129,7 @@ public class UnitScript : MonoBehaviour {
         staffParticles.Stop();
 
         dieState = "animate";
-        GameManager.GM.objectUIScript.FadeObject(owner.playerNum);
+        GameManager.GM.objectUIScript.FadeUnitUI(owner.playerNum);
         yield return new WaitForSeconds(1f);
 
         dieState = "light";

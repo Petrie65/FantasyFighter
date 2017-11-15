@@ -45,15 +45,17 @@ public class ProjectileMeteor : MonoBehaviour {
 
     private void UpdateHeight() {
         RaycastHit hit;
+
+        // Explode if collision with water
+        if (transform.position.y < 7.6f) {
+            Explode();
+            return;
+        }
+
         if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.down) , out hit)) {
-
                 if (hit.transform.tag == ("Ground")){ 
-
                     float heightPoint = hit.point.y + 2f;
-                    float heightAdjust = this.transform.position.y > heightPoint ? this.transform.position.y - 0.1f : this.transform.position.y + 0.1f;
-
-                    this.transform.position = new Vector3(transform.position.x, heightAdjust, transform.position.z);
-                    Debug.Log(heightAdjust);
+                    this.transform.position = new Vector3(transform.position.x, heightPoint, transform.position.z);
                 }
         }
     }

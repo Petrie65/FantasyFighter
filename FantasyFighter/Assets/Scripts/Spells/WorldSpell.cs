@@ -13,6 +13,9 @@ public class WorldSpell : MonoBehaviour {
     private GameObject container;
     private GameObject pickupUnit;
 
+    // The worldspell should have a reference to it's associated UI object
+    public GameObject spellUI;
+
     private void Awake() {
         container = transform.parent.gameObject;
     }
@@ -43,8 +46,11 @@ public class WorldSpell : MonoBehaviour {
                         particles[x].Stop();
                     }
                 }
+                
+                spellUI.GetComponent<Animator>().SetTrigger("triggerFadeOut");
 
                 StartCoroutine(ScaleOverTime(0.5f));
+
             }
         }
     }
@@ -61,6 +67,6 @@ public class WorldSpell : MonoBehaviour {
             yield return null;
         } while (currentTime <= time);
 
-        Destroy(gameObject);
+        SpellManager.SM.RemoveWorldSpell(transform.parent.gameObject);
     }
 }

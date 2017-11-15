@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour {
     public Player[] players;
     public Player currentPlayer { get; set; }
 
+    public GameObject[] startPositions;
+
     public ColorScript colors;
 
     public GameObject objectUI;
@@ -28,7 +30,9 @@ public class GameManager : MonoBehaviour {
             players[x] = new Player(name);
 
             GameObject currentUnit = Instantiate(playerUnit);
-            currentUnit.transform.Translate(new Vector3(x * 5, 1, 0));
+
+            currentUnit.transform.position = startPositions[x].transform.position;
+            Destroy(startPositions[x]);
 
             players[x].playerNum = x;
             currentUnit.GetComponent<UnitScript>().SetOwner(players[x]);

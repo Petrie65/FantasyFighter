@@ -12,6 +12,7 @@ public class Spell {
     public float PowerCost;
     public GameObject gameObject;
     public string Description;
+    public GameObject worldObject;
     
     public Player owner;
 
