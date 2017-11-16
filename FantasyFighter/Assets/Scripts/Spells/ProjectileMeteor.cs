@@ -27,7 +27,7 @@ public class ProjectileMeteor : MonoBehaviour {
 
     private void Awake() {
         triggerCollider = GetComponent<SphereCollider>();
-        range = SpellManager.SM.getSpell("Meteor").Range;
+        range = SpellManager.SM.getSpell("Meteor").Info.Range;
         fireLightAnim = fireLight.GetComponent<Animator>();
     }
 

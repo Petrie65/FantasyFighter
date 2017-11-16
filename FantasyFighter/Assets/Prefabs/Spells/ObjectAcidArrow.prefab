@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08054c3b203b2574686d47967df5032d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellName: AcidArrow
+  spellName: Acid Arrow
   particles:
   - {fileID: 198030666368161986}
   - {fileID: 198030604376410616}

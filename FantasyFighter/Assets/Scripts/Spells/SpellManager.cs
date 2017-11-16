@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Specialized;
+using DuloGames.UI;
 
 public class SpellManager : MonoBehaviour {
     public static SpellManager SM;
@@ -67,151 +68,8 @@ public class SpellManager : MonoBehaviour {
         spellDescriptions.Add("Swap","Description needed");
     }
 
-    // Type: charge | channel | instant
     private void InitSpells() {
-        spells = new Spell[] {
-            new Spell(
-                0, 
-                "Meteor", 
-                spellIcons[40],  
-                50f,
-                10f, 
-                3f, 
-                30f, 
-                projectileMeteor, 
-                spellDescriptions["Meteor"],
-                20f,
-                2f,
-                "channel",
-                3
-                ),
-                
-            new Spell(
-                1,
-                "Fire Nova",
-                spellIcons[41],
-                5f,
-                10f,
-                3f,
-                30f,
-                null,
-                spellDescriptions["Fire Nova"],
-                20f,
-                2f,
-                "instant",
-                1
-                ),
-
-            new Spell(
-                2,
-                "Snowball",
-                spellIcons[1],
-                25f,
-                10f,
-                3f,
-                30f,
-                projectileSnowball,
-                spellDescriptions["Snowball"],
-                20f,
-                2f,
-                "channel",
-                1
-             ),
-            new Spell(
-                3,
-                "AcidArrow",
-                spellIcons[33],
-                25f,
-                10f,
-                2f,
-                20f,
-                projectileSnowball,
-                spellDescriptions["AcidArrow"],
-                20f,
-                2f,
-                "charge",
-                2
-             ),
-            new Spell(
-                4,
-                "Blink",
-                spellIcons[22],
-                25f,
-                10f,
-                2f,
-                20f,
-                projectileSnowball,
-                spellDescriptions["Blink"],
-                20f,
-                2f,
-                "instant",
-                3
-             ),
-
-            new Spell(
-                5,
-                "FireNova",
-                spellIcons[41],
-                25f,
-                10f,
-                2f,
-                20f,
-                projectileSnowball,
-                spellDescriptions["FireNova"],
-                20f,
-                2f,
-                "instant",
-                2
-             ),
-
-            new Spell(
-                6,
-                "FrostBlast",
-                spellIcons[2],
-                25f,
-                10f,
-                2f,
-                20f,
-                projectileSnowball,
-                spellDescriptions["FrostBlast"],
-                20f,
-                2f,
-                "channel",
-                1
-             ),
-
-            new Spell(
-                7,
-                "PlagueBlast",
-                spellIcons[77],
-                25f,
-                10f,
-                2f,
-                20f,
-                projectileSnowball,
-                spellDescriptions["PlagueBlast"],
-                20f,
-                2f,
-                "channel",
-                1
-             ),
-
-            new Spell(
-                8,
-                "Swap",
-                spellIcons[33],
-                25f,
-                10f,
-                2f,
-                20f,
-                projectileSnowball,
-                spellDescriptions["Swap"],
-                20f,
-                2f,
-                "channel",
-                2
-             )
-         };
+        
     }
 
     public GameObject AddWorldSpell(GameObject worldSpell) {
@@ -232,7 +90,7 @@ public class SpellManager : MonoBehaviour {
 
     public Spell getSpell(string spellName) {
         for (int x = 0; x < spells.Length; x++) {
-            if (spells[x].Name == spellName) {
+            if (spells[x].Info.Name == spellName) {
                 return spells[x];
             }
         }
@@ -252,7 +110,7 @@ public class SpellManager : MonoBehaviour {
             Debug.Log("Unit is dead");
             return;
         }
-        if (unitScript.currentMana < spell.PowerCost) {
+        if (unitScript.currentMana < spell.Info.PowerCost) {
             Debug.Log("Not enough mana");
             return;
         }
@@ -269,9 +127,9 @@ public class SpellManager : MonoBehaviour {
         owner.spells[owner.unit.GetComponent<UnitScript>().selectedSpellIdx] = null;
         owner.unit.GetComponent<UnitScript>().selectedSpellIdx = 0;
 
-        owner.unit.GetComponent<UnitScript>().currentMana -= castSpell.PowerCost;
+        owner.unit.GetComponent<UnitScript>().currentMana -= castSpell.Info.PowerCost;
 
-        StartCoroutine(SpellDelay(0.2f, owner, castSpell.Name, clickPos));
+        StartCoroutine(SpellDelay(0.2f, owner, castSpell.Info.Name, clickPos));
 	}
 	
 	private IEnumerator SpellDelay(float delay, Player owner, string spellName, Vector3 clickPos) {

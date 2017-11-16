@@ -1,0 +1,158 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6694320caa0568e4fb296afa762666e1, type: 3}
+  m_Name: SpellDatabase
+  m_EditorClassIdentifier: 
+  spells:
+  - ID: 0
+    Name: Meteor
+    Icon: {fileID: 21300000, guid: 3b7ed903b4c0842739c371a85ad4740b, type: 3}
+    Description: Description 1
+    Range: 50
+    Cooldown: 10
+    CastTime: 3
+    PowerCost: 30
+    Damage: 70
+    HoldTime: 5
+    CastType: 0
+    Amount: 3
+    worldObject: {fileID: 1746515591049346, guid: 768b7e2b051eb2b42b4d7f02f7caf678,
+      type: 2}
+    spellObject: {fileID: 1118290831946194, guid: 8dc9d7e7b9058eb458012a4d20812f91,
+      type: 2}
+    Flags: 0
+  - ID: 1
+    Name: Fire Nova
+    Icon: {fileID: 21300000, guid: ef0456a293c284fc5b17c8311f6bcd6d, type: 3}
+    Description: Fire nova DESC
+    Range: 5
+    Cooldown: 10
+    CastTime: 3
+    PowerCost: 30
+    Damage: 50
+    HoldTime: 3
+    CastType: 2
+    Amount: 1
+    worldObject: {fileID: 1795107053668062, guid: 60f91825d3987954188a87270d33e09b,
+      type: 2}
+    spellObject: {fileID: 0}
+    Flags: 0
+  - ID: 2
+    Name: Glacial Blast
+    Icon: {fileID: 21300000, guid: f1ae94e1f0fa54d76bd257bd774f53ee, type: 3}
+    Description: DESC
+    Range: 25
+    Cooldown: 10
+    CastTime: 3
+    PowerCost: 30
+    Damage: 50
+    HoldTime: 2
+    CastType: 1
+    Amount: 1
+    worldObject: {fileID: 1904661086198704, guid: e20f3e1e0c72e4a4aad243e336a998f5,
+      type: 2}
+    spellObject: {fileID: 1032662503379850, guid: ec85a74d1717d6641a1ed6ba21632444,
+      type: 2}
+    Flags: 0
+  - ID: 3
+    Name: Acid Arrow
+    Icon: {fileID: 21300000, guid: de28a9637c8bc4b94a746a88deaa85da, type: 3}
+    Description: DESC
+    Range: 25
+    Cooldown: 10
+    CastTime: 2
+    PowerCost: 20
+    Damage: 20
+    HoldTime: 2
+    CastType: 1
+    Amount: 2
+    worldObject: {fileID: 1629406208115974, guid: 4ab2fe7790d54ed4caa8c54a57114e9d,
+      type: 2}
+    spellObject: {fileID: 0}
+    Flags: 0
+  - ID: 4
+    Name: Blink
+    Icon: {fileID: 21300000, guid: f3e60cd6661c144e4ae2b1e1d6fae27b, type: 3}
+    Description: DESC
+    Range: 25
+    Cooldown: 10
+    CastTime: 2
+    PowerCost: 20
+    Damage: 0
+    HoldTime: 0
+    CastType: 2
+    Amount: 3
+    worldObject: {fileID: 1583564886210784, guid: 865b158df1dfae44c97ff0fb85a1ab8f,
+      type: 2}
+    spellObject: {fileID: 0}
+    Flags: 0
+  - ID: 5
+    Name: Frost Nova
+    Icon: {fileID: 21300000, guid: fa5a893086bfd42a789e084acd9dddf1, type: 3}
+    Description: DESC
+    Range: 25
+    Cooldown: 10
+    CastTime: 2
+    PowerCost: 20
+    Damage: 35
+    HoldTime: 3
+    CastType: 1
+    Amount: 2
+    worldObject: {fileID: 1795107053668062, guid: 60f91825d3987954188a87270d33e09b,
+      type: 2}
+    spellObject: {fileID: 0}
+    Flags: 0
+  - ID: 6
+    Name: Plague Blast
+    Icon: {fileID: 21300000, guid: 7b2e48ef30545475e9cc20355f31f359, type: 3}
+    Description: DESC
+    Range: 25
+    Cooldown: 10
+    CastTime: 2
+    PowerCost: 20
+    Damage: 30
+    HoldTime: 3
+    CastType: 0
+    Amount: 1
+    worldObject: {fileID: 1244681401888186, guid: 88c120207c5887d43af8667691f733cd,
+      type: 2}
+    spellObject: {fileID: 0}
+    Flags: 0
+  - ID: 7
+    Name: Swap
+    Icon: {fileID: 21300000, guid: 0119dc5bc249a4b899849b64e48d4b56, type: 3}
+    Description: DESC
+    Range: 25
+    Cooldown: 10
+    CastTime: 1
+    PowerCost: 35
+    Damage: 0
+    HoldTime: 0
+    CastType: 0
+    Amount: 2
+    worldObject: {fileID: 0}
+    spellObject: {fileID: 0}
+    Flags: 0
+  - ID: 0
+    Name: 
+    Icon: {fileID: 0}
+    Description: 
+    Range: 0
+    Cooldown: 0
+    CastTime: 0
+    PowerCost: 0
+    Damage: 0
+    HoldTime: 0
+    CastType: 1
+    Amount: 0
+    worldObject: {fileID: 0}
+    spellObject: {fileID: 0}
+    Flags: 0

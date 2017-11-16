@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DuloGames.UI;
 
 public class GameManager : MonoBehaviour {
     public static GameManager GM;
@@ -57,12 +58,28 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public bool acquireItem(Player player, Spell spell) {
-        for (int x = 0; x < 4; x++) {
+    // public bool acquireItem(Player player, Spell spell) {
+    //     for (int x = 0; x < 4; x++) {
+    //         Spell currentSpell = player.spells[x];
+    //         if (currentSpell == null) {
+    //             player.spells[x] = spell;
+    //             return true;
+    //         }
+    //     }
+    //     return false;
+    // }
+
+    public bool acquireSpell(Player player, string spellName) {
+        UISpellInfo spell = UISpellDatabase.Instance.GetByName(spellName);
+        if (spell == null) {
+            Debug.Log("Spell doesnt exist");
+            return false;
+        }
+
+        for (int x = 0; x < 5; x++) {
             Spell currentSpell = player.spells[x];
             if (currentSpell == null) {
-                player.spells[x] = spell;
-                // GUIManager.GUI.updateGUI(player);
+                player.spells[x] = new Spell(player, spell);
                 return true;
             }
         }

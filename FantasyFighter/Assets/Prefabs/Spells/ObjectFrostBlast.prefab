@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08054c3b203b2574686d47967df5032d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellName: FrostBlast
+  spellName: Frost Blast
   particles:
   - {fileID: 198842073611193314}
   - {fileID: 198767799324203752}

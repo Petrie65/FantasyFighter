@@ -32,6 +32,10 @@ public class UnitScript : MonoBehaviour {
 
     public bool isDead = false;
 
+    public bool isCharging = false;
+    public float castProgress = 0f;
+    public bool spellReady = false;
+
     public void Awake() {
         currentHP = 100f;
         maxHP = 100f;
@@ -57,13 +61,25 @@ public class UnitScript : MonoBehaviour {
             // Handle player controls
             if (GameManager.GM.currentPlayer != owner) return;
 
-            if (Input.GetButtonDown("Fire1")) {
-                if (selectedSpell != null) {
+            if (selectedSpell != null) {
+                if (Input.GetMouseButtonDown(0)) {
+                    ChargeSpell();
+                }
+
+                if (Input.GetMouseButtonUp(0) && spellReady) {
                     CastSpellMouse(Input.mousePosition);
                 }
             }
         } else {
             PerformDie();
+        }
+    }
+
+    private void ChargeSpell() {
+        if (spellReady) return;
+
+        if (castProgress++ >= selectedSpell.Info.CastTime) {
+            spellReady = true;
         }
     }
 

@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114165630938788224}
   - component: {fileID: 95159336949618812}
   m_Layer: 5
-  m_Name: Snowball
+  m_Name: GlacialBlast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08054c3b203b2574686d47967df5032d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellName: Snowball
+  spellName: Glacial Blast
   particles:
   - {fileID: 198364356056520690}
   - {fileID: 198786149218608158}

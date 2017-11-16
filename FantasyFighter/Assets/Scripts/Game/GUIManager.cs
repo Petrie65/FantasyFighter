@@ -65,7 +65,7 @@ public class GUIManager : MonoBehaviour {
         for (int x = 0; x < spellButtons.Length; x++) {
             Spell spell = player.spells[x];
             if (spell != null) {
-                spellButtons[x].GetComponent<UISpellSlot>().Assign(spell.GetInfo());
+                spellButtons[x].GetComponent<UISpellSlot>().Assign(spell.Info);
             } else {
                 spellButtons[x].GetComponent<UISpellSlot>().Unassign();
             }

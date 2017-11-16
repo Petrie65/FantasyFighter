@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DuloGames.UI;
 
 public class WorldSpell : MonoBehaviour {
     public string spellName;
@@ -33,7 +34,7 @@ public class WorldSpell : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player") {
-            if (GameManager.GM.acquireItem(other.gameObject.GetComponent<UnitScript>().owner, SpellManager.SM.getSpell(spellName))) {
+            if (GameManager.GM.acquireSpell(other.gameObject.GetComponent<UnitScript>().owner, spellName)) {
                 // Only destroy if item has been picked up
                 GetComponent<SphereCollider>().enabled = false;
 

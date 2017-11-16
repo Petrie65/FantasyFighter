@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08054c3b203b2574686d47967df5032d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellName: FireNova
+  spellName: Fire Nova
   particles:
   - {fileID: 198900112474665764}
   - {fileID: 198435918201540524}

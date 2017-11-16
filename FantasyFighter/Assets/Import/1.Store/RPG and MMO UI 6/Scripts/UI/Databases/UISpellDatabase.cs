@@ -44,5 +44,21 @@ namespace DuloGames.UI
 	
 			return null;
 		}
+
+		/// <summary>
+		/// Gets the specified SpellInfo by Name.
+		/// </summary>
+		/// <returns>The SpellInfo or NULL if not found.</returns>
+		/// <param name="name">The spell name.</param>
+		public UISpellInfo GetByName(string name)
+		{
+			for (int i = 0; i < this.spells.Length; i++)
+			{
+				if (this.spells[i].Name == name)
+					return this.spells[i];
+			}
+	
+			return null;
+		}
 	}
 }
