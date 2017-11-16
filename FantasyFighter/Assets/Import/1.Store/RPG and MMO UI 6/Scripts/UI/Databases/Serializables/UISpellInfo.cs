@@ -14,6 +14,11 @@ namespace DuloGames.UI
 		public float Cooldown;
 		public float CastTime;
 		public float PowerCost;
+			
+		public float Damage;
+		public float HoldTime;
+		public string CastType;
+		public int Amount;
 	
 		[BitMask(typeof(UISpellInfo_Flags))]
 		public UISpellInfo_Flags Flags;

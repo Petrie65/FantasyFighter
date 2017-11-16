@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 95816735022089892}
   - component: {fileID: 114847567342498582}
   m_Layer: 8
-  m_Name: Nova
+  m_Name: FireNova
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

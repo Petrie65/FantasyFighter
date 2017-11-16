@@ -301,7 +301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08054c3b203b2574686d47967df5032d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellName: SpellName
+  spellName: FrostBlast
   particles:
   - {fileID: 198842073611193314}
   - {fileID: 198767799324203752}
@@ -380,7 +380,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 377337767
+  randomSeed: 1486236347
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3643,7 +3643,7 @@ ParticleSystem:
   moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 2100862749
+  randomSeed: -1567837983
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6900,7 +6900,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: 1825234262
+  randomSeed: 238856298
   InitialModule:
     serializedVersion: 3
     enabled: 1
