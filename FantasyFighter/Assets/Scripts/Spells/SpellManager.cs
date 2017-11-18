@@ -12,6 +12,8 @@ public class SpellManager : MonoBehaviour {
     public GameObject projectileMeteor;
     public GameObject projectileSnowball;
 
+    public UICastBar CastBar;
+
     public Spell[] spells;
 
     [HideInInspector]
@@ -46,6 +48,15 @@ public class SpellManager : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Start is called on the frame when a script is enabled just before
+    /// any of the Update methods is called the first time.
+    /// </summary>
+    void Start()
+    {
+        CastBar.Show();
+    }
+
     private void InitSpellIcons() {
         spellIcons = new Sprite[160];
         spellIconsGrey = new Sprite[160];
@@ -69,7 +80,7 @@ public class SpellManager : MonoBehaviour {
     }
 
     private void InitSpells() {
-        
+
     }
 
     public GameObject AddWorldSpell(GameObject worldSpell) {
@@ -152,6 +163,14 @@ public class SpellManager : MonoBehaviour {
 
         // SendMessage(string methodName, object value)
         mProjectile.SendMessage("setOwner", owner);
+    }
+
+    /// <summary>
+    /// Update is called every frame, if the MonoBehaviour is enabled.
+    /// </summary>
+    void Update()
+    {
+        
     }
 }
 
