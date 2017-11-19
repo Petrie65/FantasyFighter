@@ -63,7 +63,7 @@ public class WizardMovement : MonoBehaviour {
         // Unit is moving, reset timer
         staminaTimer = staminaRechargeDelay;
 
-        if (Input.GetMouseButtonDown(1)) {
+        if (Input.GetKeyDown(KeyCode.Space)) {
             if (UseStamina(50f)) {
                 StartDodge(h, v);
                 return;

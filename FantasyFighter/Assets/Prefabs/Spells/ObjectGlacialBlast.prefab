@@ -90,7 +90,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4925587560477638}
   m_Layer: 0
-  m_Name: ObjectSnowball
+  m_Name: ObjectGlacialBlast
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

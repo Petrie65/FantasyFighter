@@ -90,7 +90,7 @@ GameObject:
   - component: {fileID: 95955328347584780}
   - component: {fileID: 114355131423251104}
   m_Layer: 8
-  m_Name: Blink
+  m_Name: Swap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08054c3b203b2574686d47967df5032d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spellName: Blink
+  spellName: Swap
   particles:
   - {fileID: 198707765117781562}
   - {fileID: 198632465785257738}

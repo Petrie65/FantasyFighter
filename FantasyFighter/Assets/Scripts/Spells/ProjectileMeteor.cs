@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DuloGames.UI;
 
 public class ProjectileMeteor : MonoBehaviour {
     public ParticleSystem praticleTail;
@@ -27,7 +28,7 @@ public class ProjectileMeteor : MonoBehaviour {
 
     private void Awake() {
         triggerCollider = GetComponent<SphereCollider>();
-        range = SpellManager.SM.getSpell("Meteor").Info.Range;
+        range =  UISpellDatabase.Instance.GetByName("Meteor").Range; //SpellManager.SM.getSpell("Meteor").Info.Range;
         fireLightAnim = fireLight.GetComponent<Animator>();
     }
 

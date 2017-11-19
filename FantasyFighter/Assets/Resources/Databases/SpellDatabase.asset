@@ -16,14 +16,19 @@ MonoBehaviour:
     Name: Meteor
     Icon: {fileID: 21300000, guid: 3b7ed903b4c0842739c371a85ad4740b, type: 3}
     Description: Description 1
-    Range: 50
-    Cooldown: 10
-    CastTime: 3
-    PowerCost: 30
-    Damage: 70
-    HoldTime: 5
-    CastType: 0
+    ChannelColor: {r: 0.93333334, g: 0.4862745, b: 0.09411765, a: 0.78431374}
+    ChargeColor: {r: 1, g: 0.92156863, b: 0.39215687, a: 0.78431374}
     Amount: 3
+    Range: 50
+    Damage: 70
+    Cooldown: 10
+    ChannelTime: 3
+    PowerCost: 0.3
+    ChargeTo: 0.3
+    HoldTo: 0
+    ShouldFail: 1
+    DecayRate: 0.5
+    ChannelMove: 1
     worldObject: {fileID: 1746515591049346, guid: 768b7e2b051eb2b42b4d7f02f7caf678,
       type: 2}
     spellObject: {fileID: 1118290831946194, guid: 8dc9d7e7b9058eb458012a4d20812f91,
@@ -33,14 +38,19 @@ MonoBehaviour:
     Name: Fire Nova
     Icon: {fileID: 21300000, guid: ef0456a293c284fc5b17c8311f6bcd6d, type: 3}
     Description: Fire nova DESC
-    Range: 5
-    Cooldown: 10
-    CastTime: 3
-    PowerCost: 30
-    Damage: 50
-    HoldTime: 3
-    CastType: 2
+    ChannelColor: {r: 0.9372549, g: 0.49803922, b: 0.09019608, a: 0.78431374}
+    ChargeColor: {r: 1, g: 0.88235295, b: 0.45882353, a: 0.78431374}
     Amount: 1
+    Range: 5
+    Damage: 50
+    Cooldown: 10
+    ChannelTime: 0.1
+    PowerCost: 0.5
+    ChargeTo: 0.3
+    HoldTo: 0
+    ShouldFail: 0
+    DecayRate: 0.3
+    ChannelMove: 1
     worldObject: {fileID: 1795107053668062, guid: 60f91825d3987954188a87270d33e09b,
       type: 2}
     spellObject: {fileID: 0}
@@ -49,14 +59,19 @@ MonoBehaviour:
     Name: Glacial Blast
     Icon: {fileID: 21300000, guid: f1ae94e1f0fa54d76bd257bd774f53ee, type: 3}
     Description: DESC
-    Range: 25
-    Cooldown: 10
-    CastTime: 3
-    PowerCost: 30
-    Damage: 50
-    HoldTime: 2
-    CastType: 1
+    ChannelColor: {r: 0.60784316, g: 0.9254902, b: 1, a: 0.78431374}
+    ChargeColor: {r: 0.8117647, g: 0.98039216, b: 1, a: 0.78431374}
     Amount: 1
+    Range: 25
+    Damage: 50
+    Cooldown: 10
+    ChannelTime: 1
+    PowerCost: 0.3
+    ChargeTo: 2
+    HoldTo: 3
+    ShouldFail: 0
+    DecayRate: 0.5
+    ChannelMove: 0
     worldObject: {fileID: 1904661086198704, guid: e20f3e1e0c72e4a4aad243e336a998f5,
       type: 2}
     spellObject: {fileID: 1032662503379850, guid: ec85a74d1717d6641a1ed6ba21632444,
@@ -66,14 +81,19 @@ MonoBehaviour:
     Name: Acid Arrow
     Icon: {fileID: 21300000, guid: de28a9637c8bc4b94a746a88deaa85da, type: 3}
     Description: DESC
-    Range: 25
-    Cooldown: 10
-    CastTime: 2
-    PowerCost: 20
-    Damage: 20
-    HoldTime: 2
-    CastType: 1
+    ChannelColor: {r: 0.4627451, g: 0.8862745, b: 0.27450982, a: 0.78431374}
+    ChargeColor: {r: 0.48235294, g: 1, b: 0.50980395, a: 0.78431374}
     Amount: 2
+    Range: 25
+    Damage: 20
+    Cooldown: 10
+    ChannelTime: 0.5
+    PowerCost: 0.2
+    ChargeTo: 4.5
+    HoldTo: 0.25
+    ShouldFail: 0
+    DecayRate: 0.5
+    ChannelMove: 1
     worldObject: {fileID: 1629406208115974, guid: 4ab2fe7790d54ed4caa8c54a57114e9d,
       type: 2}
     spellObject: {fileID: 0}
@@ -82,14 +102,19 @@ MonoBehaviour:
     Name: Blink
     Icon: {fileID: 21300000, guid: f3e60cd6661c144e4ae2b1e1d6fae27b, type: 3}
     Description: DESC
-    Range: 25
-    Cooldown: 10
-    CastTime: 2
-    PowerCost: 20
-    Damage: 0
-    HoldTime: 0
-    CastType: 2
+    ChannelColor: {r: 0.6313726, g: 0.94509804, b: 1, a: 0.78431374}
+    ChargeColor: {r: 0.8117647, g: 0.9843137, b: 1, a: 0.78431374}
     Amount: 3
+    Range: 25
+    Damage: 0
+    Cooldown: 10
+    ChannelTime: 1
+    PowerCost: 0.3
+    ChargeTo: 0.3
+    HoldTo: 0
+    ShouldFail: 0
+    DecayRate: 1
+    ChannelMove: 2
     worldObject: {fileID: 1583564886210784, guid: 865b158df1dfae44c97ff0fb85a1ab8f,
       type: 2}
     spellObject: {fileID: 0}
@@ -98,14 +123,19 @@ MonoBehaviour:
     Name: Frost Nova
     Icon: {fileID: 21300000, guid: fa5a893086bfd42a789e084acd9dddf1, type: 3}
     Description: DESC
-    Range: 25
-    Cooldown: 10
-    CastTime: 2
-    PowerCost: 20
-    Damage: 35
-    HoldTime: 3
-    CastType: 1
+    ChannelColor: {r: 0.38431373, g: 0.60784316, b: 0.8784314, a: 0.78431374}
+    ChargeColor: {r: 0.7254902, g: 0.9647059, b: 1, a: 0.78431374}
     Amount: 2
+    Range: 25
+    Damage: 35
+    Cooldown: 10
+    ChannelTime: 1
+    PowerCost: 0.3
+    ChargeTo: 2
+    HoldTo: 2
+    ShouldFail: 0
+    DecayRate: 1
+    ChannelMove: 1
     worldObject: {fileID: 1795107053668062, guid: 60f91825d3987954188a87270d33e09b,
       type: 2}
     spellObject: {fileID: 0}
@@ -114,14 +144,19 @@ MonoBehaviour:
     Name: Plague Blast
     Icon: {fileID: 21300000, guid: 7b2e48ef30545475e9cc20355f31f359, type: 3}
     Description: DESC
-    Range: 25
-    Cooldown: 10
-    CastTime: 2
-    PowerCost: 20
-    Damage: 30
-    HoldTime: 3
-    CastType: 0
+    ChannelColor: {r: 0.36078432, g: 0.02745098, b: 0.95686275, a: 0.78431374}
+    ChargeColor: {r: 0.83137256, g: 0.47843137, b: 1, a: 0.78431374}
     Amount: 1
+    Range: 25
+    Damage: 30
+    Cooldown: 10
+    ChannelTime: 1.5
+    PowerCost: 0.5
+    ChargeTo: 2.5
+    HoldTo: 1
+    ShouldFail: 0
+    DecayRate: 0.8
+    ChannelMove: 1
     worldObject: {fileID: 1244681401888186, guid: 88c120207c5887d43af8667691f733cd,
       type: 2}
     spellObject: {fileID: 0}
@@ -130,14 +165,19 @@ MonoBehaviour:
     Name: Swap
     Icon: {fileID: 21300000, guid: 0119dc5bc249a4b899849b64e48d4b56, type: 3}
     Description: DESC
+    ChannelColor: {r: 0.9019608, g: 0.14901961, b: 1, a: 0.78431374}
+    ChargeColor: {r: 0.99607843, g: 0.7176471, b: 0.9882353, a: 0.78431374}
+    Amount: 1
     Range: 25
-    Cooldown: 10
-    CastTime: 1
-    PowerCost: 35
     Damage: 0
-    HoldTime: 0
-    CastType: 0
-    Amount: 2
+    Cooldown: 10
+    ChannelTime: 0.5
+    PowerCost: 3
+    ChargeTo: 0.3
+    HoldTo: 2
+    ShouldFail: 1
+    DecayRate: 1
+    ChannelMove: 1
     worldObject: {fileID: 0}
     spellObject: {fileID: 0}
     Flags: 0
@@ -145,14 +185,19 @@ MonoBehaviour:
     Name: 
     Icon: {fileID: 0}
     Description: 
-    Range: 0
-    Cooldown: 0
-    CastTime: 0
-    PowerCost: 0
-    Damage: 0
-    HoldTime: 0
-    CastType: 1
+    ChannelColor: {r: 0, g: 0, b: 0, a: 0}
+    ChargeColor: {r: 0, g: 0, b: 0, a: 0}
     Amount: 0
+    Range: 0
+    Damage: 0
+    Cooldown: 0
+    ChannelTime: 0
+    PowerCost: 0
+    ChargeTo: 0
+    HoldTo: 0
+    ShouldFail: 0
+    DecayRate: 0
+    ChannelMove: 0
     worldObject: {fileID: 0}
     spellObject: {fileID: 0}
     Flags: 0

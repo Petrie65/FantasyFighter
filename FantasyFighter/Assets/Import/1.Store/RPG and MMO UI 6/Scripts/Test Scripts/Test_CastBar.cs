@@ -24,13 +24,13 @@ namespace DuloGames.UI
 		{
 			yield return new WaitForSeconds(1f);
 			
-			this.m_CastBar.StartCasting(this.spell1, this.spell1.CastTime, (Time.time + this.spell1.CastTime));
+			// this.m_CastBar.StartCasting(this.spell1, this.spell1.CastTime, (Time.time + this.spell1.CastTime));
 			
-			yield return new WaitForSeconds(1f + this.spell1.CastTime);
+			// yield return new WaitForSeconds(1f + this.spell1.CastTime);
 			
-			this.m_CastBar.StartCasting(this.spell2, this.spell2.CastTime, (Time.time + this.spell2.CastTime));
+			// this.m_CastBar.StartCasting(this.spell2, this.spell2.CastTime, (Time.time + this.spell2.CastTime));
 			
-			yield return new WaitForSeconds(this.spell2.CastTime * 0.75f);
+			// yield return new WaitForSeconds(this.spell2.CastTime * 0.75f);
 			
 			this.m_CastBar.Interrupt();
 			

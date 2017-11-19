@@ -58,6 +58,13 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    private void Update() {
+        foreach(Player player in players) {
+            if (player != null)
+                player.Update();
+        }
+    }
+
     // public bool acquireItem(Player player, Spell spell) {
     //     for (int x = 0; x < 4; x++) {
     //         Spell currentSpell = player.spells[x];

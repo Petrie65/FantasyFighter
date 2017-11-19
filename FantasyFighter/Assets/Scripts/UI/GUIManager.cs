@@ -8,9 +8,13 @@ public class GUIManager : MonoBehaviour {
     public static GUIManager GUI;
     public GameObject[] spellButtons;
 
+    public Texture2D cursorTexture;
+
     public GameObject playerHP;
     public GameObject playerMana;
     public GameObject playerStamina;
+
+    public CastBar castBar;
 
     public GameObject hpTextObject;
     public GameObject manaTextObject;
@@ -23,6 +27,7 @@ public class GUIManager : MonoBehaviour {
     private UIProgressBar hudHP;
     private UIProgressBar hudMana;
     private UIProgressBar hudStamina;
+
 
     private Player currentPlayer;
 
@@ -39,6 +44,8 @@ public class GUIManager : MonoBehaviour {
 
     private void Start() {
        this.currentPlayer = GameManager.GM.currentPlayer;
+
+       Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.ForceSoftware);
     }
 
     void MakeThisOnlyGUIManager() {
@@ -70,6 +77,7 @@ public class GUIManager : MonoBehaviour {
                 spellButtons[x].GetComponent<UISpellSlot>().Unassign();
             }
         }
+        
         // HUD
         UnitScript unitScript = player.unit.GetComponent<UnitScript>();
         hudHP.fillAmount =  unitScript.currentHP / unitScript.maxHP;
@@ -79,6 +87,15 @@ public class GUIManager : MonoBehaviour {
         manaText.text = Mathf.Floor(unitScript.currentMana).ToString() + " / " + Mathf.Floor(unitScript.maxMana).ToString();
 
         hudStamina.fillAmount =  unitScript.stamina / 100f;
+
+        if (unitScript.selectedSpell != null) {
+            float channel = unitScript.selectedSpell.channelCounter / unitScript.selectedSpell.Info.ChannelTime;
+            castBar.SetChannelAmount(channel);
+            float charge = unitScript.selectedSpell.chargeCounter / unitScript.selectedSpell.Info.ChargeTo;
+            castBar.SetChargeAmount(charge);
+
+
+        }
     }
 
     public void UpdateSpells() {

@@ -149,31 +149,10 @@ namespace DuloGames.UI
 		public void Show()
 		{
 			// Call show with a transition
-			this.Show(false);
+			this.Show();
 		}
 		
-		/// <summary>
-		/// Show this cast bar.
-		/// </summary>
-		/// <param name="instant">If set to <c>true</c> instant.</param>
-		public virtual void Show(bool instant)
-		{
-            // Bring to the front
-            if (this.m_BrindToFront)
-                UIUtility.BringToFront(this.gameObject);
 
-            // Do the transition
-            if (instant || this.m_InTransition == Transition.Instant)
-			{
-				// Set the canvas group alpha
-				this.m_CanvasGroup.alpha = 1f;
-			}
-			else
-			{
-				// Start a tween
-				this.StartAlphaTween(1f, this.m_InTransitionDuration, true);
-			}
-		}
 		
 		/// <summary>
 		/// Hide this cast bar.
@@ -334,7 +313,7 @@ namespace DuloGames.UI
 
             // Set the full time cast text
             if (this.m_FullTimeLabel != null)
-                this.m_FullTimeLabel.text = spellInfo.CastTime.ToString(this.m_FullTimeFormat);
+                this.m_FullTimeLabel.text = spellInfo.ChannelTime.ToString(this.m_FullTimeFormat);
 
             // Set the icon if we have enabled icons
             if (this.m_UseSpellIcon)
@@ -352,12 +331,13 @@ namespace DuloGames.UI
 				}
 			}
 			
+			/* 
 			// Set some info about the cast
 			this.currentCastDuration = duration;
-			this.currentCastEndTime = endTime;
+			this.currentCastEndTime = endTime;*/
 			
 			// Define that we start casting animation
-			this.m_IsCasting = true;
+			// this.m_IsCasting = true;
 			
 			// Show the cast bar
 			this.Show();
@@ -365,32 +345,58 @@ namespace DuloGames.UI
 			// Start the cast animation
 			this.StartCoroutine("AnimateCast");
 		}
+
+
+		/// <summary>
+		/// Starts the casting of the specified spell.
+		/// </summary>
+		public virtual void SetInfo(UISpellInfo spellInfo) {			
+			// Set the spell name
+			if (this.m_TitleLabel != null)
+				this.m_TitleLabel.text = spellInfo.Name;
+
+            // Set the icon if we have enabled icons
+            if (this.m_UseSpellIcon)
+			{
+				// Check if we have a sprite
+				if (spellInfo.Icon != null)
+				{
+					// Check if the icon image is set
+					if (this.m_IconImage != null)
+						this.m_IconImage.sprite = spellInfo.Icon;
+					
+					// Enable the frame
+					if (this.m_IconFrame != null)
+						this.m_IconFrame.SetActive(true);
+				}
+			}
+		}
 		
 		/// <summary>
 		/// Interrupts the current cast if any.
 		/// </summary>
 		public virtual void Interrupt()
 		{
-			if (this.m_IsCasting)
-			{
+			// if (this.m_IsCasting)
+			// {
 				// Stop the coroutine if it's assigned
 				this.StopCoroutine("AnimateCast");
 				
 				// No longer casting
-				this.m_IsCasting = false;
+				// this.m_IsCasting = false;
 				
 				// Apply the interrupt colors
 				this.ApplyColorStage(this.m_OnInterruptColors);
 				
 				// Hide with a delay
 				this.StartCoroutine("DelayHide");
-			}
+			// }
 		}
 		
 		protected void OnFinishedCasting()
 		{
 			// Define that we are no longer casting
-			this.m_IsCasting = false;
+			// this.m_IsCasting = false;
 
             // Apply the finish colors
             this.ApplyColorStage(this.m_OnFinishColors);

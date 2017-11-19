@@ -48,7 +48,7 @@ namespace DuloGames.UI
             if (!spellInfo.Flags.Has(UISpellInfo_Flags.InstantCast))
             {
                 // Start casting
-                this.m_CastBar.StartCasting(spellInfo, spellInfo.CastTime, Time.time + spellInfo.CastTime);
+                // this.m_CastBar.StartCasting(spellInfo, spellInfo.CastTime, Time.time + spellInfo.CastTime);
             }
 
             // Handle cooldown just for the demonstration

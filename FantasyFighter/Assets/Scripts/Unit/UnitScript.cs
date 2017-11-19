@@ -10,6 +10,7 @@ public class UnitScript : MonoBehaviour {
 
     public int selectedSpellIdx = 0;
     public Spell selectedSpell = null;
+    public Spell activeSpell = null;
 
     public ParticleSystem staffParticles;
 
@@ -34,7 +35,6 @@ public class UnitScript : MonoBehaviour {
 
     public bool isCharging = false;
     public float castProgress = 0f;
-    public bool spellReady = false;
 
     public void Awake() {
         currentHP = 100f;
@@ -56,18 +56,37 @@ public class UnitScript : MonoBehaviour {
         if (!isDead) {
             // Regenerate hp and mana
             GainHealth(regenHP);
-            GainMana(regenMana);
+            if (activeSpell == null || activeSpell.canRelease) {
+                GainMana(regenMana);
+            }
 
             // Handle player controls
             if (GameManager.GM.currentPlayer != owner) return;
 
             if (selectedSpell != null) {
-                if (Input.GetMouseButtonDown(0)) {
-                    ChargeSpell();
+
+                if (Input.GetMouseButton(0)) {
+                    if (activeSpell != null && activeSpell.canRelease) {
+                        CastSpellMouse(Input.mousePosition);
+                        SpellManager.SM.castBar.ClearSpell();
+                        activeSpell.SetActive(false);
+
+                        activeSpell = null;
+                        selectedSpell = null;
+                        return;
+                    }
                 }
 
-                if (Input.GetMouseButtonUp(0) && spellReady) {
-                    CastSpellMouse(Input.mousePosition);
+                if (Input.GetMouseButton(1)) {
+                    if (activeSpell == null) {
+                        ActivateSpell(selectedSpell);
+                        return;
+                    }
+                }
+
+                if (Input.GetMouseButtonUp(1)) {
+                    DisableSpell();
+                    return;
                 }
             }
         } else {
@@ -75,12 +94,27 @@ public class UnitScript : MonoBehaviour {
         }
     }
 
-    private void ChargeSpell() {
-        if (spellReady) return;
+    public void ActivateSpell(Spell spell) {
+        activeSpell = spell;
+        activeSpell.SetActive(true);
 
-        if (castProgress++ >= selectedSpell.Info.CastTime) {
-            spellReady = true;
-        }
+        SpellManager.SM.castBar.SetSpell(spell);
+        SpellManager.SM.castBar.Show();
+    }
+
+    public void DisableSpell() {
+        activeSpell.SetActive(false);
+        activeSpell = null;
+
+    }
+
+    public void ReleaseSpell() {
+        CastSpellMouse(Input.mousePosition);
+        SpellManager.SM.castBar.ClearSpell();
+        activeSpell.SetActive(false);
+
+        activeSpell = null;
+        selectedSpell = null;
     }
 
     private void CastSpellMouse(Vector3 mousePos) {
@@ -124,12 +158,20 @@ public class UnitScript : MonoBehaviour {
         if (playerFrom.name != owner.name) {
             currentHP -= damage;
 
-            // TODO: add updateGUI
-
             if (currentHP <= 0) {
                 Debug.Log("Killed by " + playerFrom.name);
                 StartCoroutine(DieRoutine());
             }
+        }
+    }
+
+    public bool DrainMana(float amount) {
+        if (amount > currentMana) {
+            return false;
+            // TODO: Notify player not enough mana
+        } else {
+            currentMana -= amount;
+            return true;
         }
     }
 

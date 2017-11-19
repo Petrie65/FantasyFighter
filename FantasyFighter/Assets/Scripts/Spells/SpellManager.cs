@@ -12,9 +12,7 @@ public class SpellManager : MonoBehaviour {
     public GameObject projectileMeteor;
     public GameObject projectileSnowball;
 
-    public UICastBar CastBar;
-
-    public Spell[] spells;
+    public CastBar castBar;
 
     [HideInInspector]
     public Sprite[] spellIcons;
@@ -24,9 +22,6 @@ public class SpellManager : MonoBehaviour {
 
     private GameObject projectile;
 
-    // private int worldSpellCount = 0;
-    // public GameObject[] worldSpells;
-
     public List<GameObject> worldSpells = new List<GameObject>();
 
 
@@ -34,7 +29,6 @@ public class SpellManager : MonoBehaviour {
         MakeThisTheOnlySpellManager();
         InitSpellIcons();
         InitDictionary();
-        InitSpells();
     }
 
     void MakeThisTheOnlySpellManager() {
@@ -46,15 +40,6 @@ public class SpellManager : MonoBehaviour {
                 Destroy(gameObject);
             }
         }
-    }
-
-    /// <summary>
-    /// Start is called on the frame when a script is enabled just before
-    /// any of the Update methods is called the first time.
-    /// </summary>
-    void Start()
-    {
-        CastBar.Show();
     }
 
     private void InitSpellIcons() {
@@ -79,10 +64,6 @@ public class SpellManager : MonoBehaviour {
         spellDescriptions.Add("Swap","Description needed");
     }
 
-    private void InitSpells() {
-
-    }
-
     public GameObject AddWorldSpell(GameObject worldSpell) {
         GameObject currentSpell = Instantiate(worldSpell);
 
@@ -96,17 +77,6 @@ public class SpellManager : MonoBehaviour {
         GameManager.GM.objectUIScript.RemoveSpellUI(worldSpell);
         worldSpells.Remove(worldSpell);
         Destroy(worldSpell);
-    }
-
-
-    public Spell getSpell(string spellName) {
-        for (int x = 0; x < spells.Length; x++) {
-            if (spells[x].Info.Name == spellName) {
-                return spells[x];
-            }
-        }
-        Debug.Log("spellName does not exist");
-        return null;
     }
 
     public void SelectSpell(int spellNum) {
@@ -129,6 +99,8 @@ public class SpellManager : MonoBehaviour {
         // Success
         unitScript.selectedSpell = spell;
         unitScript.selectedSpellIdx = spellNum;
+
+        castBar.SetSpell(spell);
 	}
 
 	public void CastSpellMouse(int ownerNum, Spell castSpell, Vector3 clickPos) {
@@ -163,14 +135,6 @@ public class SpellManager : MonoBehaviour {
 
         // SendMessage(string methodName, object value)
         mProjectile.SendMessage("setOwner", owner);
-    }
-
-    /// <summary>
-    /// Update is called every frame, if the MonoBehaviour is enabled.
-    /// </summary>
-    void Update()
-    {
-        
     }
 }
 

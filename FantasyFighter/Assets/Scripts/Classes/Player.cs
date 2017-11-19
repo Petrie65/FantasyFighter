@@ -20,4 +20,11 @@ public class Player {
             null, null, null, null, null
         };
     }
+
+    public void Update() {
+        foreach(Spell spell in spells) {
+            if (spell != null)
+                spell.Update();
+        }
+    }
 }
