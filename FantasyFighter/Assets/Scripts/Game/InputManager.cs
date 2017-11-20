@@ -9,21 +9,25 @@ public class InputManager : MonoBehaviour {
 	}
 
 	public void HandleKeyboardInput() {
-		if (Input.GetKeyDown(KeyCode.Alpha1)) {
-			SpellManager.SM.SelectSpell(0);
-		}
-		if (Input.GetKeyDown(KeyCode.Alpha2)) {
-			SpellManager.SM.SelectSpell(1);
-		}
-		if (Input.GetKeyDown(KeyCode.Alpha3)) {
-			SpellManager.SM.SelectSpell(2);
-		}
-		if (Input.GetKeyDown(KeyCode.Alpha4)) {
-			SpellManager.SM.SelectSpell(3);
-		}
-	}
+		if (Input.GetKeyDown(KeyCode.Alpha1)) { SelectSpell(0); }
+		if (Input.GetKeyDown(KeyCode.Alpha2)) { SelectSpell(1); }
+		if (Input.GetKeyDown(KeyCode.Alpha3)) { SelectSpell(2); }
+		if (Input.GetKeyDown(KeyCode.Alpha4)) { SelectSpell(3); }
+		if (Input.GetKeyDown(KeyCode.Alpha5)) { SelectSpell(4); }
+
+		if (Input.GetKeyDown(KeyCode.Escape)) { ClearSpells(); }
+	}  
 
 	public void ClickSpellButton(int idx) {
-			SpellManager.SM.SelectSpell(idx);
+		SelectSpell(idx);
+	}
+
+	private void SelectSpell(int spellIdx) {
+		SpellManager.SM.SelectSpell(spellIdx);
+	}
+
+	private void ClearSpells() {
+		Debug.Log("Esc pressed");
+		GameManager.GM.currentPlayer.unit.GetComponent<UnitScript>().UnselectSpells();
 	}
 }

@@ -40,5 +40,6 @@ public class PlayerManager : MonoBehaviour {
 
     public void SetCurrentPlayer(int playerNum) {
         SetCurrentPlayer(GameManager.GM.players[playerNum]);
+        GUIManager.GUI.castBar.HideInstant();
     }
 }

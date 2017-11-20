@@ -71,8 +71,7 @@ public class UnitScript : MonoBehaviour {
                         SpellManager.SM.castBar.ClearSpell();
                         activeSpell.SetActive(false);
 
-                        activeSpell = null;
-                        selectedSpell = null;
+                        UnselectSpells();
                         return;
                     }
                 }
@@ -113,8 +112,13 @@ public class UnitScript : MonoBehaviour {
         SpellManager.SM.castBar.ClearSpell();
         activeSpell.SetActive(false);
 
-        activeSpell = null;
+        UnselectSpells();
+    }
+
+    public void UnselectSpells() {
+        selectedSpellIdx = 0;
         selectedSpell = null;
+        // activeSpell = null; // this might break
     }
 
     private void CastSpellMouse(Vector3 mousePos) {

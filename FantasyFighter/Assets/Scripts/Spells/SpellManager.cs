@@ -7,7 +7,7 @@ using DuloGames.UI;
 
 public class SpellManager : MonoBehaviour {
     public static SpellManager SM;
-	private string selectedSpell;
+	// private string selectedSpell;
 
     public GameObject projectileMeteor;
     public GameObject projectileSnowball;
@@ -23,7 +23,6 @@ public class SpellManager : MonoBehaviour {
     private GameObject projectile;
 
     public List<GameObject> worldSpells = new List<GameObject>();
-
 
     private void Awake() {
         MakeThisTheOnlySpellManager();
@@ -79,21 +78,21 @@ public class SpellManager : MonoBehaviour {
         Destroy(worldSpell);
     }
 
-    public void SelectSpell(int spellNum) {
+    public bool SelectSpell(int spellNum) {
 		var spell = GameManager.GM.currentPlayer.spells[spellNum];
 		if (spell == null) {
             Debug.Log("No spell selected");
-            return;
+            return false;
         }
 
         UnitScript unitScript =  GameManager.GM.currentPlayer.unit.GetComponent<UnitScript>();
         if (unitScript.isDead) {
             Debug.Log("Unit is dead");
-            return;
+            return false;
         }
         if (unitScript.currentMana < spell.Info.PowerCost) {
             Debug.Log("Not enough mana");
-            return;
+            return false;
         }
         
         // Success
@@ -101,6 +100,12 @@ public class SpellManager : MonoBehaviour {
         unitScript.selectedSpellIdx = spellNum;
 
         castBar.SetSpell(spell);
+        if (spell.channelCounter > 0f) {
+            castBar.Show();
+        } else {
+            castBar.HideInstant();
+        }
+        return true;
 	}
 
 	public void CastSpellMouse(int ownerNum, Spell castSpell, Vector3 clickPos) {

@@ -7,6 +7,7 @@ using DuloGames.UI;
 public class GUIManager : MonoBehaviour {
     public static GUIManager GUI;
     public GameObject[] spellButtons;
+    public CanvasGroup[] spellHighlight;
 
     public Texture2D cursorTexture;
 
@@ -28,22 +29,22 @@ public class GUIManager : MonoBehaviour {
     private UIProgressBar hudMana;
     private UIProgressBar hudStamina;
 
-
     private Player currentPlayer;
+    private UnitScript unitScript;
 
     private void Awake() {
-       MakeThisOnlyGUIManager();
- 
-       hudHP = playerHP.GetComponent<UIProgressBar>();
-       hudMana = playerMana.GetComponent<UIProgressBar>();
-       hudStamina = playerStamina.GetComponent<UIProgressBar>();
+        MakeThisOnlyGUIManager();
 
-       hpText = hpTextObject.GetComponent<Text>();
-       manaText = manaTextObject.GetComponent<Text>();
+        hudHP = playerHP.GetComponent<UIProgressBar>();
+        hudMana = playerMana.GetComponent<UIProgressBar>();
+        hudStamina = playerStamina.GetComponent<UIProgressBar>();   
+        hpText = hpTextObject.GetComponent<Text>();
+        manaText = manaTextObject.GetComponent<Text>(); 
     }
 
     private void Start() {
-       this.currentPlayer = GameManager.GM.currentPlayer;
+        this.currentPlayer = GameManager.GM.currentPlayer;
+        unitScript = this.currentPlayer.unit.GetComponent<UnitScript>();
 
        Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.ForceSoftware);
     }
@@ -61,6 +62,7 @@ public class GUIManager : MonoBehaviour {
 
     public void SetCurrentPlayer(Player player) {
         this.currentPlayer = player;
+        unitScript = player.unit.GetComponent<UnitScript>();
     }
 
     void Update() {
@@ -77,9 +79,16 @@ public class GUIManager : MonoBehaviour {
                 spellButtons[x].GetComponent<UISpellSlot>().Unassign();
             }
         }
-        
+
+        if (unitScript == null) { return; }
+
+        if (unitScript.selectedSpell != null) {
+            HighlightButton(unitScript.selectedSpellIdx);
+        } else {
+            HighlightOff();
+        }
+
         // HUD
-        UnitScript unitScript = player.unit.GetComponent<UnitScript>();
         hudHP.fillAmount =  unitScript.currentHP / unitScript.maxHP;
         hpText.text = Mathf.Floor(unitScript.currentHP).ToString() + " / " + Mathf.Floor(unitScript.maxHP).ToString();
 
@@ -93,12 +102,18 @@ public class GUIManager : MonoBehaviour {
             castBar.SetChannelAmount(channel);
             float charge = unitScript.selectedSpell.chargeCounter / unitScript.selectedSpell.Info.ChargeTo;
             castBar.SetChargeAmount(charge);
-
-
         }
     }
 
-    public void UpdateSpells() {
-        
+    public void HighlightButton(int btnIndex) {
+        for (int i = 0; i < spellHighlight.Length; i++) {
+            spellHighlight[i].alpha = (i == btnIndex) ? 1 : 0;
+        }
+    }
+
+    public void HighlightOff() {
+        for (int i = 0; i < spellHighlight.Length; i++) {
+            spellHighlight[i].alpha = 0;
+        }
     }
 }

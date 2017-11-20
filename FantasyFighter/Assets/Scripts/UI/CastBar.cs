@@ -24,8 +24,6 @@ public class CastBar : MonoBehaviour {
 		[SerializeField] private Transition m_InTransition = Transition.Instant;
 		[SerializeField] private float m_InTransitionDuration = 0.1f;
 
-        [SerializeField] private Transition m_OutTransition = Transition.Fade;
-		[SerializeField] private float m_OutTransitionDuration = 0.1f;
 		[SerializeField] private float m_HideDelay = 0.3f;
 
 		public CanvasGroup m_GlowFrame, m_CanvasGroup;
@@ -64,6 +62,11 @@ public class CastBar : MonoBehaviour {
 		public void Hide() {
 			if (this.m_CanvasGroup == null) return;
 			this.m_CanvasGroup.alpha -= 0.2f;
+		}
+
+		public void HideInstant() {
+			if (this.m_CanvasGroup == null) return;
+			this.m_CanvasGroup.alpha = 0f;
 		}
 
 		public void StartAlphaTween(float targetAlpha, float duration, bool ignoreTimeScale) {

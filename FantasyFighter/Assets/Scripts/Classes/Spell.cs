@@ -70,6 +70,7 @@ public class Spell {
                 channelCounter = Info.ChannelTime * 0.75f;
                 
                 Active = false;
+                unitScript.UnselectSpells();
                 Debug.Log("Fail");
                 return;
             }
