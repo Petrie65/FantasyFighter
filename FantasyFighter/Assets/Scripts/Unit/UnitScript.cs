@@ -104,7 +104,6 @@ public class UnitScript : MonoBehaviour {
     public void DisableSpell() {
         activeSpell.SetActive(false);
         activeSpell = null;
-
     }
 
     public void ReleaseSpell() {
@@ -118,7 +117,8 @@ public class UnitScript : MonoBehaviour {
     public void UnselectSpells() {
         selectedSpellIdx = 0;
         selectedSpell = null;
-        // activeSpell = null; // this might break
+        // SpellManager.SM.castBar.Hide();
+        activeSpell = null; // this might break
     }
 
     private void CastSpellMouse(Vector3 mousePos) {

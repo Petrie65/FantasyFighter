@@ -102,6 +102,8 @@ public class GUIManager : MonoBehaviour {
             castBar.SetChannelAmount(channel);
             float charge = unitScript.selectedSpell.chargeCounter / unitScript.selectedSpell.Info.ChargeTo;
             castBar.SetChargeAmount(charge);
+        } else {
+            castBar.Hide();
         }
     }
 

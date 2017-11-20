@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 114354960414548848}
   - component: {fileID: 222878670123717310}
   - component: {fileID: 95020240768768762}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: spellUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
