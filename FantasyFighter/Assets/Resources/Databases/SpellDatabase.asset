@@ -53,7 +53,8 @@ MonoBehaviour:
     ChannelMove: 1
     worldObject: {fileID: 1795107053668062, guid: 60f91825d3987954188a87270d33e09b,
       type: 2}
-    spellObject: {fileID: 0}
+    spellObject: {fileID: 1118290831946194, guid: 907632385d9690040b9beeda167387aa,
+      type: 2}
     Flags: 0
   - ID: 2
     Name: Glacial Blast

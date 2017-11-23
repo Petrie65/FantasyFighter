@@ -22,7 +22,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_2_0;UNITY_2017_2;UNITY_2017;PLATFORM_ARCH_64;UNITY_64;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;CROSS_PLATFORM_INPUT</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_2_0;UNITY_2017_2;UNITY_2017;PLATFORM_ARCH_64;UNITY_64;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_GRID;ENABLE_TILEMAP;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_DIRECTOR;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_TIMELINE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;ENABLE_SPRITE_MASKING;INCLUDE_DYNAMIC_GI;INCLUDE_GI;ENABLE_MONO_BDWGC;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_VIDEO;ENABLE_RMGUI;ENABLE_PACKMAN;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_STYLE_SHEETS;PLATFORM_STANDALONE_WIN;PLATFORM_STANDALONE;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_AR;ENABLE_SPATIALTRACKING;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;CROSS_PLATFORM_INPUT;ODIN_INSPECTOR;AQUAS_PRESENT</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -44,13 +44,27 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed\UnityEngine.dll</HintPath>
+      <HintPath>D:/Program Files/Unity/Editor/Data/Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\AQUAS\Scripts\AQUAS_BubbleBehaviour.cs" />
+     <Compile Include="Assets\AQUAS\Scripts\AQUAS_BubbleMorph.cs" />
+     <Compile Include="Assets\AQUAS\Scripts\AQUAS_Buoyancy.cs" />
+     <Compile Include="Assets\AQUAS\Scripts\AQUAS_Camera.cs" />
+     <Compile Include="Assets\AQUAS\Scripts\AQUAS_Caustics.cs" />
+     <Compile Include="Assets\AQUAS\Scripts\AQUAS_Gaia.cs" />
+     <Compile Include="Assets\AQUAS\Scripts\AQUAS_LensEffects.cs" />
+     <Compile Include="Assets\AQUAS\Scripts\AQUAS_Look.cs" />
+     <Compile Include="Assets\AQUAS\Scripts\AQUAS_Parameters.cs" />
+     <Compile Include="Assets\AQUAS\Scripts\AQUAS_Reflection.cs" />
+     <Compile Include="Assets\AQUAS\Scripts\AQUAS_RenderQueueEditor.cs" />
+     <Compile Include="Assets\AQUAS\Scripts\AQUAS_Screenshotter.cs" />
+     <Compile Include="Assets\AQUAS\Scripts\AQUAS_SmallBubbleBehaviour.cs" />
+     <Compile Include="Assets\AQUAS\Scripts\AQUAS_Walk.cs" />
      <Compile Include="Assets\Import\1.Store\100 Best Effect Pack\Script\csAnimationPlay.cs" />
      <Compile Include="Assets\Import\1.Store\100 Best Effect Pack\Script\csLightIntancityControl.cs" />
      <Compile Include="Assets\Import\1.Store\100 Best Effect Pack\Script\csPrefebMake.cs" />
@@ -60,6 +74,48 @@
      <Compile Include="Assets\Import\1.Store\MagicArsenal\Effects\Scripts\MagicLightFade.cs" />
      <Compile Include="Assets\Import\1.Store\MagicArsenal\Effects\Scripts\MagicLightFlicker.cs" />
      <Compile Include="Assets\Import\1.Store\MagicArsenal\Effects\Scripts\MagicRotation.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scene\RFX4_DemoGUI.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scene\RFX4_FPS.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scene\RFX4_RealtimeReflection.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\Curves\RFX4_AudioCurves.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\Curves\RFX4_LightCurves.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\Curves\RFX4_PhysicsForceCurves.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\Curves\RFX4_ScaleCurves.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\Curves\RFX4_ShaderColorGradient.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\Curves\RFX4_ShaderFloatCurve.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\Curves\RFX4_ShaderProperties.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\Curves\RFX4_WindCurves.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\EffectSettings\RFX4_EffectSettingColor.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\EffectSettings\RFX4_EffectSettingPhysxForce.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\EffectSettings\RFX4_EffectSettingProjectile.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\EffectSettings\RFX4_EffectSettingVisible.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\ParticleSysem\RFX4_CollisionPropertyDeactiavtion.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\ParticleSysem\RFX4_ParticleCollisionHandler.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\ParticleSysem\RFX4_ParticleLight.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\ParticleSysem\RFX4_ParticleTrail.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\ParticleSysem\RFX4_Turbulence.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_CameraShake.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_ColorHelper.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_CopyPosition.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_DeactivateByTime.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_DeactivateRigidbodyByTime.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_DemoReactivation.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_DistortionAndBloom.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_EffectEvent.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_MaterialQueue.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_OnEnableResetTransform.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_PhysXSetImpulse.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_RaycastCollision.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_ReplaceMaterialByTime.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_ReplaceModelOnCollision.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_RotateAround.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_StartDelay.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_TextureShaderProperties.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_TornadoParticles.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_TrailRenderer.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_TransformMotion.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_UVAnimation.cs" />
+     <Compile Include="Assets\Import\1.Store\Realistic Effects Pack v4\Scripts\RFX4_UVScroll.cs" />
      <Compile Include="Assets\Import\1.Store\RPG and MMO UI 6\Scripts\Attributes\BitMaskAttribute.cs" />
      <Compile Include="Assets\Import\1.Store\RPG and MMO UI 6\Scripts\Attributes\ResourcePathAttribute.cs" />
      <Compile Include="Assets\Import\1.Store\RPG and MMO UI 6\Scripts\Color Scheme\ColorScheme.cs" />
@@ -196,6 +252,52 @@
      <Compile Include="Assets\Import\1.Store\RPG and MMO UI 6\Scripts\UI\Window\UIWindow.cs" />
      <Compile Include="Assets\Import\1.Store\RPG and MMO UI 6\Scripts\UI\Window\UIWindowID.cs" />
      <Compile Include="Assets\Import\1.Store\RPG and MMO UI 6\Scripts\UI\Window\UIWindowManager.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Demos\Wallpapers\Gravity Clock\Scripts\BillboardCameraPlaneUVFX.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Demos\Wallpapers\Gravity Clock\Scripts\GravityClockInteractivityUVFX.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\_Demo\DemoManager.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\_Demo\FPSDisplay.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\_Demo\FPSTest.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\_Demo\LoopingParticleSystemsManager.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\_Demo\MouseFollow.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\_Demo\MouseRotateCamera.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\_Demo\OneshotParticleSystemsManager.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\_Demo\ParticleManager.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\AnimatedLight.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\Billboard.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\CameraShake.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\DestroyAfterTime.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\DestroyOnParticlesDead.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\DestroyOnTrailsDestroyed.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\IgnoreTimeScale.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\ParticleSystems.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\ParticleSystemsSimulationSpeed.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\PerlinNoise.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\RendererSortingOrder.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\Rotator.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\TrailRenderers.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\_Common\Scripts\TransformNoise.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Particle Systems\Ultimate VFX\2 - Expansions\XP - TITLES\Scripts\DemoManager_XPTitles.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Scripting\Effects\_Common\CreateLUT.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Scripting\Effects\Particle Affectors\Scripts\AttractionParticleAffector.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Scripting\Effects\Particle Affectors\Scripts\MT (EXPERIMENTAL)\ParticleAffectorMT.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Scripting\Effects\Particle Affectors\Scripts\MT (EXPERIMENTAL)\TurbulenceParticleAffectorMT.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Scripting\Effects\Particle Affectors\Scripts\Noise.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Scripting\Effects\Particle Affectors\Scripts\ParticleAffector.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Scripting\Effects\Particle Affectors\Scripts\TurbulenceParticleAffector.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Scripting\Effects\Particle Affectors\Scripts\VortexParticleAffector.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Scripting\Effects\Particle Flocking\ParticleFlocking.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Scripting\Effects\Particle Force Fields\Scripts (DEMO ONLY)\ParticleForceFieldsDemo.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Scripting\Effects\Particle Force Fields\Scripts (DEMO ONLY)\ParticleForceFieldsDemo_CameraRig.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Scripting\Effects\Particle Force Fields\Scripts\AttractionParticleForceField.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Scripting\Effects\Particle Force Fields\Scripts\Noise2.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Scripting\Effects\Particle Force Fields\Scripts\ParticleForceField.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Scripting\Effects\Particle Force Fields\Scripts\TurbulenceParticleForceField.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Scripting\Effects\Particle Force Fields\Scripts\VortexParticleForceField.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Scripting\Effects\Particle Lights\Scripts\ParticleLights.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Scripting\Effects\Particle Plexus\Scripts (DEMO ONLY)\ParticlePlexusDemo_CameraRig.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Scripting\Effects\Particle Plexus\Scripts\ParticlePlexus.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\_Common\IEBase.cs" />
+     <Compile Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Image Effects\Resources\Sharpen\Sharpen.cs" />
      <Compile Include="Assets\Import\PyroParticles\Prefab\Script\FireBaseScript.cs" />
      <Compile Include="Assets\Import\PyroParticles\Prefab\Script\FireCollisionForwardScript.cs" />
      <Compile Include="Assets\Import\PyroParticles\Prefab\Script\FireConstantBaseScript.cs" />
@@ -203,6 +305,51 @@
      <Compile Include="Assets\Import\PyroParticles\Prefab\Script\FireProjectileScript.cs" />
      <Compile Include="Assets\Import\PyroParticles\Prefab\Script\MeteorSwarmScript.cs" />
      <Compile Include="Assets\Import\PyroParticles\Prefab\Script\SingleLineAttribute.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Attributes\GetSetAttribute.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Attributes\MinAttribute.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballAttribute.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Attributes\TrackballGroupAttribute.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\AmbientOcclusionComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\BloomComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\BuiltinDebugViewsComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\ChromaticAberrationComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\ColorGradingComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\DepthOfFieldComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\DitheringComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\EyeAdaptationComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\FogComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\FxaaComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\GrainComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\MotionBlurComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\ScreenSpaceReflectionComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\TaaComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\UserLutComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Components\VignetteComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\AmbientOcclusionModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\AntialiasingModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\BloomModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\BuiltinDebugViewsModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\ChromaticAberrationModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\ColorGradingModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\DepthOfFieldModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\DitheringModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\EyeAdaptationModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\FogModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\GrainModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\MotionBlurModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\ScreenSpaceReflectionModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\UserLutModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Models\VignetteModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingBehaviour.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingComponent.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingContext.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingModel.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\PostProcessingProfile.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Utils\ColorGradingCurve.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Utils\GraphicsUtils.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Utils\MaterialFactory.cs" />
+     <Compile Include="Assets\PostProcessing\Runtime\Utils\RenderTextureFactory.cs" />
+     <Compile Include="Assets\PostProcessing\Utilities\CustomMotionTexture\ExampleWheelController.cs" />
      <Compile Include="Assets\Scripts\Classes\Player.cs" />
      <Compile Include="Assets\Scripts\Classes\Spell.cs" />
      <Compile Include="Assets\Scripts\Game\CameraScript.cs" />
@@ -210,145 +357,300 @@
      <Compile Include="Assets\Scripts\Game\GameManager.cs" />
      <Compile Include="Assets\Scripts\Game\InputManager.cs" />
      <Compile Include="Assets\Scripts\Game\PlayerManager.cs" />
-     <Compile Include="Assets\Scripts\Spells\ProjectileMeteor.cs" />
-     <Compile Include="Assets\Scripts\Spells\ProjectileSnowball.cs" />
-     <Compile Include="Assets\Scripts\Spells\SpellManager.cs" />
-     <Compile Include="Assets\Scripts\Spells\SpellSpawn.cs" />
-     <Compile Include="Assets\Scripts\Spells\WorldSpell.cs" />
+     <Compile Include="Assets\Scripts\Spells\CastSpell.cs" />
+     <Compile Include="Assets\Scripts\Spells\Manage\SpellManager.cs" />
+     <Compile Include="Assets\Scripts\Spells\Manage\SpellSpawn.cs" />
+     <Compile Include="Assets\Scripts\Spells\Manage\WorldSpell.cs" />
+     <Compile Include="Assets\Scripts\Spells\SpellFireNova.cs" />
+     <Compile Include="Assets\Scripts\Spells\SpellGlacialBlast.cs" />
+     <Compile Include="Assets\Scripts\Spells\SpellMeteor.cs" />
      <Compile Include="Assets\Scripts\UI\CastBar.cs" />
      <Compile Include="Assets\Scripts\UI\GUIManager.cs" />
      <Compile Include="Assets\Scripts\UI\ObjectUI.cs" />
+     <Compile Include="Assets\Scripts\Unit\Buff.cs" />
      <Compile Include="Assets\Scripts\Unit\SpellInventory.cs" />
      <Compile Include="Assets\Scripts\Unit\UnitScript.cs" />
      <Compile Include="Assets\Scripts\Unit\WizardMovement.cs" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
+     <None Include="Assets\AQUAS\Shaders\Water\Desktop&amp;Web\SingleTextured.shader" />
      <None Include="Assets\Standard Assets\Effects\GlassRefraction\Shaders\GlassStainedBumpDistort.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendOneOne.shader" />
+     <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.xml" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderRGB.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\No Fog\NoFog-Add.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
      <None Include="Assets\Import\1.Store\RPG and MMO UI 6\Readme.txt" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\Distortion\TextureDistortion-Alpha Blended.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\RFX4_CutoutBorderMobile.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Portal\RFX4_PortalSky.shader" />
+     <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.xml" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Fog.shader" />
+     <None Include="Assets\AQUAS\Shaders\Water\Desktop&amp;Web\2SidedDoubleTextured.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
+     <None Include="Assets\AQUAS\Shaders\Water\Desktop&amp;Web\2SidedTripleTextured.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\LutGen.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurves.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
      <None Include="Assets\Import\1.Store\RPG and MMO UI 6\Shaders\UITribalEffect.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\RFX4_Tornado.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\Distance Fade\DistanceFade-AnimBlendAlpha.shader" />
+     <None Include="Assets\AQUAS\Shaders\Water\Desktop&amp;Web\DoubleTextured.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\NFAA.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\RFX4_DepthMask.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\TiltShiftHdrLensBlur.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\RFX4_DistortionParticlesMobile.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\Intersection Highlight\IntersectionHighlight-Add.shader" />
+     <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.xml" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\VignetteShader.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
+     <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.Editor.xml" />
      <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularSmooth.shader" />
      <None Include="Assets\Standard Assets\Effects\Projectors\Guidelines.txt" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\Anim Blend\AnimBlend-Add.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
+     <None Include="Assets\AQUAS\Shaders\Water\Mobile\FoamyBiColored.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Decal\RFX4_DecalDistortMaskMulMobile.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\MotionBlur.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBloom.shader" />
+     <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\ACES.cginc" />
+     <None Include="Assets\AQUAS\Shaders\Caustics.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\MinMaxReduction.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\SSAA.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\RFX4_MobileDiffuse.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\Distortion\Distortion-Add.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\RadialBlur.shader" />
+     <None Include="Assets\AQUAS\Shaders\Water\Desktop&amp;Web\2SidedSingleTextured.shader" />
      <None Include="Assets\Import\1.Store\MagicArsenal\MagicArsenal - ReadMe.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldDX11.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Decal\RFX4_DecalMask.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ContrastComposite.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset3.shader" />
+     <None Include="Assets\AQUAS\Shaders\Water\Mobile\BiColored.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\FisheyeShader.shader" />
+     <None Include="Assets\AQUAS\Shaders\Bubble.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Uber.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\_DOCS\README - Particle Twister.txt" />
      <None Include="Assets\Import\PyroParticles\Prefab\Materials\AdditiveTintable.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Decal\RFX4_DecalDistortMaskMobile.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Apply.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\HSL\HSL-Alpha.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\Cutout\AlphaCutoff-Add.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Blit.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\frag_ao.cginc" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\No Fog\NoFog-Alpha.shader" />
      <None Include="Assets\Import\1.Store\Fantasy-Environment\Materials\StandardDoubleSided.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\Mask\Mask-Alpha.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\Distance Fade\DistanceFade-Add.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
+     <None Include="Assets\AQUAS\Shaders\Water\Desktop&amp;Web\River.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\FXAA3.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\Distortion\TextureDistortion-Add.shader" />
+     <None Include="Assets\Plugins\Sirenix\Readme.txt" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Portal\RFX4_PortalMask.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Image Effects\Resources\Sharpen\Sharpen.shader" />
      <None Include="Assets\Import\1.Store\100 Best Effect Pack\ParticleEffect_Shader\Alpha Blended\Shader_NormalAlphaBlended.shader" />
+     <None Include="Assets\AQUAS\Shaders\Water\Mobile\BiColoredPseudoOpaque.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\_DOCS\README - Action VFX.txt" />
+     <None Include="Assets\AQUAS\Shaders\Camera Effects\WetLens.shader" />
+     <None Include="Assets\AQUAS\Shaders\Water\Mobile\OneColoredOpaque.shader" />
      <None Include="Assets\Import\1.Store\RPG and MMO UI 6\Shaders\UIMaskedBlur.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Bloom\Resources\RFX4_Bloom_Inc.cginc" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonBasicOutline.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfField34.shader" />
+     <None Include="Assets\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\RFX4_DistortionParticlesAdd.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Water\RFX4_WaterSplash.shader" />
+     <None Include="Assets\AQUAS\Shaders\Water\Mobile\FoamyOneColored.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\_DOCS\README - Ultimate VFX.txt" />
      <None Include="Assets\Import\1.Store\100 Best Effect Pack\ParticleEffect_Shader\Additive\Shader_AdvancedAdditive.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Readme.txt" />
+     <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.Config.xml" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SSAOShader.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ConvertDepth.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurvesSimple.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseEffectShaderYUV.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Common.cginc" />
+     <None Include="Assets\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Decal\RFX4_DecalDistortMaskMul.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CreaseApply.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\RFX4_IceMobile.shader" />
      <None Include="Assets\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\RFX4_CutoutBorder.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Decal\RFX4_IceDecalMobile.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\UI\Trackball.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Bloom\Resources\RFX4_Bloom.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ChromaticAberrationShader.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Decal\RFX4_ProjectorBlended.shader" />
+     <None Include="Assets\AQUAS\Readme.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Import\PyroParticles\Readme.txt" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\GlobalFog.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLitOutline.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Luminance.shader" />
      <None Include="Assets\Standard Assets\Effects\ToonShading\Shaders\ToonLit.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Decal\RFX4_IceDecal.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\RFX4_Lava.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.cginc" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionSelective.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\TAA.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\Bokeh34.shader" />
+     <None Include="Assets\AQUAS\Shaders\Water\Mobile\OneColored.shader" />
      <None Include="Assets\Import\UETools\Magic_Particle_Effects\Readme.txt" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\EyeHistogram.compute" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Portal\RFX4_PortalStandard.shader" />
      <None Include="Assets\Import\1.Store\100 Best Effect Pack\ParticleEffect_Shader\Additive\Shader_NormalAdditive.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Water\RFX4_WaterSplashMobile.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\_DOCS\README - Storm VFX.txt" />
      <None Include="Assets\Import\1.Store\RPG and MMO UI 6\Changelog.txt" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\TAA.cginc" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlurDX11.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Decal\RFX4_ProjectorBlendedMobile.shader" />
+     <None Include="Assets\Plugins\Sirenix\Assemblies\link.xml" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\SeparableBlurPlus.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\Intersection Highlight\IntersectionHighlight-Alpha.shader" />
      <None Include="Assets\Import\1.Store\RPG and MMO UI 6\Shaders\UIOverlay.shader" />
      <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorLight.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MultiPassHollywoodFlares.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.cginc" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\Cutout\AlphaCutoff-Alpha.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlurEffectConeTaps.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\RFX4_ShaderExtension.cginc" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\HSL\HSL-Add.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\GrainGen.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\_DOCS\README - Advanced Particle Scaler.txt" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\FXAA.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrainDX11.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Water\RFX4_WaterTurbulence.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\DiskKernels.cginc" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\_DOCS\README - Particle Plexus.txt" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.cginc" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Bloom\Resources\RFX4_BloomAdditive.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableBlur.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\MotionBlurClear.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\Add Soft\AddSoft-Mult.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionEffect.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\GrayscaleEffect.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SepiaToneEffect.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\TwirlEffect.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\VortexEffect.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\Distortion\Distortion-Alpha.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Contrast Stretch\Adaptation.shader" />
      <None Include="Assets\Import\1.Store\100 Best Effect Pack\ParticleEffect_Shader\Alpha Blended\Shader_AdvancedAlphaBlended.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\RFX4_Particle.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\NoiseAndGrain.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\_DOCS\README - Particle Force Fields.txt" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Decal\RFX4_DecalDistortMask.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Editor Extensions\Utilities\Multi-Asset Renamer\README.txt" />
      <None Include="Assets\Standard Assets\Effects\Projectors\Shaders\ProjectorMultiply.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\VignettingShader.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\Tonemapper.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Water\RFX4_WaterSplashTexMobile.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA2.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Portal\NoStencilTransperentDiffuse.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Decal\RFX4_DecalMaskMobile.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrection3DLut.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\EdgeDetectNormals.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Portal\RFX4_TranperentDiffuse.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\PrepareSunShaftsBlur.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\Blend.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\BlendModesOverlay.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\Distance Fade\DistanceFade-AnimBlendAdd.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\RFX4_Lightning.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
+     <None Include="Assets\AQUAS\Shaders\Camera Effects\UnderWaterLens.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\RFX4_DistortionParticles.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\Distance Fade\DistanceFade-Alpha.shader" />
      <None Include="Assets\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
+     <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\Water\RFX4_WaterSplashTex.shader" />
+     <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
+     <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Attributes.xml" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\RFX4_LightningMobile.shader" />
+     <None Include="Assets\Import\1.Store\Ultimate VFX (v3.1)\Shaders\Particles\Unmultiply\Unmultiply-AlphaFromLuminance.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAAPreset2.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
+     <None Include="Assets\Import\1.Store\Realistic Effects Pack v4\Shaders\RFX4_Ice.shader" />
      <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TestRunner">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Timeline">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+ <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UIAutomation">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
+ <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.GoogleAudioSpatializer">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+ <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.SpatialTracking">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+ <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Users/Petrie/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
+ <HintPath>C:/Users/Petrie van Zyl/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Purchasing">
- <HintPath>C:/Users/Petrie/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
+ <HintPath>C:/Users/Petrie van Zyl/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
+ </Reference>
+ <Reference Include="Sirenix.OdinInspector.Attributes">
+ <HintPath>D:/Documents/Documents/Unity/Fantasy Fighter/FantasyFighter/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
+ </Reference>
+ <Reference Include="Sirenix.Utilities.Editor">
+ <HintPath>D:/Documents/Documents/Unity/Fantasy Fighter/FantasyFighter/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Sirenix.Serialization">
+ <HintPath>D:/Documents/Documents/Unity/Fantasy Fighter/FantasyFighter/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
+ </Reference>
+ <Reference Include="Sirenix.Serialization.Config">
+ <HintPath>D:/Documents/Documents/Unity/Fantasy Fighter/FantasyFighter/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
+ </Reference>
+ <Reference Include="Sirenix.OdinInspector.Editor">
+ <HintPath>D:/Documents/Documents/Unity/Fantasy Fighter/FantasyFighter/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
+ </Reference>
+ <Reference Include="Sirenix.Utilities">
+ <HintPath>D:/Documents/Documents/Unity/Fantasy Fighter/FantasyFighter/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -61,7 +61,7 @@ public class CastBar : MonoBehaviour {
 		
 		public void Hide() {
 			if (this.m_CanvasGroup == null) return;
-			this.m_CanvasGroup.alpha -= 0.2f;
+		this.m_CanvasGroup.alpha -= 0.2f;
 		}
 
 		public void HideInstant() {

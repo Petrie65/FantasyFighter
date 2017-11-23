@@ -89,7 +89,7 @@ public class ObjectUI : MonoBehaviour {
 
         Vector3 spellPos;
         foreach (GameObject worldSpell in worldSpells){
-            GameObject spellUI = worldSpell.transform.GetChild(0).GetComponent<WorldSpell>().spellUI;
+            GameObject spellUI = worldSpell.GetComponent<WorldSpell>().spellUI;
             
             // Position UI object on unit
             spellPos = Camera.main.WorldToScreenPoint(worldSpell.transform.position);
@@ -99,7 +99,7 @@ public class ObjectUI : MonoBehaviour {
     }
 
     public void AddSpellUI(GameObject worldSpell) {
-        WorldSpell spellScript = worldSpell.transform.GetChild(0).GetComponent<WorldSpell>();
+        WorldSpell spellScript = worldSpell.GetComponent<WorldSpell>();
 
         GameObject spellUI = Instantiate(this.spellUI, this.transform);
         spellUI.transform.GetChild(0).gameObject.GetComponent<Text>().text = spellScript.spellName;
@@ -108,7 +108,6 @@ public class ObjectUI : MonoBehaviour {
         SpellUIList.Add(spellUI);
 
         // Set the Gameobject's script to have a reference to the UI object
-        // WorldSpell is ObjectMeteor, we need the child
         spellScript.spellUI = spellUI;
     }
 
