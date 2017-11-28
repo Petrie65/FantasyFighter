@@ -77,6 +77,10 @@ public class GameManager : MonoBehaviour {
     // }
 
     public bool acquireSpell(Player player, string spellName) {
+
+        // players[0].unit.GetComponent<UnitScript>().AddBuff(new Burning());
+        players[0].unit.GetComponent<UnitScript>().AddBuff<Burning>(200f, 1);
+
         UISpellInfo spell = UISpellDatabase.Instance.GetByName(spellName);
         if (spell == null) {
             Debug.Log("Spell doesnt exist");

@@ -1,6 +1,6 @@
 namespace DuloGames.UI.Tweens
 {
-	internal interface ITweenValue
+	public interface ITweenValue
 	{
 		void TweenValue(float floatPercentage);
 		bool ignoreTimeScale { get; }

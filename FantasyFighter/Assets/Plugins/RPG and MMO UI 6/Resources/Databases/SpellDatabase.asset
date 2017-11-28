@@ -17,82 +17,124 @@ MonoBehaviour:
     Icon: {fileID: 21300000, guid: b8f0818508c32a44d829460c6eaf7777, type: 3}
     Description: Quisque vehicula et dui at volutpat. Quisque convallis porta bibendum.
       Duis imperdiet mi vitae dapibus euismod.
-    Range: 1
-    Cooldown: 3
-    CastTime: 1
-    PowerCost: 1
-    Damage: 0
-    HoldTime: 0
-    CastType: 
+    ChannelColor: {r: 0, g: 0, b: 0, a: 0}
+    ChargeColor: {r: 0, g: 0, b: 0, a: 0}
     Amount: 0
+    Range: 1
+    Damage: 0
+    Cooldown: 3
+    ChannelMove: 0
+    ChannelTime: 0
+    PowerCost: 1
+    ChargeTo: 0
+    HoldTo: 0
+    DecayRate: 0
+    ShouldFail: 0
+    worldObject: {fileID: 0}
+    spellObject: {fileID: 0}
     Flags: 4
   - ID: 2
     Name: Death Kiss
     Icon: {fileID: 21300000, guid: 241de5aedb1007c4c83ee1d38133dea3, type: 3}
     Description: Quisque vehicula et dui at volutpat. Quisque convallis porta bibendum.
       Duis imperdiet mi vitae dapibus euismod.
-    Range: 40
-    Cooldown: 30
-    CastTime: 0
-    PowerCost: 10
-    Damage: 0
-    HoldTime: 0
-    CastType: 
+    ChannelColor: {r: 0, g: 0, b: 0, a: 0}
+    ChargeColor: {r: 0, g: 0, b: 0, a: 0}
     Amount: 0
+    Range: 40
+    Damage: 0
+    Cooldown: 30
+    ChannelMove: 0
+    ChannelTime: 0
+    PowerCost: 10
+    ChargeTo: 0
+    HoldTo: 0
+    DecayRate: 0
+    ShouldFail: 0
+    worldObject: {fileID: 0}
+    spellObject: {fileID: 0}
     Flags: 6
   - ID: 3
     Name: Healing Leafs
     Icon: {fileID: 21300000, guid: 735deb1d753f1b340833443686deb837, type: 3}
     Description: Quisque vehicula et dui at volutpat. Quisque convallis porta bibendum.
       Duis imperdiet mi vitae dapibus euismod.
-    Range: 0
-    Cooldown: 120
-    CastTime: 3
-    PowerCost: 1000
-    Damage: 0
-    HoldTime: 0
-    CastType: 
+    ChannelColor: {r: 0, g: 0, b: 0, a: 0}
+    ChargeColor: {r: 0, g: 0, b: 0, a: 0}
     Amount: 0
+    Range: 0
+    Damage: 0
+    Cooldown: 100
+    ChannelMove: 0
+    ChannelTime: 0
+    PowerCost: 10
+    ChargeTo: 0
+    HoldTo: 0
+    DecayRate: 0
+    ShouldFail: 0
+    worldObject: {fileID: 0}
+    spellObject: {fileID: 0}
     Flags: 0
   - ID: 4
     Name: Pyroblast
     Icon: {fileID: 21300000, guid: ce01a41d7f5c4cd418c9868e474ae218, type: 3}
     Description: Quisque vehicula et dui at volutpat. Quisque convallis porta bibendum.
       Duis imperdiet mi vitae dapibus euismod.
-    Range: 40
-    Cooldown: 60
-    CastTime: 4
-    PowerCost: 2500
-    Damage: 0
-    HoldTime: 0
-    CastType: 
+    ChannelColor: {r: 0, g: 0, b: 0, a: 0}
+    ChargeColor: {r: 0, g: 0, b: 0, a: 0}
     Amount: 0
+    Range: 40
+    Damage: 0
+    Cooldown: 60
+    ChannelMove: 0
+    ChannelTime: 0
+    PowerCost: 10
+    ChargeTo: 0
+    HoldTo: 0
+    DecayRate: 0
+    ShouldFail: 0
+    worldObject: {fileID: 0}
+    spellObject: {fileID: 0}
     Flags: 0
   - ID: 5
     Name: Sun Radiation
     Icon: {fileID: 21300000, guid: 5b66a1912c5e76340bc3259a01a39861, type: 3}
     Description: Quisque vehicula et dui at volutpat. Quisque convallis porta bibendum.
       Duis imperdiet mi vitae dapibus euismod.
-    Range: 25
-    Cooldown: 120
-    CastTime: 0
-    PowerCost: 5
-    Damage: 0
-    HoldTime: 0
-    CastType: 
+    ChannelColor: {r: 0, g: 0, b: 0, a: 0}
+    ChargeColor: {r: 0, g: 0, b: 0, a: 0}
     Amount: 0
+    Range: 25
+    Damage: 0
+    Cooldown: 100
+    ChannelMove: 0
+    ChannelTime: 0
+    PowerCost: 5
+    ChargeTo: 0
+    HoldTo: 0
+    DecayRate: 0
+    ShouldFail: 0
+    worldObject: {fileID: 0}
+    spellObject: {fileID: 0}
     Flags: 6
   - ID: 6
     Name: Intelligence
     Icon: {fileID: 21300000, guid: ddd5aba7cd6b3fd46b303a5011af0f55, type: 3}
     Description: Quisque vehicula et dui at volutpat. Quisque convallis porta bibendum.
       Duis imperdiet mi vitae dapibus euismod.
-    Range: 0
-    Cooldown: 0
-    CastTime: 0
-    PowerCost: 0
-    Damage: 0
-    HoldTime: 0
-    CastType: 
+    ChannelColor: {r: 0, g: 0, b: 0, a: 0}
+    ChargeColor: {r: 0, g: 0, b: 0, a: 0}
     Amount: 0
+    Range: 0
+    Damage: 0
+    Cooldown: 0
+    ChannelMove: 0
+    ChannelTime: 0
+    PowerCost: 0
+    ChargeTo: 0
+    HoldTo: 0
+    DecayRate: 0
+    ShouldFail: 0
+    worldObject: {fileID: 0}
+    spellObject: {fileID: 0}
     Flags: 1

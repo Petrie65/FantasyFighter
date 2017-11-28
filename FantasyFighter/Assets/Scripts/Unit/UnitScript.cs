@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class UnitScript : MonoBehaviour {
     public Player owner {get; set;}
 
@@ -13,6 +12,8 @@ public class UnitScript : MonoBehaviour {
     public Spell activeSpell = null;
 
     public ParticleSystem staffParticles;
+
+    public List<Buff> CurrentBuffs = new List<Buff>();
 
     [HideInInspector]
     public float currentHP;
@@ -218,5 +219,49 @@ public class UnitScript : MonoBehaviour {
                 break;
         }
 
+    }
+
+    public Buff AddBuff<T>(float duration, int stacks) where T : Buff{
+
+        Component buff = gameObject.AddComponent(typeof(T));
+        Buff buffScript = buff.GetComponent<Buff>();
+
+        return buffScript;
+
+
+        // var currentBuff = GetBuff(buff);
+        /*   if (currentBuff == null) {
+            // Unit does not have buff yet
+            CurrentBuffs.Add(buff);
+            buff.Activate();
+            Debug.Log("Buff added");
+        } else {
+            // Buff already exists
+            if (currentBuff.Info.Stackable) {
+                currentBuff.AddStack();
+            } else {
+                currentBuff.ResetTime();
+            }
+            Debug.Log("Buff refreshed");
+        }*/
+    }
+
+    public void RemoveBuff(Buff buff) {
+        // bool exists = CurrentBuffs.Contains(buff);
+
+        var currentBuff = GetBuff(buff);
+        if (currentBuff != null) {
+            CurrentBuffs.Remove(buff);
+        }
+    }
+
+    public Buff GetBuff(Buff buff) {
+        foreach(Buff has in CurrentBuffs.ToArray()) {
+            if (has.Info.Name == buff.Info.Name) {
+                return has;
+            }
+        }
+        Debug.Log("Buff does not exist");
+        return null;
     }
 }
