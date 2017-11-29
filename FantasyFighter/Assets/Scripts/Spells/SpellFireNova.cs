@@ -9,7 +9,7 @@ public class SpellFireNova : MonoBehaviour {
     private Player owner;
 
 	private void Start() {
-		
+		StartCoroutine(WaitForDisable(0.5f));
 	}
 
 	private void Update() {
@@ -27,7 +27,15 @@ public class SpellFireNova : MonoBehaviour {
             UnitScript unitScript = other.gameObject.GetComponent<UnitScript>();
             if (unitScript.owner.name == owner.name) return;
 			
-			Debug.Log("player hit");
+        	unitScript.AddBuff<Burning>(owner, 3f, 1, 1f);
 		}
+	}
+
+	private IEnumerator WaitForDisable(float time) {
+		yield return new WaitForSeconds(time);
+		GetComponent<SphereCollider>().enabled = false;
+
+		yield return new WaitForSeconds(time);
+		Destroy(gameObject);
 	}
 }

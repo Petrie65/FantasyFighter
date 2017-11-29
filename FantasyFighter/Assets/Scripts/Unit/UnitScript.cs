@@ -56,7 +56,7 @@ public class UnitScript : MonoBehaviour {
     private void Update() {
         if (!isDead) {
             // Regenerate hp and mana
-            GainHealth(regenHP);
+            // GainHealth(regenHP);
             if (activeSpell == null || activeSpell.canRelease) {
                 GainMana(regenMana);
             }
@@ -160,14 +160,20 @@ public class UnitScript : MonoBehaviour {
     }
 
     public void TakeDamage(Player playerFrom, float damage) {
-        if (playerFrom.name != owner.name) {
-            currentHP -= damage;
+        // if (playerFrom.name != owner.name) {
+            if (currentHP - damage < 0) {
+                currentHP = 0;
 
-            if (currentHP <= 0) {
-                Debug.Log("Killed by " + playerFrom.name);
-                StartCoroutine(DieRoutine());
+                if (!isDead) {
+                    isDead = true;
+                    Debug.Log("Killed by " + playerFrom.name);
+                    StartCoroutine(DieRoutine());
+                }
+            } else {
+                currentHP -= damage;
+
             }
-        }
+        // }
     }
 
     public bool DrainMana(float amount) {
@@ -221,20 +227,18 @@ public class UnitScript : MonoBehaviour {
 
     }
 
-    public Buff AddBuff<T>(float duration, int stacks) where T : Buff{
+    public Buff AddBuff<T>(Player buffOwner, float duration, int stacks, float intensity) where T : Buff{
+        System.Type buffType = typeof(T);
 
-        Component buff = gameObject.AddComponent(typeof(T));
-        Buff buffScript = buff.GetComponent<Buff>();
-
-        return buffScript;
-
-
-        // var currentBuff = GetBuff(buff);
-        /*   if (currentBuff == null) {
+        var currentBuff = GetBuff(buffType.ToString());
+        if (currentBuff == null) {
             // Unit does not have buff yet
-            CurrentBuffs.Add(buff);
-            buff.Activate();
-            Debug.Log("Buff added");
+            Component buff = gameObject.AddComponent(buffType);
+            Buff buffScript = buff.GetComponent<Buff>();
+            buffScript.Init(this, buffOwner, duration, stacks, intensity);
+
+            CurrentBuffs.Add(buffScript);
+            return buffScript;
         } else {
             // Buff already exists
             if (currentBuff.Info.Stackable) {
@@ -242,26 +246,25 @@ public class UnitScript : MonoBehaviour {
             } else {
                 currentBuff.ResetTime();
             }
-            Debug.Log("Buff refreshed");
-        }*/
+
+            return null;
+        }
     }
 
     public void RemoveBuff(Buff buff) {
-        // bool exists = CurrentBuffs.Contains(buff);
-
-        var currentBuff = GetBuff(buff);
+        var currentBuff = GetBuff(buff.Info.Name);
         if (currentBuff != null) {
             CurrentBuffs.Remove(buff);
+            
         }
     }
 
-    public Buff GetBuff(Buff buff) {
+    public Buff GetBuff(string buffName) {
         foreach(Buff has in CurrentBuffs.ToArray()) {
-            if (has.Info.Name == buff.Info.Name) {
+            if (has.Info.Name == buffName) {
                 return has;
             }
         }
-        Debug.Log("Buff does not exist");
         return null;
     }
 }

@@ -142,6 +142,7 @@ public class SpellManager : MonoBehaviour {
 		mProjectile.transform.position = owner.unit.transform.position;
 		mProjectile.transform.LookAt(destination);
 
+        // You dont know what methods the instantiated class will contain
         // SendMessage(string methodName, object value)
         mProjectile.SendMessage("setOwner", owner);
     }

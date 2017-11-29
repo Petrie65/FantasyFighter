@@ -20,4 +20,5 @@ MonoBehaviour:
     IsPositive: 0
     Stackable: 1
     MaxStack: 5
-    buffObject: {fileID: 0}
+    buffObject: {fileID: 1875121444609870, guid: b18434a342a4f054885400d160d63c41,
+      type: 2}

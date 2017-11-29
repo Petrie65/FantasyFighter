@@ -11,12 +11,13 @@ public abstract class Buff : MonoBehaviour {
 
 	// Player + Unit
 	public virtual Player Owner {get; protected set;}
-	public virtual UnitScript unitScript {get; protected set;}
+	public virtual UnitScript TargetUnit {get; protected set;}
 	public virtual GameObject GUIItem {get; protected set;}
 
 	// Stack
 	public virtual float Duration {get; protected set;}
 	public virtual int StackSize {get; protected set;}
+	public virtual float Intensity {get; protected set;}
 
 	public virtual float CurrentTime {get; protected set;}
 	public virtual bool IsFinished {get; protected set;}
@@ -27,12 +28,17 @@ public abstract class Buff : MonoBehaviour {
 		StackSize = 0;
 	}
 
-	private void Start() {
-		
-		Duration = 20f;
+	public void Init(UnitScript unit, Player owner, float duration, int stacks, float intensity) {
+		TargetUnit = unit;	
+		Owner = unit.owner;
+		Duration = duration;
+		StackSize = stacks;
+		Intensity = intensity;
 
 		string buffName = this.GetType().Name;
 		Info =  UIBuffDatabase.Instance.GetByName(buffName);
+		
+		// GuiManager.GUI.AddBuff();
 		Activate();
 	}
 
@@ -51,14 +57,12 @@ public abstract class Buff : MonoBehaviour {
 		if (!IsFinished) {
 			CurrentTime += Time.deltaTime;
 
-			// Update buff to show time left
-			// GuiManager.GUI.UpdateBuff();
-
 			ApplySpell();
 				
 			if(CurrentTime >= Duration) {
 				IsFinished = true;
 				End();
+				// GuiManager.GUI.RemoveBuff();
 			}
 		}
 	}

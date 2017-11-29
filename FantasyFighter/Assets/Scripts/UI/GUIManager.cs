@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
 using DuloGames.UI;
+using Sirenix.OdinInspector;
 
-public class GUIManager : MonoBehaviour {
+public class GUIManager : SerializedMonoBehaviour {
     public static GUIManager GUI;
     public GameObject[] spellButtons;
     public CanvasGroup[] spellHighlight;
@@ -21,6 +23,9 @@ public class GUIManager : MonoBehaviour {
     public GameObject manaTextObject;
     
     public Text playerControl;
+    
+    [SerializeField]
+    public UIBUff[] hudBuff;
 
     private Text hpText;
     private Text manaText;
@@ -105,6 +110,17 @@ public class GUIManager : MonoBehaviour {
         } else {
             castBar.Hide();
         }
+
+        for (int x = 0; x < hudBuff.Length; x++) {
+            if (x >= unitScript.CurrentBuffs.Count) {
+                hudBuff[x].buffObject.SetActive(false);
+            } else {
+                Buff buff = unitScript.CurrentBuffs[x];
+                hudBuff[x].buffObject.SetActive(true);
+                hudBuff[x].image.sprite = buff.Info.Icon;
+                hudBuff[x].text.text = (Mathf.Floor(buff.CurrentTime / buff.Duration * 100)).ToString();
+            }
+        }
     }
 
     public void HighlightButton(int btnIndex) {
@@ -118,4 +134,10 @@ public class GUIManager : MonoBehaviour {
             spellHighlight[i].alpha = 0;
         }
     }
+}
+
+public class UIBUff {
+    public GameObject buffObject;
+    public Image image;
+    public Text text;
 }
