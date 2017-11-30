@@ -44,10 +44,10 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>D:/Program Files/Unity/Editor/Data/Managed\UnityEngine.dll</HintPath>
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>D:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -56,10 +56,35 @@
      <Compile Include="Assets\Plugins\100 Best Effect Pack\Script\csPrefebMake.cs" />
      <Compile Include="Assets\Plugins\100 Best Effect Pack\ShurikenEffectEditor\csShurikenEffectChanger.cs" />
      <Compile Include="Assets\Plugins\100 Best Effect Pack\ShurikenEffectEditor\csShurikenEffectEditor.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\ConsoleProDebug.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\ConsoleProRemoteServer.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\FastBitConverter.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\INetEventListener.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\NatPunchModule.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\NetConstants.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\NetDataReader.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\NetDataWriter.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\NetDebug.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\NetEndPoint.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\NetManager.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\NetPacket.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\NetPacketPool.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\NetPeer.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\NetPeerCollection.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\NetSerializer.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\NetSocket.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\NetThread.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\NetUtils.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\NtpSyncModule.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\ReliableChannel.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\SequencedChannel.cs" />
+     <Compile Include="Assets\Plugins\ConsolePro\Remote\LiteNetLib\SimpleChannel.cs" />
+     <Compile Include="Assets\Plugins\Demigiant\DOTweenPro\DOTweenAnimation.cs" />
      <Compile Include="Assets\Plugins\MagicArsenal\Effects\Scripts\MagicBeamScript.cs" />
      <Compile Include="Assets\Plugins\MagicArsenal\Effects\Scripts\MagicLightFade.cs" />
      <Compile Include="Assets\Plugins\MagicArsenal\Effects\Scripts\MagicLightFlicker.cs" />
      <Compile Include="Assets\Plugins\MagicArsenal\Effects\Scripts\MagicRotation.cs" />
+     <Compile Include="Assets\Plugins\QHierarchy\Scripts\QObjectList.cs" />
      <Compile Include="Assets\Plugins\Realistic Effects Pack v4\Scene\RFX4_DemoGUI.cs" />
      <Compile Include="Assets\Plugins\Realistic Effects Pack v4\Scene\RFX4_FPS.cs" />
      <Compile Include="Assets\Plugins\Realistic Effects Pack v4\Scene\RFX4_RealtimeReflection.cs" />
@@ -374,6 +399,7 @@
      <None Include="Assets\Plugins\U_VFXv3.1\Shaders\Particles\No Fog\NoFog-Add.shader" />
      <None Include="Assets\Import\Standard Assets\Effects\ToonShading\Shaders\ToonBasic.shader" />
      <None Include="Assets\Import\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\SeparableWeightedBlurDof34.shader" />
+     <None Include="Assets\Plugins\Demigiant\DOTweenPro\readme.txt" />
      <None Include="Assets\Plugins\RPG and MMO UI 6\Readme.txt" />
      <None Include="Assets\Plugins\U_VFXv3.1\Shaders\Particles\Distortion\TextureDistortion-Alpha Blended.shader" />
      <None Include="Assets\Plugins\Realistic Effects Pack v4\Shaders\RFX4_CutoutBorderMobile.shader" />
@@ -389,6 +415,7 @@
      <None Include="Assets\PostProcessing\Resources\Shaders\LutGen.shader" />
      <None Include="Assets\Import\Standard Assets\Effects\ImageEffects\Shaders\ColorCorrectionCurves.shader" />
      <None Include="Assets\Import\Standard Assets\Effects\ImageEffects\Shaders\ScreenSpaceAmbientObscurance.shader" />
+     <None Include="Assets\Plugins\Demigiant\DemiLib\Core\DemiLib.xml" />
      <None Include="Assets\Plugins\RPG and MMO UI 6\Shaders\UITribalEffect.shader" />
      <None Include="Assets\Plugins\Realistic Effects Pack v4\Shaders\RFX4_Tornado.shader" />
      <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
@@ -400,6 +427,7 @@
      <None Include="Assets\Plugins\Realistic Effects Pack v4\Shaders\RFX4_DistortionParticlesMobile.shader" />
      <None Include="Assets\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
      <None Include="Assets\Plugins\U_VFXv3.1\Shaders\Particles\Intersection Highlight\IntersectionHighlight-Add.shader" />
+     <None Include="Assets\Plugins\Demigiant\DOTween\DOTween50.xml" />
      <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.Utilities.xml" />
      <None Include="Assets\Import\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\VignetteShader.shader" />
      <None Include="Assets\Import\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\DepthOfFieldScatter.shader" />
@@ -453,6 +481,7 @@
      <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
      <None Include="Assets\Plugins\U_VFXv3.1\Shaders\Particles\Distortion\TextureDistortion-Add.shader" />
+     <None Include="Assets\Plugins\Demigiant\DOTween\DOTween46.xml" />
      <None Include="Assets\Plugins\Sirenix\Readme.txt" />
      <None Include="Assets\Plugins\Realistic Effects Pack v4\Shaders\Portal\RFX4_PortalMask.shader" />
      <None Include="Assets\Plugins\U_VFXv3.1\Shaders\Image Effects\Resources\Sharpen\Sharpen.shader" />
@@ -506,6 +535,7 @@
      <None Include="Assets\Import\Standard Assets\Effects\ImageEffects\Shaders\_DepthOfField\Bokeh34.shader" />
      <None Include="Assets\AQUAS\Shaders\Water\Mobile\OneColored.shader" />
      <None Include="Assets\Import\UETools\Magic_Particle_Effects\Readme.txt" />
+     <None Include="Assets\Plugins\Demigiant\DOTween\readme.txt" />
      <None Include="Assets\PostProcessing\Resources\Shaders\EyeHistogram.compute" />
      <None Include="Assets\Plugins\Realistic Effects Pack v4\Shaders\Portal\RFX4_PortalStandard.shader" />
      <None Include="Assets\Plugins\100 Best Effect Pack\ParticleEffect_Shader\Additive\Shader_NormalAdditive.shader" />
@@ -527,6 +557,7 @@
      <None Include="Assets\Import\Standard Assets\Effects\ImageEffects\Shaders\CameraMotionBlur.shader" />
      <None Include="Assets\Import\Standard Assets\Environment\Water\Water\Shaders\FXWaterPro.shader" />
      <None Include="Assets\Plugins\Realistic Effects Pack v4\Shaders\RFX4_ShaderExtension.cginc" />
+     <None Include="Assets\Plugins\Demigiant\DOTween\DOTween43.xml" />
      <None Include="Assets\Plugins\U_VFXv3.1\Shaders\Particles\HSL\HSL-Add.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\GrainGen.shader" />
      <None Include="Assets\Import\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\DLAA.shader" />
@@ -579,12 +610,14 @@
      <None Include="Assets\Plugins\Realistic Effects Pack v4\Shaders\RFX4_Lightning.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
      <None Include="Assets\AQUAS\Shaders\Camera Effects\UnderWaterLens.shader" />
+     <None Include="Assets\Plugins\Demigiant\DemiLib\Core\Editor\DemiEditor.xml" />
      <None Include="Assets\Import\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
      <None Include="Assets\Plugins\Realistic Effects Pack v4\Shaders\RFX4_DistortionParticles.shader" />
      <None Include="Assets\Import\Standard Assets\Effects\ImageEffects\Shaders\SimpleClear.shader" />
      <None Include="Assets\Plugins\U_VFXv3.1\Shaders\Particles\Distance Fade\DistanceFade-Alpha.shader" />
      <None Include="Assets\Import\Standard Assets\Effects\TessellationShaders\Shaders\BumpedSpecularDisplacement.shader" />
      <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
+     <None Include="Assets\Plugins\Demigiant\readme_DOTweenPro.txt" />
      <None Include="Assets\Import\Standard Assets\Effects\ImageEffects\Shaders\_Antialiasing\FXAA3Console.shader" />
      <None Include="Assets\Plugins\Realistic Effects Pack v4\Shaders\Water\RFX4_WaterSplashTex.shader" />
      <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
@@ -596,55 +629,73 @@
      <None Include="Assets\Plugins\Realistic Effects Pack v4\Shaders\RFX4_Ice.shader" />
      <None Include="Assets\Import\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlendForBloom.shader" />
  <Reference Include="UnityEngine.UI">
- <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TestRunner">
- <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
  </Reference>
  <Reference Include="nunit.framework">
- <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Timeline">
- <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UIAutomation">
- <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.GoogleAudioSpatializer">
- <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
- <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.SpatialTracking">
- <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+ </Reference>
+ <Reference Include="DemiLib">
+ <HintPath>D:/Projects/FantasyFighter/FantasyFighter/Assets/Plugins/Demigiant/DemiLib/Core/DemiLib.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween">
+ <HintPath>D:/Projects/FantasyFighter/FantasyFighter/Assets/Plugins/Demigiant/DOTween/DOTween.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween43">
+ <HintPath>D:/Projects/FantasyFighter/FantasyFighter/Assets/Plugins/Demigiant/DOTween/DOTween43.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween46">
+ <HintPath>D:/Projects/FantasyFighter/FantasyFighter/Assets/Plugins/Demigiant/DOTween/DOTween46.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTween50">
+ <HintPath>D:/Projects/FantasyFighter/FantasyFighter/Assets/Plugins/Demigiant/DOTween/DOTween50.dll</HintPath>
+ </Reference>
+ <Reference Include="DOTweenPro">
+ <HintPath>D:/Projects/FantasyFighter/FantasyFighter/Assets/Plugins/Demigiant/DOTweenPro/DOTweenPro.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.OdinInspector.Attributes">
- <HintPath>D:/Documents/Documents/Unity/Fantasy Fighter/FantasyFighter/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
+ <HintPath>D:/Projects/FantasyFighter/FantasyFighter/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.OdinInspector.Editor">
- <HintPath>D:/Documents/Documents/Unity/Fantasy Fighter/FantasyFighter/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
+ <HintPath>D:/Projects/FantasyFighter/FantasyFighter/Assets/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Serialization.Config">
- <HintPath>D:/Documents/Documents/Unity/Fantasy Fighter/FantasyFighter/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
+ <HintPath>D:/Projects/FantasyFighter/FantasyFighter/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Serialization">
- <HintPath>D:/Documents/Documents/Unity/Fantasy Fighter/FantasyFighter/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
+ <HintPath>D:/Projects/FantasyFighter/FantasyFighter/Assets/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Utilities">
- <HintPath>D:/Documents/Documents/Unity/Fantasy Fighter/FantasyFighter/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
+ <HintPath>D:/Projects/FantasyFighter/FantasyFighter/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
  </Reference>
  <Reference Include="Sirenix.Utilities.Editor">
- <HintPath>D:/Documents/Documents/Unity/Fantasy Fighter/FantasyFighter/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
+ <HintPath>D:/Projects/FantasyFighter/FantasyFighter/Assets/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
- <HintPath>C:/Users/Petrie van Zyl/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
+ <HintPath>C:/Users/Petrie/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.analytics@1.0.1/UnityEngine.Analytics.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Purchasing">
- <HintPath>C:/Users/Petrie van Zyl/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
+ <HintPath>C:/Users/Petrie/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.purchasing@1.0.1/UnityEngine.Purchasing.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

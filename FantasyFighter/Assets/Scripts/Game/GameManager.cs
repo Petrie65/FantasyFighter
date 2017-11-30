@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DuloGames.UI;
+using DG.Tweening;
 
 public class GameManager : MonoBehaviour {
     public static GameManager GM;
@@ -23,6 +24,9 @@ public class GameManager : MonoBehaviour {
 
     private void Awake() {
         MakeThisTheOnlyGameManager();
+
+		DOTween.Init(true, true, null);
+
         players = new Player[10];
 
         //  instantiate players;

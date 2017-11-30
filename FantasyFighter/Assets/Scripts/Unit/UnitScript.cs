@@ -160,20 +160,18 @@ public class UnitScript : MonoBehaviour {
     }
 
     public void TakeDamage(Player playerFrom, float damage) {
-        // if (playerFrom.name != owner.name) {
-            if (currentHP - damage < 0) {
-                currentHP = 0;
+        if (currentHP - damage < 0) {
+            currentHP = 0;
 
-                if (!isDead) {
-                    isDead = true;
-                    Debug.Log("Killed by " + playerFrom.name);
-                    StartCoroutine(DieRoutine());
-                }
-            } else {
-                currentHP -= damage;
-
+            if (!isDead) {
+                isDead = true;
+                ConsoleProDebug.LogToFilter("Killed by " + playerFrom.name, "Unit");
+                StartCoroutine(DieRoutine());
             }
-        // }
+        } else {
+            currentHP -= damage;
+
+        }
     }
 
     public bool DrainMana(float amount) {

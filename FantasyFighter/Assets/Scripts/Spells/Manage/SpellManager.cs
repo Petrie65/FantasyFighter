@@ -82,17 +82,17 @@ public class SpellManager : MonoBehaviour {
     public bool SelectSpell(int spellNum) {
 		var spell = GameManager.GM.currentPlayer.spells[spellNum];
 		if (spell == null) {
-            Debug.Log("No spell selected");
+            ConsoleProDebug.LogToFilter("No spell selected", "Spell");
             return false;
         }
 
         UnitScript unitScript =  GameManager.GM.currentPlayer.unit.GetComponent<UnitScript>();
         if (unitScript.isDead) {
-            Debug.Log("Unit is dead");
+            ConsoleProDebug.LogToFilter("Unit is dead", "Spell");
             return false;
         }
         if (unitScript.currentMana < spell.Info.PowerCost) {
-            Debug.Log("Not enough mana");
+            ConsoleProDebug.LogToFilter("Unit is dead", "Spell");
             return false;
         }
         
@@ -117,9 +117,15 @@ public class SpellManager : MonoBehaviour {
         owner.unit.GetComponent<UnitScript>().selectedSpellIdx = 0;
 
         owner.unit.GetComponent<UnitScript>().currentMana -= castSpell.Info.PowerCost;
-
+        // CastSpell(SpellFireNova);
         StartCoroutine(SpellDelay(0.2f, owner, castSpell.Info.Name, clickPos));
 	}
+
+    public void ReleaseSpell(Spell spell) {
+        spell.SpellObject = Instantiate(spell.Info.spellObject);
+        spell.SpellScript = spell.SpellObject.GetComponent<SpellObject>();
+        spell.SpellScript.Init(spell, Vector3.zero);
+    }
 	
 	private IEnumerator SpellDelay(float delay, Player owner, string spellName, Vector3 clickPos) {
 		yield return new WaitForSeconds(delay);

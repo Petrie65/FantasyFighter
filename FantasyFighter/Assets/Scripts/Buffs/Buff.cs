@@ -38,7 +38,6 @@ public abstract class Buff : MonoBehaviour {
 		string buffName = this.GetType().Name;
 		Info =  UIBuffDatabase.Instance.GetByName(buffName);
 		
-		// GuiManager.GUI.AddBuff();
 		Activate();
 	}
 
@@ -62,14 +61,17 @@ public abstract class Buff : MonoBehaviour {
 			if(CurrentTime >= Duration) {
 				IsFinished = true;
 				End();
-				// GuiManager.GUI.RemoveBuff();
 			}
 		}
 	}
 
+	// Buff start
 	public abstract void Activate();
-	// If the spell is active, this will get called
+
+	// If the buff is active, this will get called
 	public abstract void ApplySpell();
+
+	// Buff fin
 	public abstract void End();
 }
 

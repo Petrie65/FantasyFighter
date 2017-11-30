@@ -6,6 +6,9 @@ public class Spell {
     public UISpellInfo Info;
     public Player Owner;
 
+    public GameObject SpellObject;
+    public SpellObject SpellScript;
+
     public bool canRelease = false;
 
     public float channelCounter = 0;
@@ -13,7 +16,7 @@ public class Spell {
     public float holdCounter = 0;    
 
     private float ChargeDecayMult = 2f;
-    private bool Active;
+    private bool ChargeActive;
 
     public bool SpellFailed = false;
 
@@ -27,14 +30,14 @@ public class Spell {
     }
 
     public bool isActive() {
-        return Active;
+        return ChargeActive;
     }
     public void SetActive(bool status) {
-        Active = status;
+        ChargeActive = status;
     }
 
     public void Update() {
-        if (Active) {
+        if (ChargeActive) {
             // Channel
             if (Info.ChannelTime >= channelCounter) {
                 canRelease = false;
@@ -69,7 +72,7 @@ public class Spell {
                 chargeCounter = 0f;
                 channelCounter = Info.ChannelTime * 0.75f;
                 
-                Active = false;
+                ChargeActive = false;
                 unitScript.UnselectSpells();
                 Debug.Log("Fail");
                 return;

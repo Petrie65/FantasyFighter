@@ -47,6 +47,8 @@ public class WizardMovement : MonoBehaviour {
         if (GameManager.GM.currentPlayer != unitScript.owner) return;
         if (isAnimating || unitScript.isDead) return;
 
+        ConsoleProDebug.Watch("Current player health", unitScript.currentHP.ToString());
+
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
