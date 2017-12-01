@@ -116,43 +116,20 @@ public class SpellManager : MonoBehaviour {
         owner.spells[owner.unit.GetComponent<UnitScript>().selectedSpellIdx] = null;
         owner.unit.GetComponent<UnitScript>().selectedSpellIdx = 0;
 
-        owner.unit.GetComponent<UnitScript>().currentMana -= castSpell.Info.PowerCost;
-        // CastSpell(SpellFireNova);
-        StartCoroutine(SpellDelay(0.2f, castSpell));
+        StartCoroutine(SpellDelay(0.2f, castSpell, clickPos));
 	}
 
 	
-	private IEnumerator SpellDelay(float delay, Spell spell) {
+	private IEnumerator SpellDelay(float delay, Spell spell, Vector3 target) {
 		yield return new WaitForSeconds(delay);
-
-        switch (spell.Info.Name) {
-            case "Meteor":
-                // createProjectile(projectileMeteor, owner, clickPos);
-                break;
-            case "Fire Nova":
-                // createProjectile(projectileFire, owner, owner.unit.GetComponent<UnitScript>().transform.position);
-                ReleaseSpell(spell);
-                break;
-            case "Glacial Blast":
-                // createProjectile(projectileSnowball, owner, clickPos);
-                break;
-        }
+        
+        ReleaseSpell(spell, target);
 	}
 
-    public void ReleaseSpell(Spell spell) {
+    public void ReleaseSpell(Spell spell, Vector3 target) {
         spell.SpellObject = Instantiate(spell.Info.spellObject);
         spell.SpellScript = spell.SpellObject.GetComponent<SpellObject>();
-        spell.SpellScript.Init(spell, Vector3.zero);
-    }
-
-    private void createProjectile(GameObject projectile, Player owner, Vector3 destination) {
-		GameObject mProjectile = Instantiate(projectile);
-		mProjectile.transform.position = owner.unit.transform.position;
-		mProjectile.transform.LookAt(destination);
-
-        // You dont know what methods the instantiated class will contain
-        // SendMessage(string methodName, object value)
-        mProjectile.SendMessage("setOwner", owner);
+        spell.SpellScript.Init(spell, target);
     }
 }
 

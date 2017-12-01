@@ -4,13 +4,12 @@ using UnityEngine;
 using DG.Tweening;
 
 public class FireNova : SpellObject {
-	public ParticleSystem[] particles;
-	public Light effectLight;
 
-	private void Start() {
+	public override void SetPosition() {
 		this.transform.position = Spell.unitScript.transform.position;
-		Debug.Log("1");
-		// base.Start();
+	}
+
+	public override void StartSpell() {
 		StartCoroutine(WaitForDisable(0.5f));
 	}
 

@@ -3,40 +3,38 @@ using System.Collections.Generic;
 using UnityEngine;
 using DuloGames.UI;
 
-public class SpellMeteor : MonoBehaviour {
+public class SpellMeteor : SpellObject {
     public ParticleSystem praticleTail;
     public ParticleSystem particleCollide;
 
     public Light fireLight;
-
     private Animator fireLightAnim;
     
-    private float speed = 30f;
-	private float damage = 75;
-
     private float radiusAOE = 10f;
-
-    private float distance = 0f;    
-	private float range;
-
     private SphereCollider triggerCollider;
+    private float distance = 0f;    
 
-    private Transform startPosition;
-    private Player owner;
+	public override void SetPosition() {
+        Vector3 pos = Spell.unitScript.transform.position;
+        Vector3 modY = new Vector3(pos.x, pos.y + 2f, pos.z);
+		this.transform.position = modY;
 
-	private bool isAlive = true;
+		this.transform.LookAt(Target);
+	}
+
+	public override void StartSpell() {
+	}
 
     private void Awake() {
         triggerCollider = GetComponent<SphereCollider>();
-        range =  UISpellDatabase.Instance.GetByName("Meteor").Range; //SpellManager.SM.getSpell("Meteor").Info.Range;
         fireLightAnim = fireLight.GetComponent<Animator>();
     }
 
     private void Update() {
-		if (isAlive) {
-            if (distance < range) {
+		if (Active) {
+            if (distance < Spell.Info.Range) {
                 distance++;
-			    transform.position += transform.forward * Time.deltaTime * speed;
+			    transform.position += transform.forward * Time.deltaTime * Spell.Info.Speed;
                 this.UpdateHeight();
             } else {
                 Explode();
@@ -61,14 +59,10 @@ public class SpellMeteor : MonoBehaviour {
         }
     }
 
-    public void setOwner(Player owner) {
-        this.owner = owner;
-    }
-
     private void OnTriggerEnter(Collider other) {
         if (other.gameObject.tag == "Player") {
             UnitScript unitScript = other.gameObject.GetComponent<UnitScript>();
-            if (unitScript.owner.name == owner.name) return;
+            if (unitScript.owner.name == Spell.Owner.name) return;
             
             Explode();
         }
@@ -80,18 +74,16 @@ public class SpellMeteor : MonoBehaviour {
             if (hitColliders[i].gameObject.tag == "Player") {
                 GameObject unitObject = hitColliders[i].gameObject;
                 UnitScript unitScript = unitObject.GetComponent<UnitScript>();
-                if (unitScript.owner != owner) {
+                if (unitScript.owner.name != Spell.Owner.name) {
                     CapsuleCollider unitCollider = unitObject.GetComponent<CapsuleCollider>();
 
                     // Calc damange based on distance (only x and y)
                     float proximity = (transform.position - unitObject.transform.position).magnitude;
                     float effect = 1 - (proximity / radiusAOE);
-                    float modifiedDamage = damage * effect;
+                    float modifiedDamage = Spell.Info.Damage * effect;
 
-                    if (damage > 0f) {
-                        unitScript.TakeDamage(owner, modifiedDamage);
-
-                        // GameManager.GM.objectUIScript.UpdateHealthBar(unitScript.owner.playerNum);
+                    if (modifiedDamage > 0f) {
+                        unitScript.TakeDamage(Spell.Owner, modifiedDamage);
                     }
 
                     // Apply explosion force
@@ -104,7 +96,7 @@ public class SpellMeteor : MonoBehaviour {
     }
 
     private void DestroyProjectile() {
-        isAlive = false;
+        Active = false;
 
         GetComponent<MeshRenderer>().enabled = false;
         praticleTail.Stop();

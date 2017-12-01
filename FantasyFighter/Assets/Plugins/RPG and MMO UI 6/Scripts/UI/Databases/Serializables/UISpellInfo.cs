@@ -21,6 +21,7 @@ namespace DuloGames.UI
 		[FoldoutGroup("$Name/Execution")] [Range(0, 10)] public int Amount;
 		[FoldoutGroup("$Name/Execution")] [Range(0, 100)] public float Range;
 		[FoldoutGroup("$Name/Execution")] [Range(0, 100)] public float Damage;
+		[FoldoutGroup("$Name/Execution")] [Range(0, 100)] public float Speed;
 		[FoldoutGroup("$Name/Execution")] [Range(0, 100)] public float Cooldown;
 		[FoldoutGroup("$Name/Execution")] public MoveType ChannelMove;
 
