@@ -9,6 +9,8 @@ public class Spell {
     public GameObject SpellObject;
     public SpellObject SpellScript;
 
+    public UnitScript unitScript;
+
     public bool canRelease = false;
 
     public float channelCounter = 0;
@@ -20,7 +22,6 @@ public class Spell {
 
     public bool SpellFailed = false;
 
-    private UnitScript unitScript;
 
     public Spell(Player owner, UISpellInfo info) {
         this.Owner = owner;

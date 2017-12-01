@@ -8,6 +8,9 @@ public class FireNova : SpellObject {
 	public Light effectLight;
 
 	private void Start() {
+		this.transform.position = Spell.unitScript.transform.position;
+		Debug.Log("1");
+		// base.Start();
 		StartCoroutine(WaitForDisable(0.5f));
 	}
 

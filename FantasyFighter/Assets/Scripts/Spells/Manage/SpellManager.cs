@@ -118,7 +118,25 @@ public class SpellManager : MonoBehaviour {
 
         owner.unit.GetComponent<UnitScript>().currentMana -= castSpell.Info.PowerCost;
         // CastSpell(SpellFireNova);
-        StartCoroutine(SpellDelay(0.2f, owner, castSpell.Info.Name, clickPos));
+        StartCoroutine(SpellDelay(0.2f, castSpell));
+	}
+
+	
+	private IEnumerator SpellDelay(float delay, Spell spell) {
+		yield return new WaitForSeconds(delay);
+
+        switch (spell.Info.Name) {
+            case "Meteor":
+                // createProjectile(projectileMeteor, owner, clickPos);
+                break;
+            case "Fire Nova":
+                // createProjectile(projectileFire, owner, owner.unit.GetComponent<UnitScript>().transform.position);
+                ReleaseSpell(spell);
+                break;
+            case "Glacial Blast":
+                // createProjectile(projectileSnowball, owner, clickPos);
+                break;
+        }
 	}
 
     public void ReleaseSpell(Spell spell) {
@@ -126,22 +144,6 @@ public class SpellManager : MonoBehaviour {
         spell.SpellScript = spell.SpellObject.GetComponent<SpellObject>();
         spell.SpellScript.Init(spell, Vector3.zero);
     }
-	
-	private IEnumerator SpellDelay(float delay, Player owner, string spellName, Vector3 clickPos) {
-		yield return new WaitForSeconds(delay);
-
-        switch (spellName) {
-            case "Meteor":
-                createProjectile(projectileMeteor, owner, clickPos);
-                break;
-            case "Fire Nova":
-                createProjectile(projectileFire, owner, owner.unit.GetComponent<UnitScript>().transform.position);
-                break;
-            case "Glacial Blast":
-                createProjectile(projectileSnowball, owner, clickPos);
-                break;
-        }
-	}
 
     private void createProjectile(GameObject projectile, Player owner, Vector3 destination) {
 		GameObject mProjectile = Instantiate(projectile);
