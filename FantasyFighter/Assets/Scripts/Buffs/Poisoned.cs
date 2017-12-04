@@ -3,21 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using DuloGames.UI;
+using MirzaBeig.ParticleSystems;
 
 public class Poisoned : Buff {
 	GameObject particleObject;
-	ParticleSystem[] particles;
+	ParticleSystems particles;
 
 	public override void Activate() {
+		// 
+		TargetUnit.wizardMovement.walkSpeed -= 1f;
+		TargetUnit.wizardMovement.runSpeed -= 1f;
+
+		TargetUnit.transform.GetChild(1).gameObject.GetComponent<Renderer>().material.color = new Color(0.5f, 1f, 0.5f);
+
 		// Set up particles
 		particleObject = Instantiate(Info.buffObject, transform);
-		int particleNum = particleObject.transform.childCount;
-		particles = new ParticleSystem[particleNum];
-		for (int x = 0; x < particleNum; x++) {
-			GameObject child = particleObject.transform.GetChild(x).gameObject;
-			particles[x] = child.GetComponent<ParticleSystem>();
-			// particles[x]
-		}
+		particles = particleObject.GetComponent<ParticleSystems>();
 	}
 
 	public override void ApplySpell() {
@@ -25,11 +26,14 @@ public class Poisoned : Buff {
 	}
 
 	public override void End() {
+		TargetUnit.wizardMovement.walkSpeed += 1f;
+		TargetUnit.wizardMovement.runSpeed += 1f;
+
+		TargetUnit.transform.GetChild(1).gameObject.GetComponent<Renderer>().material.color = new Color(1f, 1f, 1f);
+
 		TargetUnit.RemoveBuff(this);
 
-		foreach(ParticleSystem particle in particles) {
-			particle.Stop();
-		}
+		particles.stop();
 		StartCoroutine(WaitForParticles(3f));
 	}
 

@@ -144,4 +144,7 @@ public class WizardMovement : MonoBehaviour {
         }
     }
 
+    public void SetPosition(Vector3 position) {
+        this.transform.position = position;
+    }
 }

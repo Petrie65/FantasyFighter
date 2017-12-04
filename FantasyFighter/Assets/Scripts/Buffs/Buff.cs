@@ -38,7 +38,11 @@ public abstract class Buff : MonoBehaviour {
 		string buffName = this.GetType().Name;
 		Info =  UIBuffDatabase.Instance.GetByName(buffName);
 		
-		Activate();
+		if (Info != null) {
+			Activate();
+		} else {
+            ConsoleProDebug.LogToFilter("Buff does not match up with name in DB", "Spell");
+		}
 	}
 
 	public void AddStack() {

@@ -15,6 +15,7 @@ public class AcidArrow : SpellObject {
 
     private float speed = 0f;
     private float range = 0f;
+    private float damage = 0f;
 
 	public override void SetPosition() {
         Vector3 pos = Spell.unitScript.transform.position;
@@ -25,26 +26,25 @@ public class AcidArrow : SpellObject {
 	}
 
 	public override void StartSpell() {
-        float chargePercentage = Spell.chargeCounter / Spell.Info.ChargeTo;
+        speed = CalcCharge(Spell.Info.Speed, 1f, "Speed");
+        range = CalcCharge(Spell.Info.Range, 3f, "Range");
+        damage = CalcCharge(Spell.Info.Damage, 1f, "Damage");;
 
-        float baseSpeed = Spell.Info.Speed;
-        float headroom = baseSpeed * 0.5f;
-        float chargeSpeed = chargePercentage * headroom;
-        speed = baseSpeed + chargeSpeed;
-
-        float baseRange = Spell.Info.Range;
-        float headroomR = baseRange * 2f;
-        float chargeRange = chargePercentage * headroomR;
-        range = baseRange + chargeRange;
+        arrowLight.DOIntensity(8f, 0.2f);
+        this.transform.DOScale(new Vector3(0.6f, 0.6f, 0.6f), 0.5f);
 	}
 
     private void Update() {
 		if (Active) {
             if (distance < range) {
-                distance++;
-			    transform.position += transform.forward.normalized * Time.deltaTime * speed;
+                float moveDistance =  Time.deltaTime * speed;
+                distance += moveDistance;
+                
+			    transform.position += transform.forward.normalized * moveDistance;
+                Debug.Log("Move");
                 this.UpdateHeight();
             } else {
+                Debug.Log("distance break");
                 Break();
             }
 		}
@@ -55,6 +55,7 @@ public class AcidArrow : SpellObject {
 
         // Explode if collision with water
         if (transform.position.y < 7.6f) {
+            Debug.Log("height break");
             Break();
             return;
         }
@@ -72,6 +73,13 @@ public class AcidArrow : SpellObject {
             UnitScript unitScript = other.gameObject.GetComponent<UnitScript>();
             if (unitScript.owner.name == Spell.Owner.name) return;
             
+            unitScript.TakeDamage(Spell.Owner, damage);
+        	unitScript.AddBuff<Poisoned>(Spell.Owner, 5f, 1, 0.1f);
+
+            collisionParticles.transform.position = this.transform.position;
+            Instantiate(collisionParticles);
+
+            Debug.Log("collision break");
             Break();
         }
     }
@@ -79,14 +87,16 @@ public class AcidArrow : SpellObject {
     private void Break() {
         Active = false;
 
-        arrowParticles.stop();
+        this.GetComponent<BoxCollider>().enabled = false;
 
-        collisionParticles.transform.position = this.transform.position;
-        Instantiate(collisionParticles);
+        arrowParticles.setLoop(false);
 
-        // GetComponent<MeshRenderer>().enabled = false;
+        // Finish possible current tweens before tweening down
+        this.transform.DOComplete();
 
-        this.transform.DOScale(Vector3.zero, 0.5f);
+        arrowLight.DOIntensity(0f, 0.25f);
+        this.transform.DOScale(Vector3.zero, 0.25f);
+
         Destroy(gameObject, 1);
     }
 }

@@ -17,6 +17,7 @@ public class Spell {
     public float chargeCounter = 0;
     public float holdCounter = 0;    
 
+    public float ChargePercentage = 0f;
     private float ChargeDecayMult = 2f;
     private bool ChargeActive;
 
@@ -33,6 +34,7 @@ public class Spell {
     public bool isActive() {
         return ChargeActive;
     }
+    
     public void SetActive(bool status) {
         ChargeActive = status;
     }
@@ -55,6 +57,7 @@ public class Spell {
             if (Info.ChargeTo != 0) {
                 if (Info.ChargeTo >= chargeCounter) {
                     chargeCounter += 1 * Time.deltaTime;
+                    ChargePercentage = chargeCounter / Info.ChargeTo;
                     return;
                 }
             }
@@ -70,6 +73,7 @@ public class Spell {
             // Fail
             if (Info.ShouldFail) {
                 holdCounter = 0f;
+                ChargePercentage = 0f;
                 chargeCounter = 0f;
                 channelCounter = Info.ChannelTime * 0.75f;
                 
@@ -90,6 +94,7 @@ public class Spell {
             // Decay charge
             if (chargeCounter > 0) {
                 chargeCounter -= Info.DecayRate * ChargeDecayMult * Time.deltaTime;
+                ChargePercentage = chargeCounter / Info.ChargeTo;
                 return;
             }
 

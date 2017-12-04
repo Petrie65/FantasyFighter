@@ -26,6 +26,17 @@ public abstract class SpellObject : MonoBehaviour {
 	public abstract void SetPosition();
 	public abstract void StartSpell();
 
+	public Vector3 GetCastPosition(Vector3 target) {
+		return Vector3.zero;
+	}
+
+    public float CalcCharge(float statValue, float headroom,string debugString) {
+        float range = statValue * headroom;
+        float charge = Spell.ChargePercentage * range;
+        ConsoleProDebug.LogToFilter(debugString + " : " + Mathf.Round(statValue + charge) + "(" + statValue + "-" + statValue * (headroom+1) + ")", "Spell");
+        return statValue + charge;
+    }
+
 	void OnDestroy() {
         ConsoleProDebug.LogToFilter("(" + Spell.Owner.name + ") Destroyed: " + this.GetType().Name, "Spell");
 	}

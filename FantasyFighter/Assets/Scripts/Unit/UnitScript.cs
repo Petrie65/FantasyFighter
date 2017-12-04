@@ -1,17 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-public class UnitScript : MonoBehaviour {
+using Sirenix.OdinInspector;
+
+public class UnitScript : SerializedMonoBehaviour {
     public Player owner {get; set;}
 
-	public Light unitLight;
+	public Light UnitLight;
+	public Light HighLight;
     public GameObject unitMesh;
+
+    public WizardMovement wizardMovement;
 
     public int selectedSpellIdx = 0;
     public Spell selectedSpell = null;
     public Spell activeSpell = null;
 
     public ParticleSystem staffParticles;
+
+    public Projector SelectionProjector;
 
     public List<Buff> CurrentBuffs = new List<Buff>();
 
@@ -37,6 +44,8 @@ public class UnitScript : MonoBehaviour {
     public bool isCharging = false;
     public float castProgress = 0f;
 
+    // private BoxCollider selectionBox;
+
     public void Awake() {
         currentHP = 100f;
         maxHP = 100f;
@@ -45,13 +54,17 @@ public class UnitScript : MonoBehaviour {
         currentMana = 100f;
         maxMana = 100f;
         regenMana = 0.1f;
-
         stamina = 100f;
 
         floorMask = LayerMask.GetMask("Floor");
         anim = GetComponent<Animator>();
         unitRigidbody = GetComponent<Rigidbody>();
     }
+
+    // private void Start() {
+    //     Color unitColor = GameManager.GM.colors.color[owner.playerNum];
+    //     unitMesh.GetComponent<Renderer>().materials[1].SetColor("_OutlineColor",  unitColor);
+    // }
 
     private void Update() {
         if (!isDead) {
@@ -129,7 +142,7 @@ public class UnitScript : MonoBehaviour {
         if (Physics.Raycast(camRay, out floorHit, camRayLength, floorMask)) {
             Vector3 adjustedPoint = new Vector3(floorHit.point.x, this.transform.position.y + 0.9f, floorHit.point.z);
             SpellManager.SM.CastSpellMouse(owner.playerNum, selectedSpell, adjustedPoint);
-            GetComponent<WizardMovement>().CastSpell(1, adjustedPoint);
+            wizardMovement.CastSpell(1, adjustedPoint);
         }
     }
 
@@ -137,7 +150,7 @@ public class UnitScript : MonoBehaviour {
         owner = player;
         name = "Wizard P" + owner.playerNum.ToString() + " (" +  GameManager.GM.colors.colorName[owner.playerNum] + ")";
         
-        unitLight.color = GameManager.GM.colors.lightColor[owner.playerNum];
+        UnitLight.color = GameManager.GM.colors.lightColor[owner.playerNum];
 
         unitMesh.GetComponent<SkinnedMeshRenderer>().material.mainTexture = Resources.Load("WizardSkin/wizardTexture" + owner.playerNum.ToString()) as Texture;
         return true;
@@ -216,7 +229,7 @@ public class UnitScript : MonoBehaviour {
             case "animate":
                 break;
             case "light":
-                unitLight.intensity -= 7f * Time.deltaTime;
+                UnitLight.intensity -= 7f * Time.deltaTime;
                 break;
             case "dissolve":
                 transform.Translate(Vector3.down * Time.deltaTime * dissolveSpeed, Space.World);
@@ -265,4 +278,21 @@ public class UnitScript : MonoBehaviour {
         }
         return null;
     }
+
+    private void OnMouseOver() {
+        HighLight.gameObject.SetActive(true);
+        unitMesh.GetComponent<Renderer>().materials[1].SetFloat("_Outline", 1000F);
+        // selectionBox.on
+    }
+
+    private void OnMouseExit() {
+        HighLight.gameObject.SetActive(false);
+        unitMesh.GetComponent<Renderer>().materials[1].SetFloat("_Outline", 0f);
+    }
+
+    private void OnMouseDown() {
+        SelectionProjector.gameObject.SetActive(true);
+        ConsoleProDebug.LogToFilter("Select " + owner.name, "Unit");
+    }
+
 }

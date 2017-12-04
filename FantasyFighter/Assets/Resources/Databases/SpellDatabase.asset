@@ -124,7 +124,8 @@ MonoBehaviour:
     ShouldFail: 0
     worldObject: {fileID: 1583564886210784, guid: 865b158df1dfae44c97ff0fb85a1ab8f,
       type: 2}
-    spellObject: {fileID: 0}
+    spellObject: {fileID: 1778694996241754, guid: a9b79e0e76804a5469053b4c86d6f017,
+      type: 2}
     Flags: 0
   - ID: 5
     Name: Frost Nova

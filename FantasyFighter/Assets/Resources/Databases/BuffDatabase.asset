@@ -22,3 +22,13 @@ MonoBehaviour:
     MaxStack: 5
     buffObject: {fileID: 1875121444609870, guid: b18434a342a4f054885400d160d63c41,
       type: 2}
+  - ID: 1
+    Name: Poisoned
+    Icon: {fileID: 21300000, guid: de28a9637c8bc4b94a746a88deaa85da, type: 3}
+    Color: {r: 0.15686275, g: 0.9333334, b: 0.06666667, a: 0}
+    Description: POISON DESC
+    IsPositive: 0
+    Stackable: 0
+    MaxStack: 0
+    buffObject: {fileID: 1453323825450900, guid: 122a728d698f4e346b2ef4be206afd5c,
+      type: 2}
