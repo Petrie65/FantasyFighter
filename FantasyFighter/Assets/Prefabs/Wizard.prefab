@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4289339360670860}
   m_Layer: 9
-  m_Name: 0-Hips
+  m_Name: Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -408,7 +408,7 @@ GameObject:
   - component: {fileID: 4097502005319096}
   - component: {fileID: 137639800691485718}
   m_Layer: 9
-  m_Name: 1-LichMesh
+  m_Name: LichMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1002,6 +1002,7 @@ MonoBehaviour:
   isDead: 0
   isCharging: 0
   castProgress: 0
+  isSelected: 0
 --- !u!114 &114884883208823580
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -59,12 +59,16 @@ public class UnitScript : SerializedMonoBehaviour {
         floorMask = LayerMask.GetMask("Floor");
         anim = GetComponent<Animator>();
         unitRigidbody = GetComponent<Rigidbody>();
+
     }
 
-    // private void Start() {
-    //     Color unitColor = GameManager.GM.colors.color[owner.playerNum];
-    //     unitMesh.GetComponent<Renderer>().materials[1].SetColor("_OutlineColor",  unitColor);
-    // }
+    private void Start() {
+        Color unitColor = GameManager.GM.colors.color[owner.playerNum];
+        // unitMesh.GetComponent<Renderer>().materials[1].SetColor("_OutlineColor",  unitColor);
+
+        // unitMesh.GetComponent<SkinnedMeshRenderer>().materials[0].SetColor("_RimColor", unitColor);
+
+    }
 
     private void Update() {
         if (!isDead) {
@@ -279,19 +283,30 @@ public class UnitScript : SerializedMonoBehaviour {
         return null;
     }
 
+    public bool isSelected = false;
+
     private void OnMouseOver() {
         HighLight.gameObject.SetActive(true);
         unitMesh.GetComponent<Renderer>().materials[1].SetFloat("_Outline", 1000F);
+        if (!isSelected) {
+            unitMesh.GetComponent<SkinnedMeshRenderer>().materials[0].SetFloat("_RimPower", 20f);
+        }
         // selectionBox.on
     }
 
     private void OnMouseExit() {
         HighLight.gameObject.SetActive(false);
         unitMesh.GetComponent<Renderer>().materials[1].SetFloat("_Outline", 0f);
+        if (!isSelected) {
+            unitMesh.GetComponent<SkinnedMeshRenderer>().materials[0].SetFloat("_RimPower", 10f);
+        }
     }
 
     private void OnMouseDown() {
+        isSelected = true;
+
         SelectionProjector.gameObject.SetActive(true);
+        unitMesh.GetComponent<SkinnedMeshRenderer>().materials[0].SetFloat("_RimPower", 50f);
         ConsoleProDebug.LogToFilter("Select " + owner.name, "Unit");
     }
 
