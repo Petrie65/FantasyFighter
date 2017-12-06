@@ -14,7 +14,7 @@ public class Poisoned : Buff {
 		TargetUnit.wizardMovement.walkSpeed -= 1f;
 		TargetUnit.wizardMovement.runSpeed -= 1f;
 
-		TargetUnit.transform.GetChild(1).gameObject.GetComponent<Renderer>().material.color = new Color(0.5f, 1f, 0.5f);
+		TargetUnit.transform.GetChild(1).gameObject.GetComponent<Renderer>().material.color = new Color(0.65f, 1f, 0.65f);
 
 		// Set up particles
 		particleObject = Instantiate(Info.buffObject, transform);

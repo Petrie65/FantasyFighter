@@ -64,7 +64,7 @@ public class UnitScript : SerializedMonoBehaviour {
 
     private void Start() {
         Color unitColor = GameManager.GM.colors.color[owner.playerNum];
-        // unitMesh.GetComponent<Renderer>().materials[1].SetColor("_OutlineColor",  unitColor);
+        unitMesh.GetComponent<Renderer>().materials[1].SetColor("_OutlineColor",  unitColor);
 
         // unitMesh.GetComponent<SkinnedMeshRenderer>().materials[0].SetColor("_RimColor", unitColor);
 
@@ -289,7 +289,7 @@ public class UnitScript : SerializedMonoBehaviour {
         HighLight.gameObject.SetActive(true);
         unitMesh.GetComponent<Renderer>().materials[1].SetFloat("_Outline", 1000F);
         if (!isSelected) {
-            unitMesh.GetComponent<SkinnedMeshRenderer>().materials[0].SetFloat("_RimPower", 20f);
+            unitMesh.GetComponent<SkinnedMeshRenderer>().materials[0].SetFloat("_RimPower", 2f);
         }
         // selectionBox.on
     }
@@ -298,7 +298,7 @@ public class UnitScript : SerializedMonoBehaviour {
         HighLight.gameObject.SetActive(false);
         unitMesh.GetComponent<Renderer>().materials[1].SetFloat("_Outline", 0f);
         if (!isSelected) {
-            unitMesh.GetComponent<SkinnedMeshRenderer>().materials[0].SetFloat("_RimPower", 10f);
+            unitMesh.GetComponent<SkinnedMeshRenderer>().materials[0].SetFloat("_RimPower", 1f);
         }
     }
 
@@ -306,7 +306,7 @@ public class UnitScript : SerializedMonoBehaviour {
         isSelected = true;
 
         SelectionProjector.gameObject.SetActive(true);
-        unitMesh.GetComponent<SkinnedMeshRenderer>().materials[0].SetFloat("_RimPower", 50f);
+        unitMesh.GetComponent<SkinnedMeshRenderer>().materials[0].SetFloat("_RimPower", 5f);
         ConsoleProDebug.LogToFilter("Select " + owner.name, "Unit");
     }
 
