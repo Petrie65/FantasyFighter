@@ -39,6 +39,7 @@ public abstract class Buff : MonoBehaviour {
 		Info =  UIBuffDatabase.Instance.GetByName(buffName);
 		
 		if (Info != null) {
+			ConsoleProDebug.LogToFilter("Activate", "Spell");
 			Activate();
 		} else {
             ConsoleProDebug.LogToFilter("Buff does not match up with name in DB", "Spell");
@@ -46,6 +47,8 @@ public abstract class Buff : MonoBehaviour {
 	}
 
 	public void AddStack() {
+		ConsoleProDebug.LogToFilter("Add stack", "Spell");
+
 		if (StackSize < Info.MaxStack) StackSize++;
 
 		// Reset current time each time a stack is added
@@ -53,19 +56,24 @@ public abstract class Buff : MonoBehaviour {
 	}
 
 	public void ResetTime() {
+		ConsoleProDebug.LogToFilter("Reset time", "Spell");
+
 		CurrentTime = 0f;
+		IsFinished = false;
+
+		// StopCoroutine( "DoAction" );
 	}
 
 	private void Update() {
-		if (!IsFinished) {
-			CurrentTime += Time.deltaTime;
-
-			ApplySpell();
-				
+		if (!IsFinished) {	
 			if(CurrentTime >= Duration) {
 				IsFinished = true;
+				ConsoleProDebug.LogToFilter("End", "Spell");
 				End();
-			}
+			} else {
+				CurrentTime += Time.deltaTime;
+				ApplySpell();
+			}			
 		}
 	}
 

@@ -211,12 +211,13 @@
      <None Include="Assets\Plugins\U_VFXv3.1\Shaders\Particles\Distortion\TextureDistortion-Alpha Blended.shader" />
      <None Include="Assets\Plugins\_Heathen Engineering\Heathen Shaders\Shaders\Essentials\Occlusion-Wireframe\Basic\Occlusion-Basic-Effect.shader" />
      <None Include="Assets\Plugins\Realistic Effects Pack v4\Shaders\RFX4_CutoutBorderMobile.shader" />
-     <None Include="Assets\Resources\ProjectorAdditiveTint.shader" />
+     <None Include="Assets\Resources\Outline\ProjectorAdditiveTint.shader" />
      <None Include="Assets\Import\Standard Assets\Effects\ImageEffects\Shaders\ShowAlphaChannel.shader" />
      <None Include="Assets\Plugins\Realistic Effects Pack v4\Shaders\Portal\RFX4_PortalSky.shader" />
      <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Editor.xml" />
      <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
      <None Include="Assets\PostProcessing\Resources\Shaders\Fog.shader" />
+     <None Include="Assets\Import\Goblin_rouge\readme.txt" />
      <None Include="Assets\AQUAS\Shaders\Water\Desktop&amp;Web\2SidedDoubleTextured.shader" />
      <None Include="Assets\Import\Standard Assets\Effects\ImageEffects\Shaders\SunShaftsComposite.shader" />
      <None Include="Assets\AQUAS\Shaders\Water\Desktop&amp;Web\2SidedTripleTextured.shader" />
@@ -338,6 +339,7 @@
      <None Include="Assets\Plugins\Realistic Effects Pack v4\Readme.txt" />
      <None Include="Assets\Plugins\Sirenix\Assemblies\Sirenix.Serialization.Config.xml" />
      <None Include="Assets\Import\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\MobileBlur.shader" />
+     <None Include="Assets\Import\AutoSave\ReadMe.txt" />
      <None Include="Assets\Import\Standard Assets\Effects\ImageEffects\Shaders\SSAOShader.shader" />
      <None Include="Assets\Plugins\_Heathen Engineering\Heathen Shaders\Shaders\Essentials\Occlusion-Wireframe\Standard\Occluded_StandardBump_Pattern.shader" />
      <None Include="Assets\Import\Standard Assets\Effects\ImageEffects\Shaders\ConvertDepth.shader" />

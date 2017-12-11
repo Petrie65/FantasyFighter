@@ -48,7 +48,7 @@ public class SpellMeteor : SpellObject {
         // Explode if collision with water
         if (transform.position.y < 7.6f) {
             Explode();
-            return;
+        return;
         }
 
         if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.down) , out hit)) {

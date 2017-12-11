@@ -32,3 +32,13 @@ MonoBehaviour:
     MaxStack: 0
     buffObject: {fileID: 1453323825450900, guid: 122a728d698f4e346b2ef4be206afd5c,
       type: 2}
+  - ID: 2
+    Name: Cold
+    Icon: {fileID: 21300000, guid: dccfd8b0be08d4018a52e3d242ae57bd, type: 3}
+    Color: {r: 0.57254905, g: 0.81568635, b: 0.98823535, a: 0}
+    Description: COLD DESC
+    IsPositive: 0
+    Stackable: 0
+    MaxStack: 0
+    buffObject: {fileID: 1453323825450900, guid: df977ae8966588e4b8306922a115167c,
+      type: 2}

@@ -41,10 +41,8 @@ public class AcidArrow : SpellObject {
                 distance += moveDistance;
                 
 			    transform.position += transform.forward.normalized * moveDistance;
-                Debug.Log("Move");
                 this.UpdateHeight();
             } else {
-                Debug.Log("distance break");
                 Break();
             }
 		}
@@ -55,7 +53,6 @@ public class AcidArrow : SpellObject {
 
         // Explode if collision with water
         if (transform.position.y < 7.6f) {
-            Debug.Log("height break");
             Break();
             return;
         }
@@ -74,12 +71,11 @@ public class AcidArrow : SpellObject {
             if (unitScript.owner.name == Spell.Owner.name) return;
             
             unitScript.TakeDamage(Spell.Owner, damage);
-        	unitScript.AddBuff<Poisoned>(Spell.Owner, 5f, 1, 0.1f);
+            unitScript.AddBuff<Poisoned>(Spell.Owner, 5f, 1, 0.1f);
 
             collisionParticles.transform.position = this.transform.position;
             Instantiate(collisionParticles);
 
-            Debug.Log("collision break");
             Break();
         }
     }

@@ -177,7 +177,7 @@ public class UnitScript : SerializedMonoBehaviour {
     }
 
     public void TakeDamage(Player playerFrom, float damage) {
-        if (currentHP - damage < 0) {
+        if (currentHP - damage <= 0) {
             currentHP = 0;
 
             if (!isDead) {

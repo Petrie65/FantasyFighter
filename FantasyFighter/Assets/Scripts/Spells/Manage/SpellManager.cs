@@ -129,6 +129,9 @@ public class SpellManager : MonoBehaviour {
     public void ReleaseSpell(Spell spell, Vector3 target) {
         spell.SpellObject = Instantiate(spell.Info.spellObject);
         spell.SpellScript = spell.SpellObject.GetComponent<SpellObject>();
+        if (spell.SpellScript == null) {
+            ConsoleProDebug.LogToFilter("Assign spell script to spell gameObject", "Important");
+        }
         spell.SpellScript.Init(spell, target);
     }
 }

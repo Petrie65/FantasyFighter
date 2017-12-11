@@ -33,7 +33,7 @@ public abstract class SpellObject : MonoBehaviour {
     public float CalcCharge(float statValue, float headroom,string debugString) {
         float range = statValue * headroom;
         float charge = Spell.ChargePercentage * range;
-        ConsoleProDebug.LogToFilter(debugString + " : " + Mathf.Round(statValue + charge) + "(" + statValue + "-" + statValue * (headroom+1) + ")", "Spell");
+        ConsoleProDebug.LogToFilter(debugString + " : " + Mathf.Round(statValue + charge) + " (" + statValue + "-" + statValue * (headroom+1) + ")", "Spell");
         return statValue + charge;
     }
 

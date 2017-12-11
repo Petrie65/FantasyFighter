@@ -65,9 +65,9 @@ MonoBehaviour:
     ChannelColor: {r: 0.60784316, g: 0.9254902, b: 1, a: 0.78431374}
     ChargeColor: {r: 0.8117647, g: 0.98039216, b: 1, a: 0.78431374}
     Amount: 1
-    Range: 25
-    Damage: 50
-    Speed: 0
+    Range: 10
+    Damage: 40
+    Speed: 10
     Cooldown: 10
     ChannelMove: 0
     ChannelTime: 1

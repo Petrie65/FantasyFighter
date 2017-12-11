@@ -35,10 +35,13 @@ public class Poisoned : Buff {
 
 		particles.stop();
 		StartCoroutine(WaitForParticles(3f));
+        
+		ConsoleProDebug.LogToFilter("End - wait for particles", "Spell");
 	}
 
 	private IEnumerator WaitForParticles(float time) {
 		yield return new WaitForSeconds(time);
+		ConsoleProDebug.LogToFilter("Particles done", "Spell");
 		Destroy(particleObject);
 		Destroy(this);
 	}
