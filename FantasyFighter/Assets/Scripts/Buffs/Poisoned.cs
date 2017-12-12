@@ -6,19 +6,14 @@ using DuloGames.UI;
 using MirzaBeig.ParticleSystems;
 
 public class Poisoned : Buff {
-	GameObject particleObject;
-	ParticleSystems particles;
 
 	public override void Activate() {
-		// 
+		coroutine = WaitForParticles(3f);
+
 		TargetUnit.wizardMovement.walkSpeed -= 1f;
 		TargetUnit.wizardMovement.runSpeed -= 1f;
 
 		TargetUnit.transform.GetChild(1).gameObject.GetComponent<Renderer>().material.color = new Color(0.65f, 1f, 0.65f);
-
-		// Set up particles
-		particleObject = Instantiate(Info.buffObject, transform);
-		particles = particleObject.GetComponent<ParticleSystems>();
 	}
 
 	public override void ApplySpell() {
@@ -31,18 +26,7 @@ public class Poisoned : Buff {
 
 		TargetUnit.transform.GetChild(1).gameObject.GetComponent<Renderer>().material.color = new Color(1f, 1f, 1f);
 
-		TargetUnit.RemoveBuff(this);
-
-		particles.stop();
-		StartCoroutine(WaitForParticles(3f));
-        
+		StartCoroutine(coroutine);
 		ConsoleProDebug.LogToFilter("End - wait for particles", "Spell");
-	}
-
-	private IEnumerator WaitForParticles(float time) {
-		yield return new WaitForSeconds(time);
-		ConsoleProDebug.LogToFilter("Particles done", "Spell");
-		Destroy(particleObject);
-		Destroy(this);
 	}
 }

@@ -255,6 +255,9 @@ public class UnitScript : SerializedMonoBehaviour {
             CurrentBuffs.Add(buffScript);
             return buffScript;
         } else {
+            if (currentBuff.IsFinished) {
+                currentBuff.ResetTime();
+            }
             // Buff already exists
             if (currentBuff.Info.Stackable) {
                 currentBuff.AddStack();
@@ -270,7 +273,6 @@ public class UnitScript : SerializedMonoBehaviour {
         var currentBuff = GetBuff(buff.Info.Name);
         if (currentBuff != null) {
             CurrentBuffs.Remove(buff);
-            
         }
     }
 

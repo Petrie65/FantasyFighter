@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4420599077577624}
   - component: {fileID: 114237014249162800}
   m_Layer: 0
-  m_Name: BuffPoisoned
+  m_Name: BuffCold
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

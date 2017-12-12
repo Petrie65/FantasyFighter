@@ -1,6 +1,187 @@
-Base path: D:/Program Files/Unity/Editor/Data
+Base path: C:/Program Files/Unity/Editor/Data
 Cmd: initializeCompiler
 Cmd: preprocess
-  insize=1343 outsize=391 ok=1
+  insize=1598 outsize=1138 ok=1
 Cmd: preprocess
-  insize=1713 outsize=258 ok=1
+  insize=988 outsize=988 ok=1
+Cmd: preprocess
+  insize=1075 outsize=1584 ok=1
+Cmd: preprocess
+  insize=896 outsize=1585 ok=1
+Cmd: preprocess
+  insize=1074 outsize=1686 ok=1
+Cmd: preprocess
+  insize=1852 outsize=1598 ok=1
+Cmd: preprocess
+  insize=1626 outsize=1577 ok=1
+Cmd: preprocess
+  insize=9675 outsize=2082 ok=1
+Cmd: preprocess
+  insize=1779 outsize=1093 ok=1
+Cmd: preprocess
+  insize=8332 outsize=1490 ok=1
+Cmd: preprocess
+  insize=13081 outsize=2782 ok=1
+Cmd: preprocess
+  insize=9615 outsize=2030 ok=1
+Cmd: preprocess
+  error: 1 plat 20 at (21): Program uses geometry shaders, automatically setting target to 4.0
+  insize=2529 outsize=606 ok=1
+Cmd: preprocess
+  insize=32637 outsize=3814 ok=1
+Cmd: preprocess
+  insize=1592 outsize=1117 ok=1
+Cmd: preprocess
+  insize=1443 outsize=620 ok=1
+Cmd: preprocess
+  insize=759 outsize=1507 ok=1
+Cmd: preprocess
+  insize=2947 outsize=2315 ok=1
+Cmd: preprocess
+  insize=924 outsize=924 ok=1
+Cmd: preprocess
+  insize=846 outsize=1457 ok=1
+Cmd: preprocess
+  insize=1994 outsize=1741 ok=1
+Cmd: preprocess
+  insize=1267 outsize=1919 ok=1
+Cmd: preprocess
+  insize=1042 outsize=1566 ok=1
+Cmd: preprocess
+  insize=1203 outsize=1855 ok=1
+Cmd: preprocess
+  insize=8171 outsize=1252 ok=1
+Cmd: preprocess
+  insize=44102 outsize=4407 ok=1
+Cmd: preprocess
+  insize=1078 outsize=1820 ok=1
+Cmd: preprocess
+  insize=917 outsize=1745 ok=1
+Cmd: preprocess
+  insize=608 outsize=1433 ok=1
+Cmd: preprocess
+  insize=1116 outsize=1813 ok=1
+Cmd: preprocess
+  insize=2584 outsize=577 ok=1
+Cmd: preprocess
+  insize=4504 outsize=1746 ok=1
+Cmd: preprocess
+  insize=1060 outsize=1272 ok=1
+Cmd: preprocess
+  insize=1892 outsize=1431 ok=1
+Cmd: preprocess
+  insize=1978 outsize=1725 ok=1
+Cmd: preprocess
+  insize=1340 outsize=1495 ok=1
+Cmd: preprocess
+  insize=1564 outsize=1966 ok=1
+Cmd: preprocess
+  insize=2881 outsize=2249 ok=1
+Cmd: preprocess
+  insize=962 outsize=1652 ok=1
+Cmd: preprocess
+  insize=3349 outsize=1342 ok=1
+Cmd: preprocess
+  insize=737 outsize=1468 ok=1
+Cmd: preprocess
+  insize=1904 outsize=1650 ok=1
+Cmd: preprocess
+  insize=7141 outsize=1293 ok=1
+Cmd: preprocess
+  insize=9243 outsize=5227 ok=1
+Cmd: preprocess
+  insize=3782 outsize=894 ok=1
+Cmd: preprocess
+  insize=32073 outsize=3697 ok=1
+Cmd: preprocess
+  insize=1405 outsize=1914 ok=1
+Cmd: preprocess
+  insize=1290 outsize=1944 ok=1
+Cmd: preprocess
+  insize=1610 outsize=1561 ok=1
+Cmd: preprocess
+  insize=11432 outsize=2295 ok=1
+Cmd: preprocess
+  insize=2578 outsize=571 ok=1
+Cmd: preprocess
+  insize=1886 outsize=1411 ok=1
+Cmd: preprocess
+  error: 1 plat 20 at (106): Both vertex and fragment programs must be present in a shader snippet. Excluding it from compilation.
+  insize=3077 outsize=3887 ok=1
+Cmd: preprocess
+  insize=809 outsize=238 ok=1
+Cmd: preprocess
+  insize=738 outsize=1120 ok=1
+Cmd: preprocess
+  insize=1288 outsize=1939 ok=1
+Cmd: preprocess
+  insize=1316 outsize=1717 ok=1
+Cmd: preprocess
+  insize=1496 outsize=1447 ok=1
+Cmd: preprocess
+  insize=856 outsize=1684 ok=1
+Cmd: preprocess
+  insize=13399 outsize=2880 ok=1
+Cmd: preprocess
+  insize=11766 outsize=2429 ok=1
+Cmd: preprocess
+  insize=940 outsize=1780 ok=1
+Cmd: preprocess
+  insize=1324 outsize=1833 ok=1
+Cmd: preprocess
+  insize=1645 outsize=2047 ok=1
+Cmd: preprocess
+  insize=1646 outsize=2051 ok=1
+Cmd: preprocess
+  insize=996 outsize=1719 ok=1
+Cmd: preprocess
+  insize=1843 outsize=1410 ok=1
+Cmd: preprocess
+  insize=1140 outsize=1751 ok=1
+Cmd: preprocess
+  insize=2653 outsize=2021 ok=1
+Cmd: preprocess
+  insize=1536 outsize=1486 ok=1
+Cmd: preprocess
+  insize=1404 outsize=1916 ok=1
+Cmd: preprocess
+  insize=939 outsize=1767 ok=1
+Cmd: preprocess
+  insize=14403 outsize=1852 ok=1
+Cmd: preprocess
+  insize=815 outsize=1520 ok=1
+Cmd: preprocess
+  insize=1624 outsize=2026 ok=1
+Cmd: preprocess
+  insize=1324 outsize=1479 ok=1
+Cmd: preprocess
+  insize=1228 outsize=1383 ok=1
+Cmd: preprocess
+  insize=1427 outsize=1164 ok=1
+Cmd: preprocess
+  insize=1097 outsize=1794 ok=1
+Cmd: preprocess
+  insize=668 outsize=1355 ok=1
+Cmd: preprocess
+  insize=748 outsize=1497 ok=1
+Cmd: preprocess
+  insize=3438 outsize=1084 ok=1
+Cmd: preprocess
+  insize=1385 outsize=1894 ok=1
+Cmd: preprocess
+  insize=1820 outsize=1345 ok=1
+Cmd: preprocess
+  insize=1446 outsize=1602 ok=1
+Cmd: preprocess
+  insize=11921 outsize=2547 ok=1
+Cmd: preprocess
+  insize=36958 outsize=4202 ok=1
+Cmd: preprocess
+  error: 1 plat 20 at (108): Both vertex and fragment programs must be present in a shader snippet. Excluding it from compilation.
+  insize=3044 outsize=2311 ok=1
+Cmd: preprocess
+  insize=985 outsize=1636 ok=1
+Cmd: preprocess
+  insize=1826 outsize=1365 ok=1
+Cmd: preprocess
+  insize=3274 outsize=1267 ok=1

@@ -4,6 +4,7 @@ using UnityEngine;
 using Sirenix.OdinInspector;
 using System;
 using DuloGames.UI;
+using MirzaBeig.ParticleSystems;
 
 public abstract class Buff : MonoBehaviour {
 	// Info
@@ -21,6 +22,11 @@ public abstract class Buff : MonoBehaviour {
 
 	public virtual float CurrentTime {get; protected set;}
 	public virtual bool IsFinished {get; protected set;}
+
+	// Particles
+	public virtual GameObject particleObject {get; protected set;}
+	public virtual ParticleSystems particles {get; protected set;}
+	public virtual IEnumerator coroutine {get; protected set;}
 
 	public Buff() {
 		IsFinished = false;
@@ -40,10 +46,16 @@ public abstract class Buff : MonoBehaviour {
 		
 		if (Info != null) {
 			ConsoleProDebug.LogToFilter("Activate", "Spell");
+			SetupParticles();
 			Activate();
 		} else {
             ConsoleProDebug.LogToFilter("Buff does not match up with name in DB", "Spell");
 		}
+	}
+
+	public void SetupParticles() {
+		particleObject = Instantiate(Info.buffObject, transform);
+		particles = particleObject.GetComponent<ParticleSystems>();
 	}
 
 	public void AddStack() {
@@ -59,9 +71,13 @@ public abstract class Buff : MonoBehaviour {
 		ConsoleProDebug.LogToFilter("Reset time", "Spell");
 
 		CurrentTime = 0f;
-		IsFinished = false;
-
-		// StopCoroutine( "DoAction" );
+		if (IsFinished) {
+			particles.play();
+			StopCoroutine(coroutine);
+			
+			IsFinished = false;
+			Activate();
+		}
 	}
 
 	private void Update() {
@@ -85,6 +101,20 @@ public abstract class Buff : MonoBehaviour {
 
 	// Buff fin
 	public abstract void End();
+
+	
+	public IEnumerator WaitForParticles(float time) {
+		particles.stop();
+
+		yield return new WaitForSeconds(time);
+
+		ConsoleProDebug.LogToFilter("Particles done", "Spell");
+
+		TargetUnit.RemoveBuff(this);
+		Destroy(particleObject);
+		Destroy(this);
+	}
+
 }
 
 
