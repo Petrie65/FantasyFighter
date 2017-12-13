@@ -45,12 +45,13 @@ public abstract class Buff : MonoBehaviour {
 		Info =  UIBuffDatabase.Instance.GetByName(buffName);
 		
 		if (Info != null) {
-			ConsoleProDebug.LogToFilter("Activate", "Spell");
 			SetupParticles();
 			Activate();
 		} else {
             ConsoleProDebug.LogToFilter("Buff does not match up with name in DB", "Spell");
 		}
+		
+        particles.onParticleSystemsDeadEvent += onParticleSystemsDead;
 	}
 
 	public void SetupParticles() {
@@ -59,8 +60,6 @@ public abstract class Buff : MonoBehaviour {
 	}
 
 	public void AddStack() {
-		ConsoleProDebug.LogToFilter("Add stack", "Spell");
-
 		if (StackSize < Info.MaxStack) StackSize++;
 
 		// Reset current time each time a stack is added
@@ -68,7 +67,6 @@ public abstract class Buff : MonoBehaviour {
 	}
 
 	public void ResetTime() {
-		ConsoleProDebug.LogToFilter("Reset time", "Spell");
 
 		CurrentTime = 0f;
 		if (IsFinished) {
@@ -84,7 +82,6 @@ public abstract class Buff : MonoBehaviour {
 		if (!IsFinished) {	
 			if(CurrentTime >= Duration) {
 				IsFinished = true;
-				ConsoleProDebug.LogToFilter("End", "Spell");
 				End();
 			} else {
 				CurrentTime += Time.deltaTime;
@@ -102,14 +99,7 @@ public abstract class Buff : MonoBehaviour {
 	// Buff fin
 	public abstract void End();
 
-	
-	public IEnumerator WaitForParticles(float time) {
-		particles.stop();
-
-		yield return new WaitForSeconds(time);
-
-		ConsoleProDebug.LogToFilter("Particles done", "Spell");
-
+	void onParticleSystemsDead() {
 		TargetUnit.RemoveBuff(this);
 		Destroy(particleObject);
 		Destroy(this);

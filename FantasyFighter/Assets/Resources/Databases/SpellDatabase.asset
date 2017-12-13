@@ -19,9 +19,9 @@ MonoBehaviour:
     ChannelColor: {r: 0.93333334, g: 0.4862745, b: 0.09411765, a: 0.78431374}
     ChargeColor: {r: 1, g: 0.92156863, b: 0.39215687, a: 0.78431374}
     Amount: 3
-    Range: 12
+    Range: 25
     Damage: 70
-    Speed: 30
+    Speed: 20
     Cooldown: 10
     ChannelMove: 1
     ChannelTime: 0.7
@@ -32,7 +32,7 @@ MonoBehaviour:
     ShouldFail: 1
     worldObject: {fileID: 1746515591049346, guid: 768b7e2b051eb2b42b4d7f02f7caf678,
       type: 2}
-    spellObject: {fileID: 1118290831946194, guid: 8dc9d7e7b9058eb458012a4d20812f91,
+    spellObject: {fileID: 1118290831946194, guid: d8eab71f7e2cd3f41b99a636a50c3af3,
       type: 2}
     Flags: 0
   - ID: 1

@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using DuloGames.UI;
+using MirzaBeig.ParticleSystems;
 
-public class SpellMeteor : SpellObject {
-    public ParticleSystem praticleTail;
-    public ParticleSystem particleCollide;
+public class SpellMeteor : SpellObject {    
+    public ParticleSystems ProjectileParticles;
+    public GameObject ExplosionParticles;
 
-    public Light fireLight;
-    private Animator fireLightAnim;
-    
     private float radiusAOE = 10f;
     private SphereCollider triggerCollider;
     private float distance = 0f;    
@@ -27,7 +25,6 @@ public class SpellMeteor : SpellObject {
 
     private void Awake() {
         triggerCollider = GetComponent<SphereCollider>();
-        fireLightAnim = fireLight.GetComponent<Animator>();
     }
 
     private void Update() {
@@ -52,10 +49,10 @@ public class SpellMeteor : SpellObject {
         }
 
         if (Physics.Raycast (transform.position, transform.TransformDirection (Vector3.down) , out hit)) {
-                if (hit.transform.tag == ("Ground")){ 
-                    float heightPoint = hit.point.y + 2f;
-                    this.transform.position = new Vector3(transform.position.x, heightPoint, transform.position.z);
-                }
+            if (hit.transform.tag == ("Ground")){ 
+                float heightPoint = hit.point.y + 2f;
+                this.transform.position = new Vector3(transform.position.x, heightPoint, transform.position.z);
+            }
         }
     }
 
@@ -98,13 +95,12 @@ public class SpellMeteor : SpellObject {
     private void DestroyProjectile() {
         Active = false;
 
+        ProjectileParticles.stop();
+        ExplosionParticles.SetActive(true);
+
         GetComponent<MeshRenderer>().enabled = false;
-        praticleTail.Stop();
 
-        fireLightAnim.SetTrigger("triggerExplode");
-
-        particleCollide.Emit(30);
-        Destroy(gameObject, 1);
+        Destroy(gameObject, 2);
     }
 
 }
